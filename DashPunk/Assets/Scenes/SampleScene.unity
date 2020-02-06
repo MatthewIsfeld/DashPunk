@@ -740,6 +740,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2982679444377936992, guid: cd5f09713d20cdd439098007bab0e77d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982679444377936995, guid: cd5f09713d20cdd439098007bab0e77d,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: Player
