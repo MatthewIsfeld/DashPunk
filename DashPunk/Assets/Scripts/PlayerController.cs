@@ -68,9 +68,19 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PickUp"))
+        //if (other.gameObject.CompareTag("PickUp"))
+        //{
+            //other.gameObject.SetActive(false);
+            //wounds -= 1;
+            //woundText.text = "Wounds: " + wounds.ToString();
+            //if (wounds < 1)
+            //{
+                //deadText.text = "YOU HAVE DIED";
+                //this.gameObject.SetActive(false);
+            //}
+        //}
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.SetActive(false);
             wounds -= 1;
             woundText.text = "Wounds: " + wounds.ToString();
             if (wounds < 1)
