@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  dashSpeed: 50
+  dashSpeed: 70
   initialDashTime: 0.1
   woundText: {fileID: 497167521}
   deadText: {fileID: 149403701}
