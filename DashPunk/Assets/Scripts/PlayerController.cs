@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public Text woundText;
     public Text deadText;
     Collider2D mEnemyCollider;
-    public int bouncePower;
+    public float bouncePower;
 
     void Start()
     {
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             isPierceDashing = 1;
         }
-        if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0))
         {
             isBounceDashing = 1;
         }
