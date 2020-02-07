@@ -664,6 +664,7 @@ MonoBehaviour:
   initialDashTime: 0.1
   woundText: {fileID: 497167521}
   deadText: {fileID: 149403701}
+  bouncePower: 20000
 --- !u!212 &1181688060
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -745,6 +746,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2982679444377936993, guid: cd5f09713d20cdd439098007bab0e77d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982679444377936993, guid: cd5f09713d20cdd439098007bab0e77d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936995, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -755,6 +766,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1181688061}
+    - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: m_LocalPosition.x

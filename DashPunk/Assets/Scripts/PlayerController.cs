@@ -13,10 +13,12 @@ public class PlayerController : MonoBehaviour
     private float dashTime;
     public float initialDashTime;
     private int isPierceDashing = 0;
+    private int isBounceDashing = 0;
     private int wounds;
     public Text woundText;
     public Text deadText;
     Collider2D mEnemyCollider;
+    public int bouncePower;
 
     void Start()
     {
@@ -38,11 +40,15 @@ public class PlayerController : MonoBehaviour
         {
             isPierceDashing = 1;
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            isBounceDashing = 1;
+        }
     }
 
     void FixedUpdate()
     {
-        if (isPierceDashing == 0)
+        if ((isPierceDashing == 0) && (isBounceDashing == 0))
         {
             float horizontalMove = Input.GetAxisRaw("Horizontal");
             float verticalMove = Input.GetAxisRaw("Vertical");
@@ -50,7 +56,7 @@ public class PlayerController : MonoBehaviour
             Vector2 movement = new Vector2(horizontalMove, verticalMove);
             rb.velocity = movement * speed;
         }
-        else
+        else if (isPierceDashing == 1)
         {
             if (dashTime <= 0)
             {
@@ -62,6 +68,19 @@ public class PlayerController : MonoBehaviour
             else
             {
                 mEnemyCollider.enabled = !mEnemyCollider.enabled;
+                rb.velocity = direction * dashSpeed;
+                dashTime -= Time.fixedDeltaTime;
+            }
+        } else if (isBounceDashing == 1)
+        {
+            if (dashTime <= 0)
+            {
+                rb.velocity = Vector2.zero;
+                dashTime = initialDashTime;
+                isBounceDashing = 0;
+            }
+            else
+            {
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
@@ -81,9 +100,9 @@ public class PlayerController : MonoBehaviour
         //this.gameObject.SetActive(false);
         //}
         //}
-        if (isPierceDashing == 0)
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.CompareTag("Enemy"))
+            if ((isPierceDashing == 0) && (isBounceDashing == 0))
             {
                 wounds -= 1;
                 woundText.text = "Wounds: " + wounds.ToString();
@@ -92,7 +111,10 @@ public class PlayerController : MonoBehaviour
                     deadText.text = "YOU HAVE DIED";
                     this.gameObject.SetActive(false);
                 }
+            } else if (isBounceDashing == 1)
+            {
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * bouncePower);
             }
-        }        
+        }
     }
 }
