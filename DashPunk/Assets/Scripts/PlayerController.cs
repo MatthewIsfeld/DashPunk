@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private int wounds;
     public Text woundText;
     public Text deadText;
+    Collider2D mEnemyCollider;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
         wounds = 2;
         woundText.text = "Wounds: " + wounds.ToString();
         deadText.text = "";
+        mEnemyCollider = GameObject.Find("MeleeEnemy").GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -52,17 +54,17 @@ public class PlayerController : MonoBehaviour
         {
             if (dashTime <= 0)
             {
+                mEnemyCollider.enabled = !mEnemyCollider.enabled;
                 rb.velocity = Vector2.zero;
                 dashTime = initialDashTime;
-                isDashing = 0;
+                isDashing = 0;             
             }
             else
             {
+                mEnemyCollider.enabled = !mEnemyCollider.enabled;
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
-
-
         }
     }
 
@@ -91,6 +93,6 @@ public class PlayerController : MonoBehaviour
                     this.gameObject.SetActive(false);
                 }
             }
-        }
+        }        
     }
 }
