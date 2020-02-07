@@ -70,23 +70,26 @@ public class PlayerController : MonoBehaviour
     {
         //if (other.gameObject.CompareTag("PickUp"))
         //{
-            //other.gameObject.SetActive(false);
-            //wounds -= 1;
-            //woundText.text = "Wounds: " + wounds.ToString();
-            //if (wounds < 1)
-            //{
-                //deadText.text = "YOU HAVE DIED";
-                //this.gameObject.SetActive(false);
-            //}
+        //other.gameObject.SetActive(false);
+        //wounds -= 1;
+        //woundText.text = "Wounds: " + wounds.ToString();
+        //if (wounds < 1)
+        //{
+        //deadText.text = "YOU HAVE DIED";
+        //this.gameObject.SetActive(false);
         //}
-        if (other.gameObject.CompareTag("Enemy"))
+        //}
+        if (isDashing == 0)
         {
-            wounds -= 1;
-            woundText.text = "Wounds: " + wounds.ToString();
-            if (wounds < 1)
+            if (other.gameObject.CompareTag("Enemy"))
             {
-                deadText.text = "YOU HAVE DIED";
-                this.gameObject.SetActive(false);
+                wounds -= 1;
+                woundText.text = "Wounds: " + wounds.ToString();
+                if (wounds < 1)
+                {
+                    deadText.text = "YOU HAVE DIED";
+                    this.gameObject.SetActive(false);
+                }
             }
         }
     }
