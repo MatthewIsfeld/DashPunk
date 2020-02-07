@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    //This class causes the camera to follow the player around the screen.
     public GameObject player;
 
     private Vector3 offset;
@@ -14,7 +15,7 @@ public class CameraController : MonoBehaviour
         offset = transform.position - player.transform.position;
     }
 
-    // Update is called once per frame
+    // This lateUpdate assures that the camera moves after the player has been moved
     void LateUpdate()
     {
         transform.position = player.transform.position + offset;

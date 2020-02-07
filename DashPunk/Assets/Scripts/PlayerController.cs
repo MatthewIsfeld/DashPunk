@@ -33,9 +33,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Get Mouse cursor position relative to player and turn it into a unit vector
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = new Vector2(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
         direction = direction.normalized;
+       
+        //Start dash when right and left mouse buttons are pressed
         if (Input.GetMouseButtonDown(1))
         {
             isPierceDashing = 1;
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Move character when not dashing
         if ((isPierceDashing == 0) && (isBounceDashing == 0))
         {
             float horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -56,6 +60,7 @@ public class PlayerController : MonoBehaviour
             Vector2 movement = new Vector2(horizontalMove, verticalMove);
             rb.velocity = movement * speed;
         }
+        //Move character when pierceDashing and disable enemy collider so character can pass through
         else if (isPierceDashing == 1)
         {
             if (dashTime <= 0)
@@ -71,6 +76,8 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
+
+        //Move character when BounceDashing
         } else if (isBounceDashing == 1)
         {
             if (dashTime <= 0)
@@ -87,19 +94,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+ 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.gameObject.CompareTag("PickUp"))
-        //{
-        //other.gameObject.SetActive(false);
-        //wounds -= 1;
-        //woundText.text = "Wounds: " + wounds.ToString();
-        //if (wounds < 1)
-        //{
-        //deadText.text = "YOU HAVE DIED";
-        //this.gameObject.SetActive(false);
-        //}
-        //}
+        //If the player contacts an emeny they take damage if they are not dashing display damage with simple text boxes
         if (other.gameObject.CompareTag("Enemy"))
         {
             if ((isPierceDashing == 0) && (isBounceDashing == 0))
@@ -111,7 +109,9 @@ public class PlayerController : MonoBehaviour
                     deadText.text = "YOU HAVE DIED";
                     this.gameObject.SetActive(false);
                 }
-            } else if (isBounceDashing == 1)
+            } 
+            //If player bounce dashes push enemy with force
+            else if (isBounceDashing == 1)
             {
                 other.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * bouncePower);
             }
