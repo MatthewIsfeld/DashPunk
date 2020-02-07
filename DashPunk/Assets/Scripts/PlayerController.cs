@@ -12,13 +12,10 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     private float dashTime;
     public float initialDashTime;
-    private int isBounceDashing = 0;
+    private int isDashing = 0;
     private int wounds;
     public Text woundText;
     public Text deadText;
-    public float bouncePower;
-    private GameObject enemy;
-    
 
     void Start()
     {
@@ -27,7 +24,6 @@ public class PlayerController : MonoBehaviour
         wounds = 2;
         woundText.text = "Wounds: " + wounds.ToString();
         deadText.text = "";
-        enemy = GameObject.Find("MeleeEnemy");
     }
 
     // Update is called once per frame
@@ -38,13 +34,13 @@ public class PlayerController : MonoBehaviour
         direction = direction.normalized;
         if (Input.GetMouseButtonDown(0))
         {
-            isBounceDashing = 1;
+            isDashing = 1;
         }
     }
 
     void FixedUpdate()
     {
-        if (isBounceDashing == 0)
+        if (isDashing == 0)
         {
             float horizontalMove = Input.GetAxisRaw("Horizontal");
             float verticalMove = Input.GetAxisRaw("Vertical");
@@ -58,7 +54,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = Vector2.zero;
                 dashTime = initialDashTime;
-                isBounceDashing = 0;
+                isDashing = 0;
             }
             else
             {
@@ -83,7 +79,7 @@ public class PlayerController : MonoBehaviour
         //this.gameObject.SetActive(false);
         //}
         //}
-        if (isBounceDashing == 0)
+        if (isDashing == 0)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
@@ -95,10 +91,6 @@ public class PlayerController : MonoBehaviour
                     this.gameObject.SetActive(false);
                 }
             }
-        }
-        else
-        {
-           
         }
     }
 }

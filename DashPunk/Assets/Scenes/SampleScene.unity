@@ -664,7 +664,6 @@ MonoBehaviour:
   initialDashTime: 0.1
   woundText: {fileID: 497167521}
   deadText: {fileID: 149403701}
-  bouncePower: 1000
 --- !u!212 &1181688060
 SpriteRenderer:
   m_ObjectHideFlags: 0

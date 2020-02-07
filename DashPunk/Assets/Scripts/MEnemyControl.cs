@@ -8,13 +8,10 @@ public class MEnemyControl : MonoBehaviour
     private Rigidbody2D rb;
     public Vector2 movement;
     public float moveSpeed = 5f;
-    public int isKnockedBack;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        isKnockedBack = 0;
     }
 
     // Update is called once per frame
@@ -35,10 +32,5 @@ public class MEnemyControl : MonoBehaviour
     void moveEnemy(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-    }
-
-    void enemyKnockBack()
-    {
-        
     }
 }
