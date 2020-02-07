@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     private float dashTime;
     public float initialDashTime;
-    private int isDashing = 0;
+    private int isPierceDashing = 0;
     private int wounds;
     public Text woundText;
     public Text deadText;
@@ -34,15 +34,15 @@ public class PlayerController : MonoBehaviour
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = new Vector2(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
         direction = direction.normalized;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
-            isDashing = 1;
+            isPierceDashing = 1;
         }
     }
 
     void FixedUpdate()
     {
-        if (isDashing == 0)
+        if (isPierceDashing == 0)
         {
             float horizontalMove = Input.GetAxisRaw("Horizontal");
             float verticalMove = Input.GetAxisRaw("Vertical");
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
                 mEnemyCollider.enabled = !mEnemyCollider.enabled;
                 rb.velocity = Vector2.zero;
                 dashTime = initialDashTime;
-                isDashing = 0;             
+                isPierceDashing = 0;             
             }
             else
             {
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         //this.gameObject.SetActive(false);
         //}
         //}
-        if (isDashing == 0)
+        if (isPierceDashing == 0)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
