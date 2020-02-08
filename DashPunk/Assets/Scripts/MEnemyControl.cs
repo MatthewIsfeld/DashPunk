@@ -36,8 +36,11 @@ public class MEnemyControl : MonoBehaviour
         direction.Normalize();
         movement = direction;
         playerObject = GameObject.Find("Player");
-        playerBounceDashing = playerObject.GetComponent<PlayerController>().isBounceDashing;
-        playerPierceDashing = playerObject.GetComponent<PlayerController>().isPierceDashing;
+        if (playerObject != null)
+        {
+            playerBounceDashing = playerObject.GetComponent<PlayerController>().isBounceDashing;
+            playerPierceDashing = playerObject.GetComponent<PlayerController>().isPierceDashing;
+        }
 
         if (invuln == 1)
         {
