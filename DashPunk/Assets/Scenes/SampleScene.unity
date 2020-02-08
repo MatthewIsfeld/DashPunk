@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 1181688057}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -662,9 +662,11 @@ MonoBehaviour:
   speed: 10
   dashSpeed: 70
   initialDashTime: 0.1
+  isPierceDashing: 0
+  isBounceDashing: 0
   heartsText: {fileID: 497167521}
   deadText: {fileID: 149403701}
-  bouncePower: 20000
+  bouncePower: 10000
 --- !u!212 &1181688060
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -755,6 +757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982679444377936994, guid: cd5f09713d20cdd439098007bab0e77d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936995, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}

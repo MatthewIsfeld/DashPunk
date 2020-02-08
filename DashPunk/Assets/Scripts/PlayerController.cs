@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     private float dashTime;
     public float initialDashTime;
-    private int isPierceDashing = 0;
-    private int isBounceDashing = 0;
+    public int isPierceDashing = 0;
+    public int isBounceDashing = 0;
     private int hearts;
     public Text heartsText;
     public Text deadText;
