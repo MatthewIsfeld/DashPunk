@@ -22,7 +22,7 @@ public class MEnemyControl : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        hearts = 2;
+        hearts = 3;
         invuln = 0;
         invulnTime = invulnTimeStart;
     }
@@ -52,13 +52,13 @@ public class MEnemyControl : MonoBehaviour
         }
     }
 
-    //FixedUpdate moves enemy towards player
+    // FixedUpdate moves enemy towards player
     void FixedUpdate()
     {
         moveEnemy(movement);
     }
 
-    //Move enemy with MovePosition
+    // Move enemy with MovePosition
     void moveEnemy(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));

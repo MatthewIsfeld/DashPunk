@@ -29,7 +29,9 @@ public class PlayerController : MonoBehaviour
         dashTime = initialDashTime;
         hearts = 2;
         heartsText.text = "Hearts: " + hearts.ToString();
+        heartsText.fontSize = 20;
         deadText.text = "";
+        deadText.fontSize = 50;
         mEnemyCollider = GameObject.Find("MeleeEnemy").GetComponent<Collider2D>();
         invuln = 0;
         invulnTime = invulnTimeStart;
@@ -73,7 +75,6 @@ public class PlayerController : MonoBehaviour
         {
             float horizontalMove = Input.GetAxisRaw("Horizontal");
             float verticalMove = Input.GetAxisRaw("Vertical");
-
             Vector2 movement = new Vector2(horizontalMove, verticalMove);
             rb.velocity = movement * speed;
         }
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour
                 dashTime -= Time.fixedDeltaTime;
             }
 
-        //Move character when BounceDashing
+        // Move character when BounceDashing
         } else if (isBounceDashing == 1)
         {
             if (dashTime <= 0)
@@ -114,7 +115,7 @@ public class PlayerController : MonoBehaviour
  
     void OnTriggerEnter2D(Collider2D other)
     {
-        //If the player contacts an emeny they take damage if they are not dashing display damage with simple text boxes
+        // If the player contacts an enemy, they take damage. If they're not dashing, display damage with simple text boxes
         if (other.gameObject.CompareTag("Enemy"))
         {
             if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
@@ -124,14 +125,14 @@ public class PlayerController : MonoBehaviour
                 invuln = 1;
                 if (hearts < 1)
                 {
-                    deadText.text = "YOU HAVE DIED";
+                    deadText.text = "THE PUNK'S JOURNEY IS OVER";
                     this.gameObject.SetActive(false);
                 }
             } 
-            //If player bounce dashes push enemy with force
+            // If player bounce dashes push enemy with force
             else if (isBounceDashing == 1)
             {
-                other.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * bouncePower);
+                    other.gameObject.GetComponent<Rigidbody2D>().AddForce((direction * bouncePower)/100);
             }
         }
     }
