@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 497167522}
   - component: {fileID: 497167521}
   m_Layer: 5
-  m_Name: WoundsText
+  m_Name: HeartsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -662,7 +662,7 @@ MonoBehaviour:
   speed: 10
   dashSpeed: 70
   initialDashTime: 0.1
-  woundText: {fileID: 497167521}
+  heartsText: {fileID: 497167521}
   deadText: {fileID: 149403701}
   bouncePower: 20000
 --- !u!212 &1181688060

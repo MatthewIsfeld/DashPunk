@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     public float initialDashTime;
     private int isPierceDashing = 0;
     private int isBounceDashing = 0;
-    private int wounds;
-    public Text woundText;
+    private int hearts;
+    public Text heartsText;
     public Text deadText;
     Collider2D mEnemyCollider;
     public float bouncePower;
@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         dashTime = initialDashTime;
-        wounds = 2;
-        woundText.text = "Wounds: " + wounds.ToString();
+        hearts = 2;
+        heartsText.text = "Hearts: " + hearts.ToString();
         deadText.text = "";
         mEnemyCollider = GameObject.Find("MeleeEnemy").GetComponent<Collider2D>();
     }
@@ -102,9 +102,9 @@ public class PlayerController : MonoBehaviour
         {
             if ((isPierceDashing == 0) && (isBounceDashing == 0))
             {
-                wounds -= 1;
-                woundText.text = "Wounds: " + wounds.ToString();
-                if (wounds < 1)
+                hearts -= 1;
+                heartsText.text = "Hearts: " + hearts.ToString();
+                if (hearts < 1)
                 {
                     deadText.text = "YOU HAVE DIED";
                     this.gameObject.SetActive(false);
