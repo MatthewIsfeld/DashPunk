@@ -666,7 +666,7 @@ MonoBehaviour:
   isBounceDashing: 0
   heartsText: {fileID: 497167521}
   deadText: {fileID: 149403701}
-  bouncePower: 10000
+  bouncePower: 20000
 --- !u!212 &1181688060
 SpriteRenderer:
   m_ObjectHideFlags: 0
