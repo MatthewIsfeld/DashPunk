@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private int hearts;
     public Text heartsText;
     public Text deadText;
-    GameObject[] enemyColliders;
+    List<GameObject> enemyColliders = new List<GameObject>();
     Collider2D tempEnemyCollider;
     public float bouncePower;
     public float invulnTimeStart;
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
         heartsText.fontSize = 20;
         deadText.text = "";
         deadText.fontSize = 50;
-        enemyColliders = GameObject.FindGameObjectsWithTag("Enemy");
+        enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
         invuln = 0;
         invulnTime = invulnTimeStart;
     }
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
         direction = direction.normalized;
 
         //Get all enemies
-        enemyColliders = GameObject.FindGameObjectsWithTag("Enemy");
+        enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
 
         // Start dash when right and left mouse buttons are pressed
         if (Input.GetMouseButtonDown(1))
@@ -90,7 +91,7 @@ public class PlayerController : MonoBehaviour
         // Move character when pierceDashing and disable enemy collider so character can pass through
         else if (isPierceDashing == 1)
         {
-            for (int i = 0; i < enemyColliders.Length; i++)
+            for (int i = 0; i < enemyColliders.Count; i++)
             {
                 tempEnemyCollider = enemyColliders[i].GetComponent<Collider2D>();
                 tempEnemyCollider.enabled = !tempEnemyCollider.enabled;
