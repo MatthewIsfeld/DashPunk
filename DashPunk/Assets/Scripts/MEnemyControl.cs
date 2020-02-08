@@ -12,13 +12,19 @@ public class MEnemyControl : MonoBehaviour
     public float moveSpeed = 5f;
     public int playerBounceDashing;
     public int playerPierceDashing;
+    public GameObject playerObject;
     private int hearts;
+    private float invuln;
+    private float invulnTime;
+    public float invulnTimeStart;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         hearts = 2;
+        invuln = 0;
+        invulnTime = invulnTimeStart;
     }
 
     // Update makes the enemy rotate to face the player
@@ -29,8 +35,21 @@ public class MEnemyControl : MonoBehaviour
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
-        playerBounceDashing = GameObject.Find("Player").GetComponent<PlayerController>().isBounceDashing;
-        playerPierceDashing = GameObject.Find("Player").GetComponent<PlayerController>().isPierceDashing;
+        playerObject = GameObject.Find("Player");
+        playerBounceDashing = playerObject.GetComponent<PlayerController>().isBounceDashing;
+        playerPierceDashing = playerObject.GetComponent<PlayerController>().isPierceDashing;
+
+        if (invuln == 1)
+        {
+            if (invulnTime <= 0)
+            {
+                invuln = 0;
+                invulnTime = invulnTimeStart;
+            } else
+            {
+                invulnTime -= Time.deltaTime;
+            }
+        }
     }
 
     //FixedUpdate moves enemy towards player
@@ -49,9 +68,10 @@ public class MEnemyControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (playerBounceDashing == 1 || playerPierceDashing == 1)
+            if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
             {
                 hearts -= 1;
+                invuln = 1;
                 if (hearts <= 0)
                 {
                     this.gameObject.SetActive(false);

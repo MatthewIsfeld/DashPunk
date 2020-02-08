@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     public Text deadText;
     Collider2D mEnemyCollider;
     public float bouncePower;
+    public float invulnTimeStart;
+    private float invulnTime;
+    private int invuln;
 
     void Start()
     {
@@ -28,6 +31,8 @@ public class PlayerController : MonoBehaviour
         heartsText.text = "Hearts: " + hearts.ToString();
         deadText.text = "";
         mEnemyCollider = GameObject.Find("MeleeEnemy").GetComponent<Collider2D>();
+        invuln = 0;
+        invulnTime = invulnTimeStart;
     }
 
     // Update is called once per frame
@@ -46,6 +51,18 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetMouseButtonDown(0))
         {
             isBounceDashing = 1;
+        }
+        
+        if (invuln == 1)
+        {
+            if (invulnTime <= 0)
+            {
+                invuln = 0;
+                invulnTime = invulnTimeStart;
+            } else
+            {
+                invulnTime -= Time.deltaTime;
+            }
         }
     }
 
@@ -100,10 +117,11 @@ public class PlayerController : MonoBehaviour
         //If the player contacts an emeny they take damage if they are not dashing display damage with simple text boxes
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if ((isPierceDashing == 0) && (isBounceDashing == 0))
+            if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
             {
                 hearts -= 1;
                 heartsText.text = "Hearts: " + hearts.ToString();
+                invuln = 1;
                 if (hearts < 1)
                 {
                     deadText.text = "YOU HAVE DIED";
