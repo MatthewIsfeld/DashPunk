@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float initialDashTime;
     public int isPierceDashing = 0;
     public int isBounceDashing = 0;
+    public int isHalting = 0;
     private int hearts;
     public Text deadText;
     List<GameObject> enemyColliders = new List<GameObject>();
@@ -66,6 +67,10 @@ public class PlayerController : MonoBehaviour
         {
             isBounceDashing = 1;
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isHalting = 1;
+        }
         
         if (invuln == 1)
         {
@@ -89,6 +94,13 @@ public class PlayerController : MonoBehaviour
             float verticalMove = Input.GetAxisRaw("Vertical");
             Vector2 movement = new Vector2(horizontalMove, verticalMove);
             rb.velocity = movement * speed;
+        }
+
+        // Freeze time with the halt mechanic
+        if (isHalting == 1)
+        {
+            Time.timeScale = 0;
+
         }
 
         // Move character when pierceDashing and disable enemy collider so character can pass through
