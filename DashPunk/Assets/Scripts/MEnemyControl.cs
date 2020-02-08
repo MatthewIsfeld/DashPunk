@@ -29,7 +29,7 @@ public class MEnemyControl : MonoBehaviour
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
-        playerBounceDashing = GameObject.Find("Player").GetComponent <PlayerController> ().isBounceDashing;
+        playerBounceDashing = GameObject.Find("Player").GetComponent<PlayerController>().isBounceDashing;
         playerPierceDashing = GameObject.Find("Player").GetComponent<PlayerController>().isPierceDashing;
     }
 
