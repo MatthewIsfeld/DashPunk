@@ -100,7 +100,7 @@ public class MEnemyControl : MonoBehaviour
                 hearts -= 1;
                 invuln = 1;
                 bounced = 1;
-                bounceDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
+                bounceDir = playerObject.GetComponent<PlayerController>().direction;
                 rb.AddForce(bounceDir * 15000);
                 if (hearts <= 0)
                 {

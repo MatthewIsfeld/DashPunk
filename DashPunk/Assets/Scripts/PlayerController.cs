@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
     private Vector2 cursorPos;
-    private Vector2 direction;
+    public Vector2 direction;
     public float dashSpeed;
     private float dashTime;
     public float initialDashTime;
