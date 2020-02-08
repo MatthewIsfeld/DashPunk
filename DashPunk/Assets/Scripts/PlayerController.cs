@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
             // If player bounce dashes push enemy with force
             else if (isBounceDashing == 1)
             {
-                    other.gameObject.GetComponent<Rigidbody2D>().AddForce((direction * bouncePower)/100);
+                    other.gameObject.GetComponent<Rigidbody2D>().AddForce((direction * bouncePower));
             }
         }
     }
