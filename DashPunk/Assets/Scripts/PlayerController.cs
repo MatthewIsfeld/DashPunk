@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private int invuln;
     public ParticleSystem dust;
     public ParticleSystem dust2;
+    private Vector2 knockBackDir;
+    public float knockBackPower;
 
     void Start()
     {
@@ -127,12 +129,19 @@ public class PlayerController : MonoBehaviour
                 hearts -= 1;
                 heartsText.text = "Hearts: " + hearts.ToString();
                 invuln = 1;
+                knockBackDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
+                rb.AddForce(knockBackDir * knockBackPower);
                 if (hearts < 1)
                 {
                     deadText.text = "THE PUNK'S JOURNEY IS OVER";
                     this.gameObject.SetActive(false);
                 }
-            } 
+            }
+            else if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 1))
+            {
+                knockBackDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
+                rb.AddForce(knockBackDir * knockBackPower);
+            }
             // If player bounce dashes push enemy with force
             else if (isBounceDashing == 1)
             {

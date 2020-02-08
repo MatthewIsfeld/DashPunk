@@ -5640,6 +5640,7 @@ MonoBehaviour:
   invulnTimeStart: 1
   dust: {fileID: 1816103081}
   dust2: {fileID: 986951008}
+  knockBackPower: 5000
 --- !u!212 &1181688060
 SpriteRenderer:
   m_ObjectHideFlags: 0
