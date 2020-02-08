@@ -77,17 +77,16 @@ public class MEnemyControl : MonoBehaviour
         {
             if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
             {
+                if (playerBounceDashing == 1)
+                {
+                    bounced = 1;
+                }
                 hearts -= 1;
                 invuln = 1;
                 if (hearts <= 0)
                 {
                     this.gameObject.SetActive(false);
                 }
-            }
-
-            if (playerBounceDashing == 1)
-            {
-                bounced = 1;
             }
         }
     }
@@ -102,7 +101,7 @@ public class MEnemyControl : MonoBehaviour
                 invuln = 1;
                 bounced = 1;
                 bounceDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
-                rb.AddForce(bounceDir * 20000);
+                rb.AddForce(bounceDir * 15000);
                 if (hearts <= 0)
                 {
                     this.gameObject.SetActive(false);

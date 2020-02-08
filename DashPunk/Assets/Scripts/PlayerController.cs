@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 knockBackDir;
     public float knockBackPower;
     public Image[] heartsList;
+    private bool bounceCooldown = false;
+    private bool pierceCooldown = false;
 
     void Start()
     {
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move character when pierceDashing and disable enemy collider so character can pass through
-        else if (isPierceDashing == 1)
+        else if (isPierceDashing == 1 && pierceCooldown == false)
         {
             for (int i = 0; i < enemyColliders.Count; i++)
             {
@@ -102,7 +104,9 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = Vector2.zero;
                 dashTime = initialDashTime;
-                isPierceDashing = 0;             
+                isPierceDashing = 0;
+                pierceCooldown = true;
+                Invoke("pierceDashCD", 0.5f);
             }
             else
             {
@@ -110,8 +114,9 @@ public class PlayerController : MonoBehaviour
                 dashTime -= Time.fixedDeltaTime;
             }
 
+
         // Move character when BounceDashing
-        } else if (isBounceDashing == 1)
+        } else if (isBounceDashing == 1 && bounceCooldown == false)
         {
             CreateDust();
             if (dashTime <= 0)
@@ -119,12 +124,15 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 dashTime = initialDashTime;
                 isBounceDashing = 0;
+                bounceCooldown = true;
+                Invoke("bounceDashCD", 0.5f);
             }
             else
             {
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
+            
         }
     }
 
@@ -169,5 +177,15 @@ public class PlayerController : MonoBehaviour
     void CreateDust2()
     {
         dust2.Play();
+    }
+
+    void bounceDashCD()
+    {
+        bounceCooldown = false;
+    }
+
+    void pierceDashCD()
+    {
+        pierceCooldown = false;
     }
 }
