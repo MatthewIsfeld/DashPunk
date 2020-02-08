@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     public int isPierceDashing = 0;
     public int isBounceDashing = 0;
     private int hearts;
-    public Text heartsText;
     public Text deadText;
     List<GameObject> enemyColliders = new List<GameObject>();
     Collider2D tempEnemyCollider;
@@ -28,15 +27,16 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dust2;
     private Vector2 knockBackDir;
     public float knockBackPower;
-    public SpriteRenderer[] heartsList;
+    public Image[] heartsList;
 
     void Start()
     {
+        heartsList[0].enabled = true;
+        heartsList[1].enabled = true;
+        heartsList[2].enabled = true;
         rb = GetComponent<Rigidbody2D>();
         dashTime = initialDashTime;
         hearts = 3;
-        heartsText.text = "Hearts: " + hearts.ToString();
-        heartsText.fontSize = 20;
         deadText.text = "";
         deadText.fontSize = 50;
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
@@ -139,7 +139,6 @@ public class PlayerController : MonoBehaviour
                 hearts -= 1;
                 heartsList[0].enabled = false;
                 heartsList = heartsList.Skip(1).ToArray();
-                heartsText.text = "Hearts: " + hearts.ToString();
                 invuln = 1;
                 knockBackDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
                 rb.AddForce(knockBackDir * knockBackPower);
