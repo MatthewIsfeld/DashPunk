@@ -13,18 +13,21 @@ public class MEnemyControl : MonoBehaviour
     public int playerBounceDashing;
     public int playerPierceDashing;
     public GameObject playerObject;
-    private int hearts;
+    public int hearts;
     private float invuln;
     private float invulnTime;
     public float invulnTimeStart;
+    private int bounced;
+    private Vector2 bounceDir;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        hearts = 3;
         invuln = 0;
         invulnTime = invulnTimeStart;
+        bounced = 0;
+        playerObject = GameObject.Find("Player");
     }
 
     // Update makes the enemy rotate to face the player
@@ -48,6 +51,7 @@ public class MEnemyControl : MonoBehaviour
             {
                 invuln = 0;
                 invulnTime = invulnTimeStart;
+                bounced = 0;
             } else
             {
                 invulnTime -= Time.deltaTime;
@@ -75,6 +79,30 @@ public class MEnemyControl : MonoBehaviour
             {
                 hearts -= 1;
                 invuln = 1;
+                if (hearts <= 0)
+                {
+                    this.gameObject.SetActive(false);
+                }
+            }
+
+            if (playerBounceDashing == 1)
+            {
+                bounced = 1;
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
+            {
+                hearts -= 1;
+                invuln = 1;
+                bounced = 1;
+                bounceDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
+                rb.AddForce(bounceDir * 20000);
                 if (hearts <= 0)
                 {
                     this.gameObject.SetActive(false);
