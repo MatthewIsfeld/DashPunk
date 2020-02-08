@@ -83,6 +83,7 @@ public class MEnemyControl : MonoBehaviour
                     bounced = 1;
                 }
                 hearts -= 1;
+                //Play blood animation
                 CreateBlood();
                 invuln = 1;
                 if (hearts <= 0)
