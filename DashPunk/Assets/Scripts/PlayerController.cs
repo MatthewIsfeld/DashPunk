@@ -33,12 +33,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get Mouse cursor position relative to player and turn it into a unit vector
+        // Get Mouse cursor position relative to player and turn it into a unit vector
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = new Vector2(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
         direction = direction.normalized;
        
-        //Start dash when right and left mouse buttons are pressed
+        // Start dash when right and left mouse buttons are pressed
         if (Input.GetMouseButtonDown(1))
         {
             isPierceDashing = 1;
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Move character when not dashing
+        // Move character when not dashing
         if ((isPierceDashing == 0) && (isBounceDashing == 0))
         {
             float horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -60,19 +60,19 @@ public class PlayerController : MonoBehaviour
             Vector2 movement = new Vector2(horizontalMove, verticalMove);
             rb.velocity = movement * speed;
         }
-        //Move character when pierceDashing and disable enemy collider so character can pass through
+
+        // Move character when pierceDashing and disable enemy collider so character can pass through
         else if (isPierceDashing == 1)
         {
+            mEnemyCollider.enabled = !mEnemyCollider.enabled;
             if (dashTime <= 0)
             {
-                mEnemyCollider.enabled = !mEnemyCollider.enabled;
                 rb.velocity = Vector2.zero;
                 dashTime = initialDashTime;
                 isPierceDashing = 0;             
             }
             else
             {
-                mEnemyCollider.enabled = !mEnemyCollider.enabled;
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
