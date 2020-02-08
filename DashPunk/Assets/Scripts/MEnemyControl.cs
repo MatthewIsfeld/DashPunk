@@ -19,6 +19,7 @@ public class MEnemyControl : MonoBehaviour
     public float invulnTimeStart;
     private int bounced;
     private Vector2 bounceDir;
+    public ParticleSystem blood;
 
     // Start is called before the first frame update
     void Start()
@@ -82,9 +83,11 @@ public class MEnemyControl : MonoBehaviour
                     bounced = 1;
                 }
                 hearts -= 1;
+                CreateBlood();
                 invuln = 1;
                 if (hearts <= 0)
                 {
+                    CreateBlood();
                     this.gameObject.SetActive(false);
                 }
             }
@@ -98,15 +101,22 @@ public class MEnemyControl : MonoBehaviour
             if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
             {
                 hearts -= 1;
+                CreateBlood();
                 invuln = 1;
                 bounced = 1;
                 bounceDir = playerObject.GetComponent<PlayerController>().direction;
                 rb.AddForce(bounceDir * 15000);
                 if (hearts <= 0)
                 {
+                    CreateBlood();
                     this.gameObject.SetActive(false);
                 }
             }
         }
+    }
+
+    void CreateBlood()
+    {
+        blood.Play();
     }
 }
