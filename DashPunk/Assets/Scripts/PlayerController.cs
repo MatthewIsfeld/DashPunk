@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private float invulnTime;
     private int invuln;
     public ParticleSystem dust;
+    public ParticleSystem dust2;
 
     void Start()
     {
@@ -84,7 +85,7 @@ public class PlayerController : MonoBehaviour
         else if (isPierceDashing == 1)
         {
             mEnemyCollider.enabled = !mEnemyCollider.enabled;
-            CreateDust();
+            CreateDust2();
             if (dashTime <= 0)
             {
                 rb.velocity = Vector2.zero;
@@ -143,5 +144,10 @@ public class PlayerController : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
+    }
+
+    void CreateDust2()
+    {
+        dust2.Play();
     }
 }
