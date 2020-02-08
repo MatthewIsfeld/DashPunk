@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public float invulnTimeStart;
     private float invulnTime;
     private int invuln;
+    public ParticleSystem dust;
 
     void Start()
     {
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
         else if (isPierceDashing == 1)
         {
             mEnemyCollider.enabled = !mEnemyCollider.enabled;
+            CreateDust();
             if (dashTime <= 0)
             {
                 rb.velocity = Vector2.zero;
@@ -98,6 +100,7 @@ public class PlayerController : MonoBehaviour
         // Move character when BounceDashing
         } else if (isBounceDashing == 1)
         {
+            CreateDust();
             if (dashTime <= 0)
             {
                 rb.velocity = Vector2.zero;
@@ -135,5 +138,10 @@ public class PlayerController : MonoBehaviour
                     other.gameObject.GetComponent<Rigidbody2D>().AddForce((direction * bouncePower));
             }
         }
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
