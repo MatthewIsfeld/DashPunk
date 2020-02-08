@@ -28,12 +28,13 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dust2;
     private Vector2 knockBackDir;
     public float knockBackPower;
+    public SpriteRenderer[] heartsList;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         dashTime = initialDashTime;
-        hearts = 2;
+        hearts = 3;
         heartsText.text = "Hearts: " + hearts.ToString();
         heartsText.fontSize = 20;
         deadText.text = "";
@@ -136,6 +137,8 @@ public class PlayerController : MonoBehaviour
             if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
             {
                 hearts -= 1;
+                heartsList[0].enabled = false;
+                heartsList = heartsList.Skip(1).ToArray();
                 heartsText.text = "Hearts: " + hearts.ToString();
                 invuln = 1;
                 knockBackDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
