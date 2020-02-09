@@ -9,14 +9,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
     private Vector2 cursorPos;
-    public Vector2 direction;
+    public static Vector2 direction;
     public float dashSpeed;
     private float dashTime;
     public float initialDashTime;
     public int isPierceDashing;
     public int isBounceDashing;
     public int isHalting;
-    private int hearts;
+    public int hearts;
     public Text deadText;
     List<GameObject> enemyColliders = new List<GameObject>();
     Collider2D tempEnemyCollider;
@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
         heartsList[2].enabled = true;
         rb = GetComponent<Rigidbody2D>();
         dashTime = initialDashTime;
-        hearts = 3;
         deadText.text = "";
         deadText.fontSize = 50;
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
@@ -75,7 +74,7 @@ public class PlayerController : MonoBehaviour
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
 
         // Check how full your halt bar is
-        if (enemyHits > 4)
+        if (enemyHits >= 0)
         {
             haltCooldown = false;
         }
@@ -135,6 +134,7 @@ public class PlayerController : MonoBehaviour
                     tempBody = enemyColliders[i].GetComponent<Rigidbody2D>();
                     tempBody.isKinematic = false;
                 }
+
             } else
             {
                 enemyHits = 0; // Bring the halt bar back down to 0

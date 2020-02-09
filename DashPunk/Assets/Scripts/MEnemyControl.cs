@@ -85,7 +85,7 @@ public class MEnemyControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
+            if ((invuln == 0))
             {
                 PlayerController.enemyHits++; // Increment the halting bar.
                 if (playerBounceDashing == 1)
@@ -94,7 +94,7 @@ public class MEnemyControl : MonoBehaviour
                 }
                 hearts -= 1;
                 // Play blood animation
-                //CreateBlood();
+                // CreateBlood();
                 invuln = 1;
                 if (hearts <= 0)
                 {
@@ -110,7 +110,7 @@ public class MEnemyControl : MonoBehaviour
         if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
         {
             PlayerController.enemyHits++; // Increment the halting bar.
-            if (playerBounceDashing == 1)
+            if (playerBounceDashing == 1 || BounceCloneScript.cloneBouncing == 1)
             {
                 bounced = 1;
             }
@@ -134,10 +134,7 @@ public class MEnemyControl : MonoBehaviour
                 //CreateBlood();
                 invuln = 1;
                 bounced = 1;
-                if (playerObject != null)
-                {
-                    bounceDir = playerObject.GetComponent<PlayerController>().direction;
-                }
+                bounceDir = PlayerController.direction;
                 rb.AddForce(bounceDir * 15000);
                 if (hearts <= 0)
                 {
