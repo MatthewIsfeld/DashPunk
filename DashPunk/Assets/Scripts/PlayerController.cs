@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public float bouncePower;
     public float invulnTimeStart;
     private float invulnTime;
+    public float haltTimeStart;
+    private float haltTime;
     private int invuln;
     public ParticleSystem dust;
     public ParticleSystem dust2;
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
         invuln = 0;
         invulnTime = invulnTimeStart;
+        haltTime = haltTimeStart;
     }
 
     // Update is called once per frame
@@ -71,11 +74,11 @@ public class PlayerController : MonoBehaviour
         enemyHitsText.text = "Halting: "+ enemyHits.ToString();
 
         // Start dash when right and left mouse buttons are pressed
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && isHalting == 0)
         {
             isPierceDashing = 1;
         }
-        else if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0) && isHalting == 0)
         {
             isBounceDashing = 1;
         }
@@ -111,15 +114,22 @@ public class PlayerController : MonoBehaviour
         // Freeze time with the halt mechanic
         if (isHalting == 1)
         {
-            enemyHits = 0; // Bring the halt bar back down to 0
-            MEnemyControl.isHalted = true; // Enemies are frozen
-            // Set up the clone dash.
-                // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
-            // Wait 5 seconds 
-            isHalting = 0;
-            MEnemyControl.isHalted = false; // Enemies unfreeze
-            // All the set-up clone dashes fire at this point.
-            haltCooldown = true; // Halt bar goes back on cooldown.
+            if (haltTime <= 0)
+            {
+                isHalting = 0;
+                haltTime = haltTimeStart;
+                MEnemyControl.isHalted = false; // Enemies unfreeze
+                // All the set-up clone dashes fire at this point.
+                haltCooldown = true; // Halt bar goes back on cooldown.
+            } else
+            {
+                enemyHits = 0; // Bring the halt bar back down to 0
+                MEnemyControl.isHalted = true; // Enemies are frozen
+                // Set up the clone dash.
+                   // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
+                // Wait 5 seconds 
+                haltTime -= Time.deltaTime;
+            }
         }
 
         // Move character when pierceDashing and disable enemy collider so character can pass through
