@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
     private bool pierceCooldown = false;
     private bool haltCooldown = true;
     public static int enemyHits = 0;
-    public Text enemyHitsText;
 
     void Start()
     {
@@ -71,8 +70,7 @@ public class PlayerController : MonoBehaviour
             haltCooldown = false;
         }
 
-        // Display the enemyHits counter on the canvas. Will change to a bar at a later point.
-        enemyHitsText.text = "Halting: "+ enemyHits.ToString();
+        // We want to display the enemyHits counter on the canvas.
 
         // Start dash when right and left mouse buttons are pressed
         if (Input.GetMouseButtonDown(1) && isHalting == 0)
