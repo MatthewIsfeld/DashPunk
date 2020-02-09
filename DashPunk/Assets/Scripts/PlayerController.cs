@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
             haltCooldown = false;
         }
 
+        // We want to display the enemyHits counter on the canvas.
+
         // Start dash when right and left mouse buttons are pressed
         if (Input.GetMouseButtonDown(1))
         {
