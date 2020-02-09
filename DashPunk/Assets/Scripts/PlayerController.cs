@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
             enemyHits = 0; // Bring the halt bar back down to 0
             MEnemyControl.isHalted = true; // Enemies are frozen
             // Set up the clone dash.
-                // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
+                 // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
             // Wait 5 seconds 
             isHalting = 0;
             MEnemyControl.isHalted = false; // Enemies unfreeze
