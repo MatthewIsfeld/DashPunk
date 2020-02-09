@@ -20,6 +20,7 @@ public class MEnemyControl : MonoBehaviour
     private int bounced;
     private Vector2 bounceDir;
     public ParticleSystem blood;
+    public static bool isHalted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,10 @@ public class MEnemyControl : MonoBehaviour
     {
         Vector3 direction = Player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        if (isHalted == false)
+        {
+            rb.rotation = angle;
+        }
         direction.Normalize();
         movement = direction;
         playerObject = GameObject.Find("Player");
@@ -69,7 +73,11 @@ public class MEnemyControl : MonoBehaviour
     // Move enemy with MovePosition
     void moveEnemy(Vector2 direction)
     {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        if (isHalted == false)
+        {
+            rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -78,17 +86,18 @@ public class MEnemyControl : MonoBehaviour
         {
             if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
             {
+                PlayerController.enemyHits++; // Increment the halting bar.
                 if (playerBounceDashing == 1)
                 {
                     bounced = 1;
                 }
                 hearts -= 1;
-                //Play blood animation
-                CreateBlood();
+                // Play blood animation
+                //CreateBlood();
                 invuln = 1;
                 if (hearts <= 0)
                 {
-                    CreateBlood();
+                    //CreateBlood();
                     this.gameObject.SetActive(false);
                 }
             }
@@ -102,14 +111,14 @@ public class MEnemyControl : MonoBehaviour
             if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
             {
                 hearts -= 1;
-                CreateBlood();
+                //CreateBlood();
                 invuln = 1;
                 bounced = 1;
                 bounceDir = playerObject.GetComponent<PlayerController>().direction;
                 rb.AddForce(bounceDir * 15000);
                 if (hearts <= 0)
                 {
-                    CreateBlood();
+                    //CreateBlood();
                     this.gameObject.SetActive(false);
                 }
             }

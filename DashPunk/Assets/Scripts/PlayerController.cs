@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public Image[] heartsList;
     private bool bounceCooldown = false;
     private bool pierceCooldown = false;
+    private bool haltCooldown = true;
+    public static int enemyHits = 0;
 
     void Start()
     {
@@ -55,8 +57,14 @@ public class PlayerController : MonoBehaviour
         direction = new Vector2(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
         direction = direction.normalized;
 
-        //Get all enemies
+        // Get all enemies
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
+
+        // Check how full your halt bar is
+        if (enemyHits > 4)
+        {
+            haltCooldown = false;
+        }
 
         // Start dash when right and left mouse buttons are pressed
         if (Input.GetMouseButtonDown(1))
@@ -67,7 +75,7 @@ public class PlayerController : MonoBehaviour
         {
             isBounceDashing = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space) && haltCooldown == false)
         {
             isHalting = 1;
         }
@@ -99,8 +107,15 @@ public class PlayerController : MonoBehaviour
         // Freeze time with the halt mechanic
         if (isHalting == 1)
         {
-            Time.timeScale = 0;
-
+            enemyHits = 0; // Bring the halt bar back down to 0
+            MEnemyControl.isHalted = true; // Enemies are frozen
+            // Set up the clone dash.
+                // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
+            // Wait 5 seconds 
+            isHalting = 0;
+            MEnemyControl.isHalted = false; // Enemies unfreeze
+            // All the set-up clone dashes fire at this point.
+            haltCooldown = true; // Halt bar goes back on cooldown.
         }
 
         // Move character when pierceDashing and disable enemy collider so character can pass through
@@ -176,7 +191,7 @@ public class PlayerController : MonoBehaviour
             // If player bounce dashes push enemy with force
             else if (isBounceDashing == 1)
             {
-                    other.gameObject.GetComponent<Rigidbody2D>().AddForce((direction * bouncePower));
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce((direction * bouncePower));
             }
         }
     }
