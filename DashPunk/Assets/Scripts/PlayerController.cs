@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         // If the player contacts an enemy, they take damage. If they're not dashing, display damage with simple text boxes
         if (other.gameObject.CompareTag("Enemy"))

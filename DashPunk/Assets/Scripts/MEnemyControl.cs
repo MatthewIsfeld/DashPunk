@@ -81,7 +81,7 @@ public class MEnemyControl : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -103,10 +103,31 @@ public class MEnemyControl : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
+            {
+                PlayerController.enemyHits++; // Increment the halting bar.
+                if (playerBounceDashing == 1)
+                {
+                    bounced = 1;
+                }
+                hearts -= 1;
+                // Play blood animation
+                //CreateBlood();
+                invuln = 1;
+                if (hearts <= 0)
+                {
+                    //CreateBlood();
+                    this.gameObject.SetActive(false);
+                }
+            }
+        }
+
         if (other.gameObject.CompareTag("Enemy"))
         {
             if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
