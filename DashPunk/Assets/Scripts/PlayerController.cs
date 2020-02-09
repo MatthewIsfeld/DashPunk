@@ -134,6 +134,8 @@ public class PlayerController : MonoBehaviour
                 for (int i = 0; i < enemyColliders.Count; i++)
                 {
                     tempRigidBody = enemyColliders[i].GetComponent<Rigidbody2D>();
+                    tempRigidBody.velocity = Vector2.zero;
+                    tempRigidBody.angularVelocity = 0f;
                     tempRigidBody.isKinematic = true;
                 }
                 // Set up the clone dash.
