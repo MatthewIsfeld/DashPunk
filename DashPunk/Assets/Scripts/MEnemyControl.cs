@@ -107,7 +107,7 @@ public class MEnemyControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
+        if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
         {
             PlayerController.enemyHits++; // Increment the halting bar.
             if (playerBounceDashing == 1)
@@ -129,6 +129,7 @@ public class MEnemyControl : MonoBehaviour
         {
             if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
             {
+                PlayerController.enemyHits++;
                 hearts -= 1;
                 //CreateBlood();
                 invuln = 1;
