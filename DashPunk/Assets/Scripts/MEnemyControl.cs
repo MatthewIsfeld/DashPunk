@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MEnemyControl : MonoBehaviour
 {
-    //This code makes the enemy rotate to face the player and then move towards them
+    // This code makes the enemy rotate to face the player and then move towards them
     public Transform Player;
     private Rigidbody2D rb;
     public Vector2 movement;
