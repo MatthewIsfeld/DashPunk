@@ -200,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
@@ -676,6 +676,41 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2521881077157509926, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.94999874
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521881077157509926, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521881077157509926, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521881077157509926, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521881077157509926, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_Text
+      value: Halt Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521881077157509927, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521881077157509927, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52c7a4c262772644ba5d3512a9fa5052, type: 3}
 --- !u!1001 &3124930891644818919
@@ -848,6 +883,11 @@ PrefabInstance:
       propertyPath: enemyHitsText
       value: 
       objectReference: {fileID: 1490226315}
+    - target: {fileID: 4514663858792220216, guid: b73af14510a9b7748bdbf2b64138f3d4,
+        type: 3}
+      propertyPath: haltTimeStart
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4514663858792220219, guid: b73af14510a9b7748bdbf2b64138f3d4,
         type: 3}
       propertyPath: m_Name
