@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MEnemyControl : MonoBehaviour
 {
     // This code makes the enemy rotate to face the player and then move towards them.
-    // This code makes the enemy rotate to face the player and then move towards them
     public Transform Player;
     private Rigidbody2D rb;
     public Vector2 movement;
@@ -58,7 +57,8 @@ public class MEnemyControl : MonoBehaviour
                 invuln = 0;
                 invulnTime = invulnTimeStart;
                 bounced = 0;
-            } else
+            }
+            else
             {
                 invulnTime -= Time.deltaTime;
             }
@@ -78,7 +78,7 @@ public class MEnemyControl : MonoBehaviour
         {
             rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

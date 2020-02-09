@@ -20,12 +20,9 @@ public class PlayerController : MonoBehaviour
     public Text deadText;
     List<GameObject> enemyColliders = new List<GameObject>();
     Collider2D tempEnemyCollider;
-    Rigidbody2D tempRigidBody;
     public float bouncePower;
     public float invulnTimeStart;
     private float invulnTime;
-    public float haltTimeStart;
-    private float haltTime;
     private int invuln;
     public ParticleSystem dust;
     public ParticleSystem dust2;
@@ -36,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool pierceCooldown = false;
     private bool haltCooldown = true;
     public static int enemyHits = 0;
+    public Text enemyHitsText;
 
     void Start()
     {
@@ -50,7 +48,6 @@ public class PlayerController : MonoBehaviour
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
         invuln = 0;
         invulnTime = invulnTimeStart;
-        haltTime = haltTimeStart;
     }
 
     // Update is called once per frame
@@ -70,14 +67,15 @@ public class PlayerController : MonoBehaviour
             haltCooldown = false;
         }
 
-        // We want to display the enemyHits counter on the canvas.
+        // Display the enemyHits counter on the canvas. Will change to a bar at a later point.
+        enemyHitsText.text = "Halting: " + enemyHits.ToString();
 
         // Start dash when right and left mouse buttons are pressed
-        if (Input.GetMouseButtonDown(1) && isHalting == 0)
+        if (Input.GetMouseButtonDown(1))
         {
             isPierceDashing = 1;
         }
-        else if (Input.GetMouseButtonDown(0) && isHalting == 0)
+        else if (Input.GetMouseButtonDown(0))
         {
             isBounceDashing = 1;
         }
@@ -85,14 +83,15 @@ public class PlayerController : MonoBehaviour
         {
             isHalting = 1;
         }
-        
+
         if (invuln == 1)
         {
             if (invulnTime <= 0)
             {
                 invuln = 0;
                 invulnTime = invulnTimeStart;
-            } else
+            }
+            else
             {
                 invulnTime -= Time.deltaTime;
             }
@@ -113,45 +112,15 @@ public class PlayerController : MonoBehaviour
         // Freeze time with the halt mechanic
         if (isHalting == 1)
         {
-
             enemyHits = 0; // Bring the halt bar back down to 0
             MEnemyControl.isHalted = true; // Enemies are frozen
-            // Set up the clone dash.
-                 // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
-            // Wait 5 seconds 
+                                           // Set up the clone dash.
+                                           // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
+                                           // Wait 5 seconds 
             isHalting = 0;
             MEnemyControl.isHalted = false; // Enemies unfreeze
-            // All the set-up clone dashes fire at this point.
-            haltCooldown = true; // Halt bar goes back on cooldown.
-
-            if (haltTime <= 0)
-            {
-                isHalting = 0;
-                haltTime = haltTimeStart;
-                for (int i = 0; i < enemyColliders.Count; i++)
-                {
-                    tempRigidBody = enemyColliders[i].GetComponent<Rigidbody2D>();
-                    tempRigidBody.isKinematic = false;
-                }
-                MEnemyControl.isHalted = false; // Enemies unfreeze
-                // All the set-up clone dashes fire at this point.
-                haltCooldown = true; // Halt bar goes back on cooldown.
-            } else
-            {
-                enemyHits = 0; // Bring the halt bar back down to 0
-                MEnemyControl.isHalted = true; // Enemies are frozen
-                for (int i = 0; i < enemyColliders.Count; i++)
-                {
-                    tempRigidBody = enemyColliders[i].GetComponent<Rigidbody2D>();
-                    tempRigidBody.velocity = Vector2.zero;
-                    tempRigidBody.angularVelocity = 0f;
-                    tempRigidBody.isKinematic = true;
-                }
-                // Set up the clone dash.
-                   // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
-                // Wait 5 seconds 
-                haltTime -= Time.deltaTime;
-            }
+            // All the set-up clone dashes fire at this point
+            haltCooldown = true; // Halt bar goes back on cooldown
         }
 
         // Move character when pierceDashing and disable enemy collider so character can pass through
@@ -178,8 +147,9 @@ public class PlayerController : MonoBehaviour
             }
 
 
-        // Move character when BounceDashing
-        } else if (isBounceDashing == 1 && bounceCooldown == false)
+            // Move character when BounceDashing
+        }
+        else if (isBounceDashing == 1 && bounceCooldown == false)
         {
             CreateDust();
             if (dashTime <= 0)
@@ -195,11 +165,11 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
-            
+
         }
     }
 
- 
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // If the player contacts an enemy, they take damage. If they're not dashing, display damage with simple text boxes
