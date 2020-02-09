@@ -107,24 +107,21 @@ public class MEnemyControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
         {
-            if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0))
+            PlayerController.enemyHits++; // Increment the halting bar.
+            if (playerBounceDashing == 1)
             {
-                PlayerController.enemyHits++; // Increment the halting bar.
-                if (playerBounceDashing == 1)
-                {
-                    bounced = 1;
-                }
-                hearts -= 1;
-                // Play blood animation
+                bounced = 1;
+            }
+            hearts -= 1;
+            // Play blood animation
+            //CreateBlood();
+            invuln = 1;
+            if (hearts <= 0)
+            {
                 //CreateBlood();
-                invuln = 1;
-                if (hearts <= 0)
-                {
-                    //CreateBlood();
-                    this.gameObject.SetActive(false);
-                }
+                this.gameObject.SetActive(false);
             }
         }
 
@@ -146,6 +143,9 @@ public class MEnemyControl : MonoBehaviour
             }
         }
     }
+
+
+        
 
     void CreateBlood()
     {
