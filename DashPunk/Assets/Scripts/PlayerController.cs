@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Text deadText;
     List<GameObject> enemyColliders = new List<GameObject>();
     Collider2D tempEnemyCollider;
+    Rigidbody2D tempRigidBody;
     public float bouncePower;
     public float invulnTimeStart;
     private float invulnTime;
@@ -118,6 +119,11 @@ public class PlayerController : MonoBehaviour
             {
                 isHalting = 0;
                 haltTime = haltTimeStart;
+                for (int i = 0; i < enemyColliders.Count; i++)
+                {
+                    tempRigidBody = enemyColliders[i].GetComponent<Rigidbody2D>();
+                    tempRigidBody.isKinematic = false;
+                }
                 MEnemyControl.isHalted = false; // Enemies unfreeze
                 // All the set-up clone dashes fire at this point.
                 haltCooldown = true; // Halt bar goes back on cooldown.
@@ -125,6 +131,11 @@ public class PlayerController : MonoBehaviour
             {
                 enemyHits = 0; // Bring the halt bar back down to 0
                 MEnemyControl.isHalted = true; // Enemies are frozen
+                for (int i = 0; i < enemyColliders.Count; i++)
+                {
+                    tempRigidBody = enemyColliders[i].GetComponent<Rigidbody2D>();
+                    tempRigidBody.isKinematic = true;
+                }
                 // Set up the clone dash.
                    // Have a duplicate player object (without health) spawn in between the mouse and the player every time you dash.
                 // Wait 5 seconds 
