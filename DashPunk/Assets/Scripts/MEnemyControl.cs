@@ -134,7 +134,10 @@ public class MEnemyControl : MonoBehaviour
                 //CreateBlood();
                 invuln = 1;
                 bounced = 1;
-                bounceDir = playerObject.GetComponent<PlayerController>().direction;
+                if (playerObject != null)
+                {
+                    bounceDir = playerObject.GetComponent<PlayerController>().direction;
+                }
                 rb.AddForce(bounceDir * 15000);
                 if (hearts <= 0)
                 {
