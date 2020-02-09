@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public float haltTimeStart;
     public float haltTime;
     public Rigidbody2D tempBody;
+    private bool spaceDash; 
 
     void Start()
     {
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
         bounceCooldown = false;
         isPierceDashing = 0;
         isBounceDashing = 0;
+        spaceDash = false;
 }
 
     // Update is called once per frame
@@ -80,7 +82,6 @@ public class PlayerController : MonoBehaviour
 
         // Display the enemyHits counter on the canvas. Will change to a bar at a later point.
         enemyHitsText.text = "Halting: " + enemyHits.ToString();
-
         // Start dash when right and left mouse buttons are pressed
         if (Input.GetMouseButtonDown(1) && (isHalting == 0))
         {
@@ -90,7 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             isBounceDashing = 1;
         }
-        else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false))
+        else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
         {
             isHalting = 1;
         }
@@ -165,9 +166,11 @@ public class PlayerController : MonoBehaviour
                 isPierceDashing = 0;
                 pierceCooldown = true;
                 Invoke("pierceDashCD", 0.5f);
+                spaceDash = false;
             }
             else
             {
+                spaceDash = true;
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
@@ -185,9 +188,11 @@ public class PlayerController : MonoBehaviour
                 isBounceDashing = 0;
                 bounceCooldown = true;
                 Invoke("bounceDashCD", 0.5f);
+                spaceDash = false;
             }
             else
             {
+                spaceDash = true;
                 rb.velocity = direction * dashSpeed;
                 dashTime -= Time.fixedDeltaTime;
             }
