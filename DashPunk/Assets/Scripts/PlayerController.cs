@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private int invuln;
     public ParticleSystem dust;
     public ParticleSystem dust2;
+    public ParticleSystem haltDust;
     private Vector2 knockBackDir;
     public float knockBackPower;
     public Image[] heartsList;
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
         }
         else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
         {
+            CreateDust3();
             isHalting = 1;
         }
 
@@ -241,6 +243,11 @@ public class PlayerController : MonoBehaviour
     void CreateDust2()
     {
         dust2.Play();
+    }
+
+    void CreateDust3()
+    {
+        haltDust.Play();
     }
 
     void bounceDashCD()
