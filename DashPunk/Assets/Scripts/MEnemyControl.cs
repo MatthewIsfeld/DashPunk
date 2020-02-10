@@ -81,17 +81,13 @@ public class MEnemyControl : MonoBehaviour
 
     }
 
-    /*private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if ((other.gameObject.CompareTag("Player")) && (PierceCloneScript.clonePiercing == 1))
         {
             if ((invuln == 0))
             {
                 PlayerController.enemyHits++; // Increment the halting bar.
-                if (playerBounceDashing == 1)
-                {
-                    bounced = 1;
-                }
                 hearts -= 1;
                 // Play blood animation
                 // CreateBlood();
@@ -103,11 +99,11 @@ public class MEnemyControl : MonoBehaviour
                 }
             }
         }
-    }*/
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
+        if ((playerBounceDashing == 1 || playerPierceDashing == 1 || BounceCloneScript.cloneBouncing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
         {
             PlayerController.enemyHits++; // Increment the halting bar.
             if (playerBounceDashing == 1 || BounceCloneScript.cloneBouncing == 1)
