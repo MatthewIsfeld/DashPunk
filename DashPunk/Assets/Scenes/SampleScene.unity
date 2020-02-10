@@ -287,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
@@ -474,7 +474,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
