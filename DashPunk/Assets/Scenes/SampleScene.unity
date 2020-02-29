@@ -313,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
@@ -5183,6 +5183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dust: {fileID: 302122707}
+  playerObject: {fileID: 0}
 --- !u!1 &1152881560 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8665986120445689360, guid: bcb3de2cb0217e24d9acfa48dcecc51c,
@@ -5297,7 +5298,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
@@ -5433,7 +5434,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
@@ -5557,7 +5558,7 @@ PrefabInstance:
     - target: {fileID: 2982679444377936996, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
       propertyPath: hearts
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2982679444377936998, guid: cd5f09713d20cdd439098007bab0e77d,
         type: 3}
