@@ -10,6 +10,7 @@ public class PierceCloneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Make Collider trigger collider
         pCloneCollider = this.GetComponent<Collider2D>();
         pCloneCollider.isTrigger = true;
     }
