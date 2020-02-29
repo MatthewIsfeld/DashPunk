@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -224,6 +225,7 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(knockBackDir * knockBackPower);
                 if (hearts < 1)
                 {
+                    Invoke("mainMenu", 2.5f);
                     deadText.text = "THE PUNK'S JOURNEY IS OVER";
                     this.gameObject.SetActive(false);
                 }
@@ -269,5 +271,10 @@ public class PlayerController : MonoBehaviour
     void dashCD()
     {
         dashCooldown = false;
+    }
+
+    void mainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
