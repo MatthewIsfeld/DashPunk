@@ -83,11 +83,11 @@ public class PlayerController : MonoBehaviour
         // Display the enemyHits counter on the canvas. Will change to a bar at a later point.
         enemyHitsText.text = "Halting: " + enemyHits.ToString();
         // Start dash when right and left mouse buttons are pressed
-        if (Input.GetMouseButtonDown(1) && (isHalting == 0))
+        if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0))
         {
             isPierceDashing = 1;
         }
-        else if (Input.GetMouseButtonDown(0) && (isHalting == 0))
+        else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0))
         {
             isBounceDashing = 1;
         }
