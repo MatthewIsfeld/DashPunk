@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MEnemyControl : MonoBehaviour
+public class REnemyControl : MonoBehaviour
 {
     // This code makes the enemy rotate to face the player and then move towards them.
     public Transform Player;
@@ -21,6 +21,11 @@ public class MEnemyControl : MonoBehaviour
     private Vector2 bounceDir;
     public ParticleSystem blood;
     public static bool isHalted = false;
+    public float stoppingDistance;
+    public float retreatDistance;
+    private float shootCooldown;
+    public float startShootCooldown;
+    public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -30,19 +35,41 @@ public class MEnemyControl : MonoBehaviour
         invulnTime = invulnTimeStart;
         bounced = 0;
         playerObject = GameObject.Find("Player");
+        shootCooldown = startShootCooldown;
     }
 
     // Update makes the enemy rotate to face the player
     void Update()
-    {
-        Vector3 direction = Player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if (isHalted == false)
+    {       
+        if (playerObject.GetComponent<PlayerController>().isHalting == 0)
         {
-            rb.rotation = angle;
+            Vector3 direction = Player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            if (isHalted == false)
+            {
+                rb.rotation = angle;
+            }
+            if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, Player.position, moveSpeed * Time.deltaTime);
+            }
+            else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
+            {
+                transform.position = this.transform.position;
+            }
+            else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, Player.position, -moveSpeed * Time.deltaTime);
+            }
         }
-        direction.Normalize();
-        movement = direction;
+        if (shootCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0)
+        {
+            Instantiate(bullet, transform.position, Quaternion.identity);
+            shootCooldown = startShootCooldown;
+        } else
+        {
+            shootCooldown -= Time.deltaTime;
+        }
         playerObject = GameObject.Find("Player");
         if (playerObject != null)
         {
@@ -68,17 +95,7 @@ public class MEnemyControl : MonoBehaviour
     // FixedUpdate moves enemy towards player
     void FixedUpdate()
     {
-        moveEnemy(movement);
-    }
-
-    // Move enemy with MovePosition
-    void moveEnemy(Vector2 direction)
-    {
-        if (isHalted == false)
-        {
-            rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-        }
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -136,7 +153,7 @@ public class MEnemyControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
+            if ((other.gameObject.GetComponent<REnemyControl>().bounced == 1) && (invuln == 0))
             {
                 PlayerController.enemyHits++;
                 hearts -= 1;
@@ -152,7 +169,11 @@ public class MEnemyControl : MonoBehaviour
                 }
             }
         }
-    }   
+    }
+
+
+
+
     void CreateBlood()
     {
         blood.Play();
