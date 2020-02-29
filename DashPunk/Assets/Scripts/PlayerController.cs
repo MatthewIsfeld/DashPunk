@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public Image[] heartsList;
     private bool bounceCooldown;
     private bool pierceCooldown;
+    private bool dashCooldown;
     private bool haltCooldown;
     public static int enemyHits;
     public Text enemyHitsText;
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         enemyHits = 0;
         pierceCooldown = false;
         bounceCooldown = false;
+        dashCooldown = false;
         isPierceDashing = 0;
         isBounceDashing = 0;
         spaceDash = false;
@@ -153,7 +155,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move character when pierceDashing and disable enemy collider so character can pass through
-        else if (isPierceDashing == 1 && pierceCooldown == false)
+        else if (isPierceDashing == 1 && pierceCooldown == false && dashCooldown == false)
         {
             for (int i = 0; i < enemyColliders.Count; i++)
             {
@@ -167,7 +169,9 @@ public class PlayerController : MonoBehaviour
                 dashTime = initialDashTime;
                 isPierceDashing = 0;
                 pierceCooldown = true;
+                dashCooldown = true;
                 Invoke("pierceDashCD", 0.5f);
+                Invoke("dashCD", 0.25f);
                 spaceDash = false;
             }
             else
@@ -180,7 +184,7 @@ public class PlayerController : MonoBehaviour
 
             // Move character when BounceDashing
         }
-        else if (isBounceDashing == 1 && bounceCooldown == false)
+        else if (isBounceDashing == 1 && bounceCooldown == false && dashCooldown == false)
         {
             CreateDust();
             if (dashTime <= 0)
@@ -189,7 +193,9 @@ public class PlayerController : MonoBehaviour
                 dashTime = initialDashTime;
                 isBounceDashing = 0;
                 bounceCooldown = true;
+                dashCooldown = true;
                 Invoke("bounceDashCD", 0.5f);
+                Invoke("dashCD", 0.25f);
                 spaceDash = false;
             }
             else
@@ -258,5 +264,10 @@ public class PlayerController : MonoBehaviour
     void pierceDashCD()
     {
         pierceCooldown = false;
+    }
+
+    void dashCD()
+    {
+        dashCooldown = false;
     }
 }
