@@ -83,7 +83,7 @@ public class MEnemyControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.CompareTag("PierceClone")) && (PierceCloneScript.clonePiercing == 1))
+        if (other.gameObject.CompareTag("PierceClone"))
         {
             if ((invuln == 0))
             {

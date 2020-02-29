@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PierceCloneScript : MonoBehaviour
 {
-    public static int clonePiercing = 1;
     public static Collider2D pCloneCollider;
     public ParticleSystem dust;
 
@@ -21,4 +20,5 @@ public class PierceCloneScript : MonoBehaviour
         
 
     }
+
 }
