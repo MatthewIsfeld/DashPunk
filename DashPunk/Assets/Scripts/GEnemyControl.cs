@@ -162,7 +162,7 @@ public class GEnemyControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.GetComponent<REnemyControl>() != null)
+            if (other.gameObject.GetComponent<GEnemyControl>() != null)
             {
                 if ((other.gameObject.GetComponent<GEnemyControl>().bounced == 1) && (invuln == 0))
                 {
