@@ -30,6 +30,7 @@ public class MEnemyControl : MonoBehaviour
         invulnTime = invulnTimeStart;
         bounced = 0;
         playerObject = GameObject.Find("Player");
+        Player = playerObject.GetComponent<Transform>();
     }
 
     // Update makes the enemy rotate to face the player

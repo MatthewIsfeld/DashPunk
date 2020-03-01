@@ -37,7 +37,6 @@ public class REnemyControl : MonoBehaviour
         bounced = 0;
         playerObject = GameObject.Find("Player");
         shootCooldown = startShootCooldown;
-        Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update makes the enemy rotate to face the player
