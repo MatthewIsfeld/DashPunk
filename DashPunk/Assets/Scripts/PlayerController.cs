@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
         // Check how full your halt bar is
         if (enemyHits >= 5)
         {
+            enemyHits = 5;
             haltCooldown = false;
         }
 
