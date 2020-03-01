@@ -121,6 +121,7 @@ public class REnemyControl : MonoBehaviour
                 if (hearts <= 0)
                 {
                     //CreateBlood();
+                    WaveSpawner.totalEnemies -= 1;
                     this.gameObject.SetActive(false);
                 }
             }
@@ -143,6 +144,7 @@ public class REnemyControl : MonoBehaviour
             if (hearts <= 0)
             {
                 //CreateBlood();
+                WaveSpawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
             }
         }
@@ -155,6 +157,7 @@ public class REnemyControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
+                WaveSpawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
             }
         }
@@ -176,6 +179,7 @@ public class REnemyControl : MonoBehaviour
                     if (hearts <= 0)
                     {
                         //CreateBlood();
+                        WaveSpawner.totalEnemies -= 1;
                         this.gameObject.SetActive(false);
                     }
                 }

@@ -95,6 +95,7 @@ public class MEnemyControl : MonoBehaviour
                 if (hearts <= 0)
                 {
                     //CreateBlood();
+                    WaveSpawner.totalEnemies -= 1;
                     this.gameObject.SetActive(false);
                 }
             }
@@ -117,6 +118,7 @@ public class MEnemyControl : MonoBehaviour
             if (hearts <= 0)
             {
                 //CreateBlood();
+                WaveSpawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
             }
         }
@@ -127,6 +129,7 @@ public class MEnemyControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
+                WaveSpawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
             }
         }
@@ -147,6 +150,7 @@ public class MEnemyControl : MonoBehaviour
                     rb.AddForce(bounceDir * 15000);
                     if (hearts <= 0)
                     {
+                        WaveSpawner.totalEnemies -= 1;
                         //CreateBlood();
                         this.gameObject.SetActive(false);
                     }

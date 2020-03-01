@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -15,13 +16,20 @@ public class WaveSpawner : MonoBehaviour
     public float nextWaveTime = 5f;
     public float waveCountDown;
     private float searchCountDown = 1f;
+    public Text enemiesText;
+    public static int totalEnemies;
+
 
     [System.Serializable]
     public class OneWave
     {
         public string name;
         public GameObject enemy1;
-        public int enemyCount;
+        public GameObject enemy2;
+        public GameObject enemy3;
+        public int enemy1Count;
+        public int enemy2Count;
+        public int enemy3Count;
         public float spawnRate;
     }
 
@@ -29,6 +37,8 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         waveCountDown = nextWaveTime;
+        enemiesText.text = "";
+        enemiesText.fontSize = 18;
     }
 
     // Update is called once per frame
@@ -43,6 +53,7 @@ public class WaveSpawner : MonoBehaviour
             }
             else
             {
+                enemiesText.text = "Enemies Remaining: " + totalEnemies;
                 return;
             }
         }
@@ -63,10 +74,22 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator spawnWave(OneWave theWave)
     {
         waveState = state.SPAWNING;
+        totalEnemies = theWave.enemy1Count + theWave.enemy2Count + theWave.enemy3Count;
+        enemiesText.text = "Enemies Remaining: " + totalEnemies;
 
-        for (int i = 0; i < theWave.enemyCount; i++)
+        for (int i = 0; i < theWave.enemy1Count; i++)
         {
             spawnEnemy(theWave.enemy1);
+            yield return new WaitForSeconds(1f / theWave.spawnRate);
+        }
+        for (int i = 0; i < theWave.enemy2Count; i++)
+        {
+            spawnEnemy(theWave.enemy2);
+            yield return new WaitForSeconds(1f / theWave.spawnRate);
+        }
+        for (int i = 0; i < theWave.enemy3Count; i++)
+        {
+            spawnEnemy(theWave.enemy3);
             yield return new WaitForSeconds(1f / theWave.spawnRate);
         }
 
