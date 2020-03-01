@@ -26,6 +26,7 @@ public class REnemyControl : MonoBehaviour
     private float shootCooldown;
     public float startShootCooldown;
     public GameObject bullet;
+    public Transform firePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class REnemyControl : MonoBehaviour
         bounced = 0;
         playerObject = GameObject.Find("Player");
         shootCooldown = startShootCooldown;
+        Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update makes the enemy rotate to face the player
@@ -51,20 +53,20 @@ public class REnemyControl : MonoBehaviour
             }
             if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, Player.position, moveSpeed * Time.deltaTime);
+                rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
             }
             else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
             {
-                transform.position = this.transform.position;
+                rb.MovePosition(this.transform.position);
             }
             else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, Player.position, -moveSpeed * Time.deltaTime);
+                rb.MovePosition(transform.position + (direction * -moveSpeed * Time.deltaTime));
             }
         }
         if (shootCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0)
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, firePoint.position, firePoint.rotation);
             shootCooldown = startShootCooldown;
         } else
         {
