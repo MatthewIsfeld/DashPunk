@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
 
         // Check how full your halt bar is
-        if (enemyHits >= 0)
+        if (enemyHits >= 5)
         {
             haltCooldown = false;
         }
