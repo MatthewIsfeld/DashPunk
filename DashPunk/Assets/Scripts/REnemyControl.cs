@@ -128,63 +128,56 @@ public class REnemyControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other != null)
+        if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
         {
-            if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
+            PlayerController.enemyHits++; // Increment the halting bar.
+            if (playerBounceDashing == 1)
             {
-                PlayerController.enemyHits++; // Increment the halting bar.
-                if (playerBounceDashing == 1)
-                {
-                    bounced = 1;
-                }
-                hearts -= 1;
-                // Play blood animation
-                //CreateBlood();
-                invuln = 1;
-                if (hearts <= 0)
-                {
-                    //CreateBlood();
-                    this.gameObject.SetActive(false);
-                }
-            }
-
-            if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
-            {
-                PlayerController.enemyHits++;
                 bounced = 1;
-                hearts -= 1;
-                invuln = 1;
-
-                if (hearts <= 0)
-                {
-                    this.gameObject.SetActive(false);
-                }
             }
-
-            if (other.gameObject.CompareTag("Enemy"))
+            hearts -= 1;
+            // Play blood animation
+            //CreateBlood();
+            invuln = 1;
+            if (hearts <= 0)
             {
-                if ((other.gameObject.GetComponent<REnemyControl>().bounced == 1) && (invuln == 0))
-                {
-                    PlayerController.enemyHits++;
-                    hearts -= 1;
-                    //CreateBlood();
-                    invuln = 1;
-                    bounced = 1;
-                    bounceDir = PlayerController.direction;
-                    rb.AddForce(bounceDir * 15000);
-                    if (hearts <= 0)
-                    {
-                        //CreateBlood();
-                        this.gameObject.SetActive(false);
-                    }
-                }
+                //CreateBlood();
+                this.gameObject.SetActive(false);
             }
         }
+
+        if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
+        {
+            PlayerController.enemyHits++;
+            bounced = 1;
+            hearts -= 1;
+            invuln = 1;
+            if (hearts <= 0)
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
+            
+            
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if ((other.gameObject.GetComponent<REnemyControl>().bounced == 1) && (invuln == 0))
+            {
+                PlayerController.enemyHits++;
+                hearts -= 1;
+                //CreateBlood();
+                invuln = 1;
+                bounced = 1;
+                bounceDir = PlayerController.direction;
+                rb.AddForce(bounceDir * 15000);
+                if (hearts <= 0)
+                {
+                    //CreateBlood();
+                    this.gameObject.SetActive(false);
+                }
+            }
+        }                    
     }
-
-
-
-
     void CreateBlood()
     {
         blood.Play();
