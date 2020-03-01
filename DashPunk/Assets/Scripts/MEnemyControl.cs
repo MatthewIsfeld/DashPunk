@@ -134,19 +134,22 @@ public class MEnemyControl : MonoBehaviour
             
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
+            if (other.gameObject.GetComponent<REnemyControl>() != null)
             {
-                PlayerController.enemyHits++;
-                hearts -= 1;
-                //CreateBlood();
-                invuln = 1;
-                bounced = 1;
-                bounceDir = PlayerController.direction;
-                rb.AddForce(bounceDir * 15000);
-                if (hearts <= 0)
+                if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
                 {
+                    PlayerController.enemyHits++;
+                    hearts -= 1;
                     //CreateBlood();
-                    this.gameObject.SetActive(false);
+                    invuln = 1;
+                    bounced = 1;
+                    bounceDir = PlayerController.direction;
+                    rb.AddForce(bounceDir * 15000);
+                    if (hearts <= 0)
+                    {
+                        //CreateBlood();
+                        this.gameObject.SetActive(false);
+                    }
                 }
             }
         }                    

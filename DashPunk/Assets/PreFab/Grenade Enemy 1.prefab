@@ -207,7 +207,7 @@ MonoBehaviour:
   playerBounceDashing: 0
   playerPierceDashing: 0
   playerObject: {fileID: 0}
-  hearts: 1
+  hearts: 2
   invulnTimeStart: 0.3
   blood: {fileID: 0}
   stoppingDistance: 20
