@@ -11,6 +11,7 @@ public class GrenadeControl : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 direction;
     private float angle;
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class GrenadeControl : MonoBehaviour
 
     void destroyGrenade()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
