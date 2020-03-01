@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
     private bool dashCooldown;
     private bool haltCooldown;
     public static int enemyHits;
-    public Text enemyHitsText;
     public float haltTimeStart;
     public float haltTime;
     public Rigidbody2D tempBody;
@@ -83,21 +82,22 @@ public class PlayerController : MonoBehaviour
             haltCooldown = false;
         }
 
-        // Display the enemyHits counter on the canvas. Will change to a bar at a later point.
-        enemyHitsText.text = "Halting: " + enemyHits.ToString();
         // Start dash when right and left mouse buttons are pressed
-        if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0))
+        if (PauseMenu.isPaused == false) // These things can only happen when the game is not paused
         {
-            isPierceDashing = 1;
-        }
-        else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0))
-        {
-            isBounceDashing = 1;
-        }
-        else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
-        {
-            CreateDust3();
-            isHalting = 1;
+            if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0))
+            {
+                isPierceDashing = 1;
+            }
+            else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0))
+            {
+                isBounceDashing = 1;
+            }
+            else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
+            {
+                CreateDust3();
+                isHalting = 1;
+            }
         }
 
         if (invuln == 1)
