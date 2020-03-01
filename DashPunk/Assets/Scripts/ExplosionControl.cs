@@ -22,9 +22,12 @@ public class ExplosionControl : MonoBehaviour
             explosionTime -= Time.deltaTime;
         } else
         {
-            if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+            if (playerObject.GetComponent<PlayerController>() != null)
             {
-                destroyExplosion();
+                if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+                {
+                    destroyExplosion();
+                }
             }
         }
     }
