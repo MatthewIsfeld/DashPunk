@@ -31,16 +31,9 @@ public class BulletControl : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            destroyBullet();
-        }
-        if (other.CompareTag("Enemy"))
-        {
-            destroyBullet();
-        }
+        destroyBullet();
     }
 
     void destroyBullet()

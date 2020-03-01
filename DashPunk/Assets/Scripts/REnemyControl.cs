@@ -41,26 +41,29 @@ public class REnemyControl : MonoBehaviour
 
     // Update makes the enemy rotate to face the player
     void Update()
-    {       
-        if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+    {
+        if (playerObject != null)
         {
-            Vector3 direction = Player.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            if (isHalted == false)
+            if (playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
-                rb.rotation = angle;
-            }
-            if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
-            {
-                rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
-            }
-            else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
-            {
-                rb.MovePosition(this.transform.position);
-            }
-            else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
-            {
-                rb.MovePosition(transform.position + (direction * -moveSpeed * Time.deltaTime));
+                Vector3 direction = Player.position - transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                if (isHalted == false)
+                {
+                    rb.rotation = angle;
+                }
+                if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
+                {
+                    rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
+                }
+                else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
+                {
+                    rb.MovePosition(this.transform.position);
+                }
+                else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
+                {
+                    rb.MovePosition(transform.position + (direction * -moveSpeed * Time.deltaTime));
+                }
             }
         }
         if (shootCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0)
