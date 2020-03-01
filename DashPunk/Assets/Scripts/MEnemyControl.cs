@@ -88,7 +88,6 @@ public class MEnemyControl : MonoBehaviour
         {
             if ((invuln == 0))
             {
-                PlayerController.enemyHits++; // Increment the halting bar.
                 hearts -= 1;
                 // Play blood animation
                 // CreateBlood();
@@ -126,7 +125,6 @@ public class MEnemyControl : MonoBehaviour
 
             if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
             {
-                PlayerController.enemyHits++;
                 bounced = 1;
                 hearts -= 1;
                 invuln = 1;
