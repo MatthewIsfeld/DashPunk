@@ -110,15 +110,12 @@ MonoBehaviour:
   invulnTimeStart: 1
   dust: {fileID: 4514663859164442218}
   dust2: {fileID: 4514663859925437347}
+  haltDust: {fileID: 0}
   knockBackPower: 5000
-  heartsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  enemyHitsText: {fileID: 0}
   haltTimeStart: 0
   haltTime: 0
   tempBody: {fileID: 0}
+  healthbar: {fileID: 0}
 --- !u!61 &4514663858792220217
 BoxCollider2D:
   m_ObjectHideFlags: 0

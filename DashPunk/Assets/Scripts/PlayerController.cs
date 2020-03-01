@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem haltDust;
     private Vector2 knockBackDir;
     public float knockBackPower;
-    public Image[] heartsList;
     private bool bounceCooldown;
     private bool pierceCooldown;
     private bool dashCooldown;
@@ -39,13 +38,12 @@ public class PlayerController : MonoBehaviour
     public float haltTimeStart;
     public float haltTime;
     public Rigidbody2D tempBody;
-    private bool spaceDash; 
+    private bool spaceDash;
+    public HealthBar healthbar;
 
     void Start()
     {
-        heartsList[0].enabled = true;
-        heartsList[1].enabled = true;
-        heartsList[2].enabled = true;
+        Debug.Log("Player script started.");
         rb = GetComponent<Rigidbody2D>();
         dashTime = initialDashTime;
         deadText.text = "";
@@ -63,7 +61,12 @@ public class PlayerController : MonoBehaviour
         isPierceDashing = 0;
         isBounceDashing = 0;
         spaceDash = false;
-}
+        hearts = 5;
+        healthbar.setMaxHealth(hearts);
+        Debug.Log(" max Health set on player script.");
+        healthbar.setHealth(hearts);
+        Debug.Log("Health set on player script.");
+    }
 
     // Update is called once per frame
     void Update()
@@ -222,8 +225,7 @@ public class PlayerController : MonoBehaviour
             if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
             {
                 hearts -= 1;
-                heartsList[0].enabled = false;
-                heartsList = heartsList.Skip(1).ToArray();
+                healthbar.setHealth(hearts);
                 invuln = 1;
                 knockBackDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);
                 rb.AddForce(knockBackDir * knockBackPower);
