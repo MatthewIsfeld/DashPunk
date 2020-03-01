@@ -97,6 +97,10 @@ public class PlayerController : MonoBehaviour
             {
                 CreateDust3();
                 isHalting = 1;
+                for (int i = 1; i < 6; i++)     // Make the bar count down for 5s
+                {
+                    Invoke("reduceHits", i);
+                }
             }
         }
 
@@ -142,7 +146,6 @@ public class PlayerController : MonoBehaviour
 
             } else
             {
-                enemyHits = 0; // Bring the halt bar back down to 0
                 MEnemyControl.isHalted = true; 
                 for (int i = 0; i < enemyColliders.Count; i++)
                 {
@@ -277,4 +280,10 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    void reduceHits()
+    {
+        enemyHits--;
+    }
+
 }
