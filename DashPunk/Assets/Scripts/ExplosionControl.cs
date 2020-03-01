@@ -33,7 +33,7 @@ public class ExplosionControl : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //playerObject.GetComponent<PlayerController>().hearts -= 1;
+            //playerObject.GetComponent<PlayerController>().hearts -= 1; sort of works
         }
     }
 
