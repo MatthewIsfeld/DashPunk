@@ -27,6 +27,10 @@ public class REnemyControl : MonoBehaviour
     public float startShootCooldown;
     public GameObject bullet;
     public Transform firePoint;
+    public Transform topWall;
+    public Transform leftWall;
+    public Transform rightWall;
+    public Transform bottomWall;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +67,10 @@ public class REnemyControl : MonoBehaviour
                 }
                 else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
                 {
-                    rb.MovePosition(transform.position + (direction * -moveSpeed * Time.deltaTime));
+                    if ((Vector2.Distance(transform.position, topWall.localPosition) > 15) && (Vector2.Distance(transform.position, leftWall.localPosition) > 15) && (Vector2.Distance(transform.position, rightWall.localPosition) > 15) && (Vector2.Distance(transform.position, bottomWall.localPosition) > 15))
+                    {
+                        rb.MovePosition(transform.position + (direction * -moveSpeed * Time.deltaTime));
+                    }
                 }
             }
         }

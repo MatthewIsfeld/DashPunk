@@ -215,3 +215,10 @@ MonoBehaviour:
   startShootCooldown: 2
   grenade: {fileID: 7349242362888390505, guid: 5263221354d6cab47b67d5c486e10ebb, type: 3}
   firePoint: {fileID: 5942789901038218531}
+  topWall: {fileID: 3154504506389118582, guid: 8bf69fdaf64972c4b895c4270e9ccf73, type: 3}
+  leftWall: {fileID: 3124930891480301395, guid: 5877bb1864400c944b9c9bf35439566e,
+    type: 3}
+  rightWall: {fileID: 2157882853764328099, guid: 6d94b66fe46ed8f4bb5f5e4aaddc1e0d,
+    type: 3}
+  bottomWall: {fileID: 135878743834079277, guid: 1f699f9001dd1f844ab5326c8c17aef3,
+    type: 3}
