@@ -57,21 +57,8 @@ public class REnemyControl : MonoBehaviour
                 {
                     rb.rotation = angle;
                 }
-                if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
-                {
-                    rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
-                }
-                else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
-                {
-                    rb.MovePosition(this.transform.position);
-                }
-                else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
-                {
-                    if ((Vector2.Distance(transform.position, topWall.localPosition) > 15) && (Vector2.Distance(transform.position, leftWall.localPosition) > 15) && (Vector2.Distance(transform.position, rightWall.localPosition) > 15) && (Vector2.Distance(transform.position, bottomWall.localPosition) > 15))
-                    {
-                        rb.MovePosition(transform.position + (direction * -moveSpeed * Time.deltaTime));
-                    }
-                }
+                direction.Normalize();
+                movement = direction;
             }
         }
         if (playerObject != null)
@@ -111,7 +98,32 @@ public class REnemyControl : MonoBehaviour
     // FixedUpdate moves enemy towards player
     void FixedUpdate()
     {
-        
+        moveEnemy(movement); 
+    }
+
+    void moveEnemy(Vector2 direction)
+    {
+        if (playerObject != null)
+        {
+            if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+            {
+                if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
+                {
+                    rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+                }
+                else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
+                {
+                    rb.MovePosition(this.transform.position);
+                }
+                else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
+                {
+                    if ((Vector2.Distance(transform.position, topWall.localPosition) > 15) && (Vector2.Distance(transform.position, leftWall.localPosition) > 15) && (Vector2.Distance(transform.position, rightWall.localPosition) > 15) && (Vector2.Distance(transform.position, bottomWall.localPosition) > 15))
+                    {
+                        rb.MovePosition((Vector2)transform.position + (direction * -moveSpeed * Time.deltaTime));
+                    }
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

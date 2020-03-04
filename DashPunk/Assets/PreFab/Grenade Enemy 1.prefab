@@ -211,7 +211,7 @@ MonoBehaviour:
   invulnTimeStart: 0.3
   blood: {fileID: 0}
   stoppingDistance: 20
-  retreatDistance: 5
+  retreatDistance: 10
   startShootCooldown: 2
   grenade: {fileID: 7349242362888390505, guid: 5263221354d6cab47b67d5c486e10ebb, type: 3}
   firePoint: {fileID: 5942789901038218531}
