@@ -115,7 +115,7 @@ public class GEnemyControl : MonoBehaviour
                 {
                     rb.MovePosition(this.transform.position);
                 }
-                else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
+                else if (Vector2.Distance(transform.position, Player.position) < retreatDistance && playerObject.GetComponent<PlayerController>().isPierceDashing == 0)
                 {
                     if ((Vector2.Distance(transform.position, topWall.localPosition) > 15) && (Vector2.Distance(transform.position, leftWall.localPosition) > 15) && (Vector2.Distance(transform.position, rightWall.localPosition) > 15) && (Vector2.Distance(transform.position, bottomWall.localPosition) > 15))
                     {
