@@ -120,6 +120,9 @@ public class REnemyControl : MonoBehaviour
                     if ((Vector2.Distance(transform.position, topWall.localPosition) > 15) && (Vector2.Distance(transform.position, leftWall.localPosition) > 15) && (Vector2.Distance(transform.position, rightWall.localPosition) > 15) && (Vector2.Distance(transform.position, bottomWall.localPosition) > 15))
                     {
                         rb.MovePosition((Vector2)transform.position + (direction * -moveSpeed * Time.deltaTime));
+                    } else
+                    {
+                        rb.MovePosition(this.transform.position);
                     }
                 }
             }
