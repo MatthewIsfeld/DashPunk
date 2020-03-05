@@ -8,38 +8,47 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed;
     private Vector2 cursorPos;
     public static Vector2 direction;
-    public float dashSpeed;
-    private float dashTime;
-    public float initialDashTime;
     public int isPierceDashing;
     public int isBounceDashing;
     public int isHalting;
-    public int hearts;
     public Text deadText;
     List<GameObject> enemyColliders = new List<GameObject>();
     Collider2D tempEnemyCollider;
-    public float bouncePower;
-    public float invulnTimeStart;
-    private float invulnTime;
     private int invuln;
     public ParticleSystem dust;
     public ParticleSystem dust2;
     public ParticleSystem haltDust;
     private Vector2 knockBackDir;
-    public float knockBackPower;
     private bool bounceCooldown;
     private bool pierceCooldown;
     private bool dashCooldown;
     private bool haltCooldown;
     public static int enemyHits;
-    public float haltTimeStart;
-    public float haltTime;
     public Rigidbody2D tempBody;
     private bool spaceDash;
     public HealthBar healthbar;
+    
+    //Parameters for upgrades
+    public int bounceDamage;
+    public int pierceDamage;
+    public int bounceCloneDamage;
+    public int pierceCloneDamage;
+    public float bounceDashCooldown;
+    public float pierceDashCooldown;
+    public float genericDashCooldown; //A cooldown that applies to both dashes
+    public int hearts;
+    public float speed; //Movement speed with WASD
+    public float dashSpeed; //This determines the speed of the dash combined with initialDashTime
+    private float dashTime;
+    public float initialDashTime; //This controls how long the dash lasts and is combined with dashSpeed
+    public float bouncePower; //KnockBack on bounceDash.
+    public float haltTimeStart;//This determines how long the halt lasts.
+    public float knockBackPower; //Determines how far the player is knocked away from enemies when they take damage.
+    public float haltTime;
+    public float invulnTimeStart;
+    private float invulnTime;
 
     void Start()
     {
@@ -178,8 +187,8 @@ public class PlayerController : MonoBehaviour
                 isPierceDashing = 0;
                 pierceCooldown = true;
                 dashCooldown = true;
-                Invoke("pierceDashCD", 0.5f);
-                Invoke("dashCD", 0.25f);
+                Invoke("pierceDashCD", pierceDashCooldown);
+                Invoke("dashCD", genericDashCooldown);
                 spaceDash = false;
             }
             else
@@ -202,8 +211,8 @@ public class PlayerController : MonoBehaviour
                 isBounceDashing = 0;
                 bounceCooldown = true;
                 dashCooldown = true;
-                Invoke("bounceDashCD", 0.5f);
-                Invoke("dashCD", 0.25f);
+                Invoke("bounceDashCD", bounceDashCooldown);
+                Invoke("dashCD", genericDashCooldown);
                 spaceDash = false;
             }
             else

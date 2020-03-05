@@ -136,7 +136,7 @@ public class GEnemyControl : MonoBehaviour
             if ((invuln == 0))
             {
                 PlayerController.enemyHits++; // Increment the halting bar.
-                hearts -= 1;
+                hearts -= playerObject.GetComponent<PlayerController>().pierceCloneDamage;
                 // Play blood animation
                 // CreateBlood();
                 invuln = 1;
@@ -158,8 +158,12 @@ public class GEnemyControl : MonoBehaviour
             if (playerBounceDashing == 1)
             {
                 bounced = 1;
+                hearts -= playerObject.GetComponent<PlayerController>().bounceDamage;
             }
-            hearts -= 1;
+            else
+            {
+                hearts -= playerObject.GetComponent<PlayerController>().pierceDamage;
+            }
             // Play blood animation
             //CreateBlood();
             invuln = 1;
@@ -175,7 +179,7 @@ public class GEnemyControl : MonoBehaviour
         {
             PlayerController.enemyHits++;
             bounced = 1;
-            hearts -= 1;
+            hearts -= playerObject.GetComponent<PlayerController>().bounceCloneDamage;
             invuln = 1;
             if (hearts <= 0)
             {

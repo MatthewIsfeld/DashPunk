@@ -88,7 +88,7 @@ public class MEnemyControl : MonoBehaviour
         {
             if ((invuln == 0))
             {
-                hearts -= 1;
+                hearts -= playerObject.GetComponent<PlayerController>().pierceCloneDamage;
                 // Play blood animation
                 // CreateBlood();
                 invuln = 1;
@@ -110,8 +110,11 @@ public class MEnemyControl : MonoBehaviour
             if (playerBounceDashing == 1)
             {
                 bounced = 1;
+                hearts -= playerObject.GetComponent<PlayerController>().bounceDamage;
+            } else
+            {
+                hearts -= playerObject.GetComponent<PlayerController>().pierceDamage;
             }
-            hearts -= 1;
             // Play blood animation
             //CreateBlood();
             invuln = 1;
@@ -125,7 +128,7 @@ public class MEnemyControl : MonoBehaviour
         if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
         {
             bounced = 1;
-            hearts -= 1;
+            hearts -= playerObject.GetComponent<PlayerController>().bounceCloneDamage;
             invuln = 1;
             if (hearts <= 0)
             {
