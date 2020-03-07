@@ -30,6 +30,7 @@ public class BossControl : MonoBehaviour
     private float grenadeCooldown;
     public float startGrenadeCooldown;
     public Transform firePoint;
+    public Transform firePoint2;
     public HealthBar healthbar;
 
     // Start is called before the first frame update
@@ -51,14 +52,20 @@ public class BossControl : MonoBehaviour
     // Update makes the enemy rotate to face the player
     void Update()
     {
-        Vector3 direction = Player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if (isHalted == false)
+        if (playerObject != null)
         {
-            rb.rotation = angle;
+            if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+            {
+                Vector3 direction = Player.position - transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                if (isHalted == false)
+                {
+                    rb.rotation = angle;
+                }
+                direction.Normalize();
+                movement = direction;
+            }
         }
-        direction.Normalize();
-        movement = direction;
         playerObject = GameObject.Find("Player");
         if (playerObject != null)
         {
@@ -83,22 +90,22 @@ public class BossControl : MonoBehaviour
         if (playerObject != null)
         {
             if (shootCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0)
-            {
+            {                                    
                 shotBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 Physics2D.IgnoreCollision(shotBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-                shootCooldown = startShootCooldown;
+                shootCooldown = startShootCooldown;                                                                             
             }
             else
             {
                 shootCooldown -= Time.deltaTime;
             }
         }
-
+        
         if (playerObject != null)
         {
             if (grenadeCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0 && shootCooldown > 0)
             {
-                shotGrenade = Instantiate(grenade, firePoint.position, firePoint.rotation);
+                shotGrenade = Instantiate(grenade, firePoint2.position, firePoint2.rotation);
                 Physics2D.IgnoreCollision(shotGrenade.GetComponent<Collider2D>(), GetComponent<Collider2D>());
                 grenadeCooldown = startGrenadeCooldown;
             }
@@ -107,6 +114,7 @@ public class BossControl : MonoBehaviour
                 grenadeCooldown -= Time.deltaTime;
             }
         }
+       
         healthbar.setHealth(hearts);
     }
 
@@ -119,11 +127,16 @@ public class BossControl : MonoBehaviour
     // Move enemy with MovePosition
     void moveEnemy(Vector2 direction)
     {
-        if (isHalted == false)
+        if (playerObject != null)
         {
-            rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+            if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+            {
+                if (isHalted == false)
+                {
+                    rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+                }
+            }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
