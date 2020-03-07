@@ -31,6 +31,7 @@ public class GEnemyControl : MonoBehaviour
     public Transform leftWall;
     public Transform rightWall;
     public Transform bottomWall;
+    private GameObject shotGrenade;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +66,8 @@ public class GEnemyControl : MonoBehaviour
         {
             if (shootCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
-                Instantiate(grenade, firePoint.position, firePoint.rotation);
+                shotGrenade = Instantiate(grenade, firePoint.position, firePoint.rotation);
+                Physics2D.IgnoreCollision(shotGrenade.GetComponent<Collider2D>(), GetComponent<Collider2D>());
                 shootCooldown = startShootCooldown;
             }
             else

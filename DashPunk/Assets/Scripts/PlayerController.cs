@@ -103,10 +103,10 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0))
             {
-                GameObject bLine = Instantiate(bounceLine, GameObject.FindGameObjectsWithTag("Player")[0].transform.position, rotation);
+                //GameObject bLine = Instantiate(bounceLine, GameObject.FindGameObjectsWithTag("Player")[0].transform.position, rotation);
                 //if (Input.GetMouseButtonUp(1))
                 //{
-                Destroy(bLine);
+                //Destroy(bLine);
                 isPierceDashing = 1;
                // }
             }
