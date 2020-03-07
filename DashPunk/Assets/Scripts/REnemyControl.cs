@@ -31,6 +31,7 @@ public class REnemyControl : MonoBehaviour
     public Transform leftWall;
     public Transform rightWall;
     public Transform bottomWall;
+    private GameObject shotBullet;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +66,8 @@ public class REnemyControl : MonoBehaviour
         {
             if (shootCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                shotBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                Physics2D.IgnoreCollision(shotBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
                 shootCooldown = startShootCooldown;
             }
             else
