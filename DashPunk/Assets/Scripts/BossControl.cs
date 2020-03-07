@@ -43,7 +43,7 @@ public class BossControl : MonoBehaviour
         Player = playerObject.GetComponent<Transform>();
         shootCooldown = startShootCooldown;
         grenadeCooldown = startGrenadeCooldown;
-        hearts = 20;
+        hearts = 5;
         healthbar.setMaxHealth(hearts);
         healthbar.setActive();
     }
@@ -169,6 +169,7 @@ public class BossControl : MonoBehaviour
                 //CreateBlood();
                 WaveSpawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
+                healthbar.setUnactive();
             }
         }
         if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
@@ -180,6 +181,7 @@ public class BossControl : MonoBehaviour
             {
                 WaveSpawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
+                healthbar.setUnactive();
             }
         }
 
@@ -202,6 +204,7 @@ public class BossControl : MonoBehaviour
                         WaveSpawner.totalEnemies -= 1;
                         //CreateBlood();
                         this.gameObject.SetActive(false);
+                        healthbar.setUnactive();
                     }
                 }
             }

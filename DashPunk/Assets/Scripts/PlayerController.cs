@@ -84,9 +84,8 @@ public class PlayerController : MonoBehaviour
         // Get Mouse cursor position relative to player and turn it into a unit vector
         playerPos = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        direction = new Vector3(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
+        direction = new Vector2(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
         direction = direction.normalized;
-        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
 
         // Get all enemies
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
