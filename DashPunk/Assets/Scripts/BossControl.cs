@@ -30,6 +30,7 @@ public class BossControl : MonoBehaviour
     private float grenadeCooldown;
     public float startGrenadeCooldown;
     public Transform firePoint;
+    public HealthBar healthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,9 @@ public class BossControl : MonoBehaviour
         Player = playerObject.GetComponent<Transform>();
         shootCooldown = startShootCooldown;
         grenadeCooldown = startGrenadeCooldown;
+        hearts = 20;
+        healthbar.setMaxHealth(hearts);
+        healthbar.setActive();
     }
 
     // Update makes the enemy rotate to face the player
@@ -103,6 +107,7 @@ public class BossControl : MonoBehaviour
                 grenadeCooldown -= Time.deltaTime;
             }
         }
+        healthbar.setHealth(hearts);
     }
 
     // FixedUpdate moves enemy towards player
@@ -133,6 +138,7 @@ public class BossControl : MonoBehaviour
                 invuln = 1;
                 if (hearts <= 0)
                 {
+                    healthbar.setUnactive();
                     //CreateBlood();
                     WaveSpawner.totalEnemies -= 1;
                     this.gameObject.SetActive(false);

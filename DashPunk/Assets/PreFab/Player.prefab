@@ -190,8 +190,8 @@ MonoBehaviour:
   haltDust: {fileID: 0}
   tempBody: {fileID: 0}
   healthbar: {fileID: 0}
-  bounceLine: {fileID: 0}
-  pierceLine: {fileID: 0}
+  bounceLine: {fileID: 1292138644905695426}
+  pierceLine: {fileID: 8783489656734935130}
   mouse: {fileID: 0}
   bounceDamage: 0
   pierceDamage: 0
