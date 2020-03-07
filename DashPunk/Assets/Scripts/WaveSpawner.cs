@@ -18,7 +18,7 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountDown = 1f;
     public Text enemiesText;
     public static int totalEnemies;
-
+    
 
     [System.Serializable]
     public class OneWave
