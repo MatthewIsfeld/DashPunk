@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D tempBody;
     private bool spaceDash;
     public HealthBar healthbar;
-    
+    public GameObject bounceLine;
+    public GameObject pierceLine;
+    public GameObject mouse;
+
     //Parameters for upgrades
     public int bounceDamage;
     public int pierceDamage;
@@ -52,7 +55,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Player script started.");
         rb = GetComponent<Rigidbody2D>();
         dashTime = initialDashTime;
         deadText.text = "";
@@ -72,9 +74,7 @@ public class PlayerController : MonoBehaviour
         spaceDash = false;
         hearts = 5;
         healthbar.setMaxHealth(hearts);
-        Debug.Log(" max Health set on player script.");
         healthbar.setHealth(hearts);
-        Debug.Log("Health set on player script.");
     }
 
     // Update is called once per frame
@@ -100,11 +100,18 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0))
             {
-                isPierceDashing = 1;
+                //if (Input.GetMouseButtonUp(1))
+                //{
+                    isPierceDashing = 1;
+               // }
             }
             else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0))
             {
-                isBounceDashing = 1;
+
+                //if (Input.GetMouseButtonUp(0))
+                //{
+                    isBounceDashing = 1;
+                //}
             }
             else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
             {
