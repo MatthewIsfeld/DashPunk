@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class MouseCursor : MonoBehaviour
 {
+    private Vector2 cursorPos;
     void Start()
     {
         Cursor.visible = false;
+        cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void Update()
-    {
-        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = cursorPos;
-    }
+    {        
+        cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = cursorPos;   
+    }    
 }
