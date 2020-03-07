@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Vector2 playerPos;
     private Vector2 cursorPos;
     public static Vector2 direction;
     public int isPierceDashing;
@@ -81,9 +82,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Get Mouse cursor position relative to player and turn it into a unit vector
+        playerPos = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        direction = new Vector2(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
+        direction = new Vector3(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
         direction = direction.normalized;
+        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
 
         // Get all enemies
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
@@ -100,9 +103,11 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0))
             {
+                GameObject bLine = Instantiate(bounceLine, GameObject.FindGameObjectsWithTag("Player")[0].transform.position, rotation);
                 //if (Input.GetMouseButtonUp(1))
                 //{
-                    isPierceDashing = 1;
+                Destroy(bLine);
+                isPierceDashing = 1;
                // }
             }
             else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0))
