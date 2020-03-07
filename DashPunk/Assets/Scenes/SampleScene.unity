@@ -6064,6 +6064,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1791156073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1746855353129689550, guid: 52c7a4c262772644ba5d3512a9fa5052,
+    type: 3}
+  m_PrefabInstance: {fileID: 2521881076206647213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1985473634
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,6 +6511,11 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[9]
       value: 
       objectReference: {fileID: 1114565356}
+    - target: {fileID: 8051089645976310939, guid: 987230af80fb9b941b00a85a8bea134c,
+        type: 3}
+      propertyPath: waveEnd
+      value: 
+      objectReference: {fileID: 1791156073}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 987230af80fb9b941b00a85a8bea134c, type: 3}
 --- !u!4 &2375966927170765707 stripped
@@ -6735,6 +6746,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6449136501785807713, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6487985850114917204, guid: 52c7a4c262772644ba5d3512a9fa5052,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -6750,8 +6766,32 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8769128481174504411, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52c7a4c262772644ba5d3512a9fa5052, type: 3}
+--- !u!1 &2521881076206647214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2521881075496065474, guid: 52c7a4c262772644ba5d3512a9fa5052,
+    type: 3}
+  m_PrefabInstance: {fileID: 2521881076206647213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2521881076206647215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521881076206647214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007b6274d38da6c4a9606b6c08c10838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeScreenUI: {fileID: 0}
 --- !u!1001 &4514663859771270851
 PrefabInstance:
   m_ObjectHideFlags: 0

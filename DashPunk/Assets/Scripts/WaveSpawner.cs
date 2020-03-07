@@ -18,6 +18,7 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountDown = 1f;
     public Text enemiesText;
     public static int totalEnemies;
+    public GameObject waveEnd;
     
 
     [System.Serializable]
@@ -120,6 +121,8 @@ public class WaveSpawner : MonoBehaviour
 
     void waveCompleted()
     {
+        Debug.Log("game paused to go to upgrade screen.");
+        waveEnd.GetComponent<UpgradeScreen>().Pause();
         Debug.Log("Wave Completed!");
         waveState = state.COUNTING;
         waveCountDown = nextWaveTime;
