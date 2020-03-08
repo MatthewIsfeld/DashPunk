@@ -13,12 +13,12 @@ public class HealthBar : MonoBehaviour
         healthbarUI.SetActive(true);
         slider.maxValue = health;
         slider.value = health;
-        Debug.Log("max Health set on healthbar script.");
+        //Debug.Log("max Health set on healthbar script.");
     }
     public void setHealth (int health)
     {
         slider.value = health;
-        Debug.Log("Health set on healthbar script.");
+        //Debug.Log("Health set on healthbar script.");
     }
 
     public void setActive()
