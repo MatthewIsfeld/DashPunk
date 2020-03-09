@@ -6550,7 +6550,7 @@ PrefabInstance:
     - target: {fileID: 4658793960413423984, guid: 987230af80fb9b941b00a85a8bea134c,
         type: 3}
       propertyPath: m_Name
-      value: WaveSpawner
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8051089645976310939, guid: 987230af80fb9b941b00a85a8bea134c,
         type: 3}

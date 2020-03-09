@@ -145,7 +145,7 @@ public class GEnemyControl : MonoBehaviour
                 if (hearts <= 0)
                 {
                     //CreateBlood();
-                    WaveSpawner.totalEnemies -= 1;
+                    Spawner.totalEnemies -= 1;
                     this.gameObject.SetActive(false);
                 }
             }
@@ -172,7 +172,7 @@ public class GEnemyControl : MonoBehaviour
             if (hearts <= 0)
             {
                 //CreateBlood();
-                WaveSpawner.totalEnemies -= 1;
+                Spawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
             }
         }
@@ -185,7 +185,7 @@ public class GEnemyControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                WaveSpawner.totalEnemies -= 1;
+                Spawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
             }
         }
@@ -207,7 +207,7 @@ public class GEnemyControl : MonoBehaviour
                     if (hearts <= 0)
                     {
                         //CreateBlood();
-                        WaveSpawner.totalEnemies -= 1;
+                        Spawner.totalEnemies -= 1;
                         this.gameObject.SetActive(false);
                     }
                 }

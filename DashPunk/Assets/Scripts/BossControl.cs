@@ -153,7 +153,7 @@ public class BossControl : MonoBehaviour
                 {
                     healthbar.setUnactive();
                     //CreateBlood();
-                    WaveSpawner.totalEnemies -= 1;
+                    Spawner.totalEnemies -= 1;
                     this.gameObject.SetActive(false);
                 }
             }
@@ -180,7 +180,7 @@ public class BossControl : MonoBehaviour
             if (hearts <= 0)
             {
                 //CreateBlood();
-                WaveSpawner.totalEnemies -= 1;
+                Spawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
                 healthbar.setUnactive();
             }
@@ -192,7 +192,7 @@ public class BossControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                WaveSpawner.totalEnemies -= 1;
+                Spawner.totalEnemies -= 1;
                 this.gameObject.SetActive(false);
                 healthbar.setUnactive();
             }
@@ -214,7 +214,7 @@ public class BossControl : MonoBehaviour
                     rb.AddForce(bounceDir * 15000);
                     if (hearts <= 0)
                     {
-                        WaveSpawner.totalEnemies -= 1;
+                        Spawner.totalEnemies -= 1;
                         //CreateBlood();
                         this.gameObject.SetActive(false);
                         healthbar.setUnactive();
