@@ -201,6 +201,11 @@ public class PlayerController : MonoBehaviour
                 Invoke("pierceDashCD", pierceDashCooldown);
                 Invoke("dashCD", genericDashCooldown);
                 spaceDash = false;
+                for (int i = 0; i < enemyColliders.Count; i++)
+                {
+                    tempEnemyCollider = enemyColliders[i].GetComponent<Collider2D>();
+                    tempEnemyCollider.enabled = true;
+                }
             }
             else
             {
