@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    public enum state { SPAWNING, WAITING, COUNTING };
-
-    public state waveState = state.COUNTING;
+    public int waveState = 1; //1 is between waves, 2 is during wave, 3 is creating wave
     public OneWave[] waves;
     private int nextWave = 0;
 
@@ -45,7 +43,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (waveState == state.WAITING)
+        if (waveState == 2)
         {
             //Check if enemies are still alive
             if (checkAlive() == false)
@@ -60,7 +58,7 @@ public class Spawner : MonoBehaviour
         }
         if (waveCountDown <= 0)
         {
-            if (waveState != state.SPAWNING)
+            if (waveState != 3)
             {
                 //Spawn wave
                 StartCoroutine(spawnWave(waves[nextWave]));
@@ -74,7 +72,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator spawnWave(OneWave theWave)
     {
-        waveState = state.SPAWNING;
+        waveState = 3;
         totalEnemies = theWave.enemy1Count + theWave.enemy2Count + theWave.enemy3Count;
         enemiesText.text = "Enemies Remaining: " + totalEnemies;
 
@@ -94,7 +92,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(1f / theWave.spawnRate);
         }
 
-        waveState = state.WAITING;
+        waveState = 2;
         yield break;
     }
 
@@ -124,7 +122,7 @@ public class Spawner : MonoBehaviour
         Debug.Log("game paused to go to upgrade screen.");
         waveEnd.GetComponent<UpgradeScreen>().Pause();
         Debug.Log("Wave Completed!");
-        waveState = state.COUNTING;
+        waveState = 1;
         waveCountDown = nextWaveTime;
 
         if (nextWave + 1 > waves.Length - 1)
