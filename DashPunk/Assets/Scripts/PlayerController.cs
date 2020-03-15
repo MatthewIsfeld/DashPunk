@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         // Start dash when right and left mouse buttons are pressed
         if (PauseMenu.isPaused == false) // These things can only happen when the game is not paused
         {
-            if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0))
+            if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0) && pierceCooldown == false && dashCooldown == false)
             {
                 //GameObject bLine = Instantiate(bounceLine, GameObject.FindGameObjectsWithTag("Player")[0].transform.position, rotation);
                 //if (Input.GetMouseButtonUp(1))
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
                 isPierceDashing = 1;
                // }
             }
-            else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0))
+            else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0) && bounceCooldown == false && dashCooldown == false)
             {
 
                 //if (Input.GetMouseButtonUp(0))
@@ -169,6 +169,7 @@ public class PlayerController : MonoBehaviour
                     tempBody = enemyColliders[i].GetComponent<Rigidbody2D>();
                     tempBody.isKinematic = false;
                 }
+                enemyHits = 0;
 
             } else
             {
@@ -185,7 +186,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move character when pierceDashing and disable enemy collider so character can pass through
-        else if (isPierceDashing == 1 && pierceCooldown == false && dashCooldown == false)
+        else if (isPierceDashing == 1)
         {
             for (int i = 0; i < enemyColliders.Count; i++)
             {
@@ -219,7 +220,7 @@ public class PlayerController : MonoBehaviour
 
             // Move character when BounceDashing
         }
-        else if (isBounceDashing == 1 && bounceCooldown == false && dashCooldown == false)
+        else if (isBounceDashing == 1)
         {
             CreateDust();
             if (dashTime <= 0)

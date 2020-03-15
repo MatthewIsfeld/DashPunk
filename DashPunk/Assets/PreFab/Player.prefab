@@ -5118,9 +5118,9 @@ MonoBehaviour:
   pierceDamage: 1
   bounceCloneDamage: 1
   pierceCloneDamage: 1
-  bounceDashCooldown: 0.5
-  pierceDashCooldown: 0.5
-  genericDashCooldown: 0.25
+  bounceDashCooldown: 0.8
+  pierceDashCooldown: 0.8
+  genericDashCooldown: 0.6
   hearts: 5
   speed: 10
   dashSpeed: 70
