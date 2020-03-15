@@ -106,6 +106,8 @@ MonoBehaviour:
   hearts: 2
   invulnTimeStart: 0.3
   blood: {fileID: 0}
+  HealthDrop: {fileID: 4035910383399343260, guid: 61c6fa629ad810d4ea94ebe789f18754,
+    type: 3}
 --- !u!50 &2982679444377936995
 Rigidbody2D:
   serializedVersion: 4

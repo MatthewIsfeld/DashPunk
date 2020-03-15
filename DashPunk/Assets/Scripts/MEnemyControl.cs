@@ -21,6 +21,7 @@ public class MEnemyControl : MonoBehaviour
     private Vector2 bounceDir;
     public ParticleSystem blood;
     public static bool isHalted = false;
+    public GameObject HealthDrop;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +97,7 @@ public class MEnemyControl : MonoBehaviour
                 {
                     //CreateBlood();
                     Spawner.totalEnemies -= 1;
+                    spawnHealthDrop();
                     this.gameObject.SetActive(false);
                 }
             }
@@ -122,6 +124,7 @@ public class MEnemyControl : MonoBehaviour
             {
                 //CreateBlood();
                 Spawner.totalEnemies -= 1;
+                spawnHealthDrop();
                 this.gameObject.SetActive(false);
             }
         }
@@ -133,6 +136,7 @@ public class MEnemyControl : MonoBehaviour
             if (hearts <= 0)
             {
                 Spawner.totalEnemies -= 1;
+                spawnHealthDrop();
                 this.gameObject.SetActive(false);
             }
         }
@@ -155,6 +159,7 @@ public class MEnemyControl : MonoBehaviour
                     {
                         Spawner.totalEnemies -= 1;
                         //CreateBlood();
+                        spawnHealthDrop();
                         this.gameObject.SetActive(false);
                     }
                 }
@@ -164,5 +169,15 @@ public class MEnemyControl : MonoBehaviour
     void CreateBlood()
     {
         blood.Play();
+    }
+
+    void spawnHealthDrop()
+    {
+        int randVal;
+        randVal = Random.Range(0, 100);
+        if (randVal <= 20)
+        {
+            Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0));
+        }
     }
 }

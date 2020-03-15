@@ -9,6 +9,7 @@ TagManager:
   - BounceClone
   - PierceClone
   - mouse
+  - HealthDrop
   layers:
   - Default
   - TransparentFX

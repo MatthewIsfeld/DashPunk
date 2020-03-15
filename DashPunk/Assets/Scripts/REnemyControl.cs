@@ -32,6 +32,7 @@ public class REnemyControl : MonoBehaviour
     public Transform rightWall;
     public Transform bottomWall;
     private GameObject shotBullet;
+    public GameObject HealthDrop;
 
     // Start is called before the first frame update
     void Start()
@@ -146,6 +147,7 @@ public class REnemyControl : MonoBehaviour
                 {
                     //CreateBlood();
                     Spawner.totalEnemies -= 1;
+                    spawnHealthDrop();
                     this.gameObject.SetActive(false);
                 }
             }
@@ -173,6 +175,7 @@ public class REnemyControl : MonoBehaviour
             {
                 //CreateBlood();
                 Spawner.totalEnemies -= 1;
+                spawnHealthDrop();
                 this.gameObject.SetActive(false);
             }
         }
@@ -186,6 +189,7 @@ public class REnemyControl : MonoBehaviour
             if (hearts <= 0)
             {
                 Spawner.totalEnemies -= 1;
+                spawnHealthDrop();
                 this.gameObject.SetActive(false);
             }
         }
@@ -208,6 +212,7 @@ public class REnemyControl : MonoBehaviour
                     {
                         //CreateBlood();
                         Spawner.totalEnemies -= 1;
+                        spawnHealthDrop();
                         this.gameObject.SetActive(false);
                     }
                 }
@@ -217,5 +222,15 @@ public class REnemyControl : MonoBehaviour
     void CreateBlood()
     {
         blood.Play();
+    }
+
+    void spawnHealthDrop()
+    {
+        int randVal;
+        randVal = Random.Range(0, 100);
+        if (randVal <= 20)
+        {
+            Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0));
+        }
     }
 }

@@ -166,6 +166,8 @@ MonoBehaviour:
     type: 3}
   bottomWall: {fileID: 135878743834079277, guid: 1f699f9001dd1f844ab5326c8c17aef3,
     type: 3}
+  HealthDrop: {fileID: 4035910383399343260, guid: 61c6fa629ad810d4ea94ebe789f18754,
+    type: 3}
 --- !u!61 &-9022841987287687294
 BoxCollider2D:
   m_ObjectHideFlags: 0

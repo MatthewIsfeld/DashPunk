@@ -274,6 +274,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("HealthDrop"))
+        {
+            if ((isBounceDashing == 0) && (isPierceDashing == 0))
+            {
+                if (hearts < 5)
+                {
+                    hearts += 1;
+                    healthbar.setHealth(hearts);
+                }
+                other.gameObject.SetActive(false);
+            }
+        }
+
+    }
+
     void CreateDust()
     {
         dust.Play();
