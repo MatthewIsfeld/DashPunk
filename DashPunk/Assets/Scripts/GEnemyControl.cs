@@ -33,6 +33,7 @@ public class GEnemyControl : MonoBehaviour
     public Transform bottomWall;
     private GameObject shotGrenade;
     public GameObject HealthDrop;
+    public GameObject HealthUpgrade;
 
     // Start is called before the first frame update
     void Start()
@@ -218,6 +219,11 @@ public class GEnemyControl : MonoBehaviour
         Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnHealthUpgrade()
+    {
+        Instantiate(HealthUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -227,6 +233,10 @@ public class GEnemyControl : MonoBehaviour
         if (randVal <= 20)
         {
             spawnHealthDrop();
+        }
+        else if (randVal > 20 && randVal <= 40)
+        {
+            spawnHealthUpgrade();
         }
         this.gameObject.SetActive(false);
     }

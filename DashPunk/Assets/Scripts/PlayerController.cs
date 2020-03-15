@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public float pierceDashCooldown;
     public float genericDashCooldown; //A cooldown that applies to both dashes
     public int hearts;
+    private int maxHealth;
     public float speed; //Movement speed with WASD
     public float dashSpeed; //This determines the speed of the dash combined with initialDashTime
     private float dashTime;
@@ -74,7 +75,8 @@ public class PlayerController : MonoBehaviour
         isBounceDashing = 0;
         spaceDash = false;
         hearts = 5;
-        healthbar.setMaxHealth(hearts);
+        maxHealth = hearts;
+        healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
     }
 
@@ -280,11 +282,22 @@ public class PlayerController : MonoBehaviour
         {
             if ((isBounceDashing == 0) && (isPierceDashing == 0))
             {
-                if (hearts < 5)
+                if (hearts < maxHealth)
                 {
                     hearts += 1;
                     healthbar.setHealth(hearts);
                 }
+                other.gameObject.SetActive(false);
+            }
+        }
+        else if (other.gameObject.CompareTag("MaxHealthUpgrade"))
+        {
+            if ((isBounceDashing == 0) && (isPierceDashing == 0))
+            {
+                maxHealth += 1;
+                healthbar.setMaxHealth(maxHealth);
+                hearts += 1;
+                healthbar.setHealth(hearts);
                 other.gameObject.SetActive(false);
             }
         }

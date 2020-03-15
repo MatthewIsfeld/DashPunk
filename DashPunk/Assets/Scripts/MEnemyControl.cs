@@ -22,6 +22,7 @@ public class MEnemyControl : MonoBehaviour
     public ParticleSystem blood;
     public static bool isHalted = false;
     public GameObject HealthDrop;
+    public GameObject HealthUpgrade;
 
     // Start is called before the first frame update
     void Start()
@@ -165,6 +166,11 @@ public class MEnemyControl : MonoBehaviour
         Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnHealthUpgrade()
+    {
+        Instantiate(HealthUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -174,6 +180,10 @@ public class MEnemyControl : MonoBehaviour
         if (randVal <= 20)
         {
             spawnHealthDrop();
+        }
+        else if (randVal > 20 && randVal <= 40)
+        {
+            spawnHealthUpgrade();
         }
         this.gameObject.SetActive(false);
     }

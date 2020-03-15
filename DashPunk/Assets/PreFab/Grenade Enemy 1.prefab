@@ -224,3 +224,5 @@ MonoBehaviour:
     type: 3}
   HealthDrop: {fileID: 4035910383399343260, guid: 61c6fa629ad810d4ea94ebe789f18754,
     type: 3}
+  HealthUpgrade: {fileID: 3856469186272228498, guid: dc9a67a96a53ffc4e9fd216099811175,
+    type: 3}

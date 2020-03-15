@@ -10,6 +10,7 @@ TagManager:
   - PierceClone
   - mouse
   - HealthDrop
+  - MaxHealthUpgrade
   layers:
   - Default
   - TransparentFX
