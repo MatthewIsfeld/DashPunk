@@ -215,19 +215,19 @@ public class REnemyControl : MonoBehaviour
 
     void spawnHealthDrop()
     {
-        int randVal;
-        randVal = Random.Range(0, 100);
-        if (randVal <= 20)
-        {
-            Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0));
-        }
+        Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0)); 
     }
 
     void death()
     {
+        int randVal;
+        randVal = Random.Range(0, 100);
         Spawner.totalEnemies -= 1;
         //CreateBlood();
-        spawnHealthDrop();
+        if (randVal <= 20)
+        {
+            spawnHealthDrop();
+        }
         this.gameObject.SetActive(false);
     }
 }
