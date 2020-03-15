@@ -145,10 +145,7 @@ public class GEnemyControl : MonoBehaviour
                 invuln = 1;
                 if (hearts <= 0)
                 {
-                    //CreateBlood();
-                    Spawner.totalEnemies -= 1;
-                    spawnHealthDrop();
-                    this.gameObject.SetActive(false);
+                    death();
                 }
             }
         }
@@ -173,10 +170,7 @@ public class GEnemyControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                //CreateBlood();
-                Spawner.totalEnemies -= 1;
-                spawnHealthDrop();
-                this.gameObject.SetActive(false);
+                death();
             }
         }
 
@@ -188,9 +182,7 @@ public class GEnemyControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                Spawner.totalEnemies -= 1;
-                spawnHealthDrop();
-                this.gameObject.SetActive(false);
+                death();
             }
         }
 
@@ -210,10 +202,7 @@ public class GEnemyControl : MonoBehaviour
                     rb.AddForce(bounceDir * 15000);
                     if (hearts <= 0)
                     {
-                        //CreateBlood();
-                        Spawner.totalEnemies -= 1;
-                        spawnHealthDrop();
-                        this.gameObject.SetActive(false);
+                        death();
                     }
                 }
             }
@@ -232,5 +221,13 @@ public class GEnemyControl : MonoBehaviour
         {
             Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0));
         }
+    }
+
+    void death()
+    {
+        Spawner.totalEnemies -= 1;
+        //CreateBlood();
+        spawnHealthDrop();
+        this.gameObject.SetActive(false);
     }
 }

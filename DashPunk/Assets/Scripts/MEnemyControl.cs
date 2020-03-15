@@ -95,10 +95,7 @@ public class MEnemyControl : MonoBehaviour
                 invuln = 1;
                 if (hearts <= 0)
                 {
-                    //CreateBlood();
-                    Spawner.totalEnemies -= 1;
-                    spawnHealthDrop();
-                    this.gameObject.SetActive(false);
+                    death();
                 }
             }
         }
@@ -122,10 +119,7 @@ public class MEnemyControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                //CreateBlood();
-                Spawner.totalEnemies -= 1;
-                spawnHealthDrop();
-                this.gameObject.SetActive(false);
+                death();
             }
         }
         if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
@@ -135,9 +129,7 @@ public class MEnemyControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                Spawner.totalEnemies -= 1;
-                spawnHealthDrop();
-                this.gameObject.SetActive(false);
+                death();
             }
         }
            
@@ -157,10 +149,7 @@ public class MEnemyControl : MonoBehaviour
                     rb.AddForce(bounceDir * 15000);
                     if (hearts <= 0)
                     {
-                        Spawner.totalEnemies -= 1;
-                        //CreateBlood();
-                        spawnHealthDrop();
-                        this.gameObject.SetActive(false);
+                        death();
                     }
                 }
             }
@@ -179,5 +168,13 @@ public class MEnemyControl : MonoBehaviour
         {
             Instantiate(HealthDrop, this.transform.position, new Quaternion(0, 0, 0, 0));
         }
+    }
+
+    void death()
+    {
+        Spawner.totalEnemies -= 1;
+        //CreateBlood();
+        spawnHealthDrop();
+        this.gameObject.SetActive(false);
     }
 }
