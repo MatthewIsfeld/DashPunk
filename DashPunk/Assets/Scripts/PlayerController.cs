@@ -121,7 +121,8 @@ public class PlayerController : MonoBehaviour
                 //GameObject bLine = Instantiate(bounceLine, GameObject.FindGameObjectsWithTag("Player")[0].transform.position, Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime));
                 //if (Input.GetMouseButtonUp(1))
                 //{
-                    //Destroy(bLine);
+                //Destroy(bLine);
+                    invuln = 1;
                     isPierceDashing = 1;
                 //}
             }
@@ -130,7 +131,8 @@ public class PlayerController : MonoBehaviour
 
                 //if (Input.GetMouseButtonUp(0))
                 //{
-                    isBounceDashing = 1;
+                invuln = 1;
+                isBounceDashing = 1;
                 //}
             }
             else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
