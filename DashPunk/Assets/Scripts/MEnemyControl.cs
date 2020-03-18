@@ -23,6 +23,7 @@ public class MEnemyControl : MonoBehaviour
     public static bool isHalted = false;
     public GameObject HealthDrop;
     public GameObject HealthUpgrade;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -39,13 +40,19 @@ public class MEnemyControl : MonoBehaviour
     void Update()
     {
         Vector3 direction = Player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if (isHalted == false)
-        {
-            rb.rotation = angle;
-        }
+       // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+       // if (isHalted == false)
+        //{
+           // rb.rotation = angle;
+        //}
         direction.Normalize();
         movement = direction;
+
+        //Animation Code
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
         playerObject = GameObject.Find("Player");
         if (playerObject != null)
         {
