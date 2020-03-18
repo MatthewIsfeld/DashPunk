@@ -1,7 +1,115 @@
 fileFormatVersion: 2
 guid: ceda44ce72c71a54aba0ff21678689dd
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5218938108991132534
+    second: AgentShoot_0
+  - first:
+      213: 4066978238998227432
+    second: AgentShoot_1
+  - first:
+      213: -8944292023776330512
+    second: AgentShoot_2
+  - first:
+      213: -3287547136869043422
+    second: AgentShoot_3
+  - first:
+      213: 8848939415035169802
+    second: AgentShoot_4
+  - first:
+      213: -4331157130969294232
+    second: AgentShoot_5
+  - first:
+      213: -8438735329144453865
+    second: AgentShoot_6
+  - first:
+      213: -2382340267844852464
+    second: AgentShoot_7
+  - first:
+      213: -4438204486409588759
+    second: AgentShoot_8
+  - first:
+      213: 8080940273625845035
+    second: AgentShoot_9
+  - first:
+      213: -4881333490568205855
+    second: AgentShoot_10
+  - first:
+      213: 1715863900279573782
+    second: AgentShoot_11
+  - first:
+      213: 8947480768170739692
+    second: AgentShoot_12
+  - first:
+      213: -9057329453684144719
+    second: AgentShoot_13
+  - first:
+      213: 1169590302467168731
+    second: AgentShoot_14
+  - first:
+      213: -3984394467623576701
+    second: AgentShoot_15
+  - first:
+      213: 5002470066289239691
+    second: AgentShoot_16
+  - first:
+      213: 1831018513014514162
+    second: AgentShoot_17
+  - first:
+      213: -7941793562141805257
+    second: AgentShoot_18
+  - first:
+      213: 7232884011724700967
+    second: AgentShoot_19
+  - first:
+      213: -2904606375128008132
+    second: AgentShoot_20
+  - first:
+      213: -8757346019843219304
+    second: AgentShoot_21
+  - first:
+      213: -5985347622134351916
+    second: AgentShoot_22
+  - first:
+      213: 164826155245040306
+    second: AgentShoot_23
+  - first:
+      213: -8675198804920859569
+    second: AgentShoot_24
+  - first:
+      213: 2982349616313230117
+    second: AgentShoot_25
+  - first:
+      213: -3439432296960661017
+    second: AgentShoot_26
+  - first:
+      213: 6809287129900330854
+    second: AgentShoot_27
+  - first:
+      213: 5352032036797086823
+    second: AgentShoot_28
+  - first:
+      213: 5932101633005023816
+    second: AgentShoot_29
+  - first:
+      213: -5106928224521015099
+    second: AgentShoot_30
+  - first:
+      213: 2662736138472134089
+    second: AgentShoot_31
+  - first:
+      213: 5396081312390322435
+    second: AgentShoot_32
+  - first:
+      213: 8785664653594117261
+    second: AgentShoot_33
+  - first:
+      213: -1711662318755858299
+    second: AgentShoot_34
+  - first:
+      213: 8919890448272366969
+    second: AgentShoot_35
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +148,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +178,789 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AgentShoot_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 195
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6735a2b1f846d6840800000000000000
+      internalID: 5218938108991132534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 195
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9abbc192fc07830800000000000000
+      internalID: 4066978238998227432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 194
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcb3731bcd7fd380800000000000000
+      internalID: -8944292023776330512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 193
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22371941c494062d0800000000000000
+      internalID: -3287547136869043422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 194
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ccf18a38fbdca70800000000000000
+      internalID: 8848939415035169802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 195
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86adc2e6983a4e3c0800000000000000
+      internalID: -4331157130969294232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 194
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7154ec0bde693ea80800000000000000
+      internalID: -8438735329144453865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 193
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015aff8062a30fed0800000000000000
+      internalID: -2382340267844852464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 194
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efe203c8845862c0800000000000000
+      internalID: -4438204486409588759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 130
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dcd9c3d54452070800000000000000
+      internalID: 8080940273625845035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 130
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9e6708d05024cb0800000000000000
+      internalID: -4881333490568205855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 131
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d84135029ffc710800000000000000
+      internalID: 1715863900279573782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_12
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 131
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7c4755a56db2c70800000000000000
+      internalID: 8947480768170739692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_13
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 130
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5497389d6ed4280800000000000000
+      internalID: -9057329453684144719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 130
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd91c4fee283b3010800000000000000
+      internalID: 1169590302467168731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_15
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 130
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38bd348875694b8c0800000000000000
+      internalID: -3984394467623576701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_16
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 130
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86e1b465085c6540800000000000000
+      internalID: 5002470066289239691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_17
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 130
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1e46de2a5196910800000000000000
+      internalID: 1831018513014514162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 66
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735bd0925d419c190800000000000000
+      internalID: -7941793562141805257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_19
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 66
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72df37cefad506460800000000000000
+      internalID: 7232884011724700967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_20
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3af82e14e3c0b7d0800000000000000
+      internalID: -2904606375128008132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_21
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 64
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89060108138a77680800000000000000
+      internalID: -8757346019843219304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_22
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7f375ac06cfeca0800000000000000
+      internalID: -5985347622134351916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_23
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 66
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2f211d384994200800000000000000
+      internalID: 164826155245040306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_24
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f448ccc66a08b9780800000000000000
+      internalID: -8675198804920859569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_25
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 65
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5236f54cc2f636920800000000000000
+      internalID: 2982349616313230117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_26
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e967ae7c8ea440d0800000000000000
+      internalID: -3439432296960661017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_27
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 2
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f295741927f7e50800000000000000
+      internalID: 6809287129900330854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_28
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cfccbf7cc364a40800000000000000
+      internalID: 5352032036797086823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_29
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 3
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84277ce610f035250800000000000000
+      internalID: 5932101633005023816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_30
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 3
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0320466db8029b0800000000000000
+      internalID: -5106928224521015099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_31
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 2
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c51a300960f3f420800000000000000
+      internalID: 2662736138472134089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_32
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 2
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309162c2d5bb2ea40800000000000000
+      internalID: 5396081312390322435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_33
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84ce293473fce970800000000000000
+      internalID: 8785664653594117261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_34
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 2
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588b22b9034fe38e0800000000000000
+      internalID: -1711662318755858299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgentShoot_35
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 2
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d9ca46a11d9cb70800000000000000
+      internalID: 8919890448272366969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
