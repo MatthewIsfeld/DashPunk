@@ -11,6 +11,7 @@ TagManager:
   - mouse
   - HealthDrop
   - MaxHealthUpgrade
+  - Explosion
   layers:
   - Default
   - TransparentFX

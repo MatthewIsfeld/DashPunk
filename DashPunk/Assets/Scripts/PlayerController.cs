@@ -319,6 +319,21 @@ public class PlayerController : MonoBehaviour
                 inventoryCount[0] += 1;
                 other.gameObject.SetActive(false);
             }
+        } 
+        if (other.gameObject.CompareTag("Explosion"))
+        {
+            if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
+            {
+                hearts -= 1;
+                healthbar.setHealth(hearts);
+                invuln = 1;
+                if (hearts < 1)
+                {
+                    Invoke("mainMenu", 2.5f);
+                    deadText.text = "THE PUNK'S JOURNEY IS OVER";
+                    this.gameObject.SetActive(false);
+                }
+            }
         }
 
     }
