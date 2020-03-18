@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     public float haltTime;
     public float invulnTimeStart;
     private float invulnTime;
+    public int clonesAllowed;
 
     void Start()
     {
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
         maxHealth = hearts;
         healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
+        clonesAllowed = 4;
     }
 
     // Update is called once per frame

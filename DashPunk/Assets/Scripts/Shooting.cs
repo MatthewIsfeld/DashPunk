@@ -13,10 +13,12 @@ public class Shooting : MonoBehaviour
     public List<GameObject> pierceList = new List<GameObject>();
     public List<Vector2> bDirList = new List<Vector2>();
     public List<Vector2> pDirList = new List<Vector2>();
+    private int cloneNum;
 
     void Start()
     {
         playerAccess = GameObject.Find("Player");
+        cloneNum = 0;
     }
     
     // Update is called once per frame
@@ -24,11 +26,19 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && playerAccess.GetComponent<PlayerController>().isHalting == 1) // Code for setting up bounce clones
         {
-            BounceDash();
+            if (cloneNum < playerAccess.GetComponent<PlayerController>().clonesAllowed)
+            {
+                BounceDash();
+                cloneNum++;
+            }
         }
         else if (Input.GetMouseButtonDown(1) && playerAccess.GetComponent<PlayerController>().isHalting == 1) // Code for setting up pierce clones
         {
-            PierceDash();
+            if (cloneNum < playerAccess.GetComponent<PlayerController>().clonesAllowed)
+            {
+                PierceDash();
+                cloneNum++;
+            }
         }
         if (playerAccess.GetComponent<PlayerController>().haltTime <= 0)
         {
@@ -60,10 +70,8 @@ public class Shooting : MonoBehaviour
         {
             pierceList[i].GetComponent<Rigidbody2D>().AddForce(pDirList[i] * 70f, ForceMode2D.Impulse);
         }
-        Invoke("clearClones", 0.8f);
-        
-
-
+        cloneNum = 0;
+        Invoke("clearClones", 0.8f);    
     }
 
     void clearClones()
