@@ -115,12 +115,15 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && (isHalting == 0) && (isBounceDashing == 0) && pierceCooldown == false && dashCooldown == false)
             {
-                //GameObject bLine = Instantiate(bounceLine, GameObject.FindGameObjectsWithTag("Player")[0].transform.position, rotation);
+                //var lookPos = cursorPos - playerPos;
+                //lookPos.y = 0;
+                //var rotation = Quaternion.LookRotation(lookPos);
+                //GameObject bLine = Instantiate(bounceLine, GameObject.FindGameObjectsWithTag("Player")[0].transform.position, Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime));
                 //if (Input.GetMouseButtonUp(1))
                 //{
-                //Destroy(bLine);
-                isPierceDashing = 1;
-               // }
+                    //Destroy(bLine);
+                    isPierceDashing = 1;
+                //}
             }
             else if (Input.GetMouseButtonDown(0) && (isHalting == 0) && (isPierceDashing == 0) && bounceCooldown == false && dashCooldown == false)
             {
