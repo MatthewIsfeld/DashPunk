@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerPos;
     private Vector2 cursorPos;
+    Vector2 movement;
     public static Vector2 direction;
     public int isPierceDashing;
     public int isBounceDashing;
@@ -84,16 +85,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Animation stuff
-        animator.SetFloat("Horizontal", playerPos.x);
-        animator.SetFloat("Vertical", playerPos.y);
-        animator.SetFloat("Speed", playerPos.sqrMagnitude);
-
         // Get Mouse cursor position relative to player and turn it into a unit vector
         playerPos = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = new Vector2(cursorPos.x - transform.position.x, cursorPos.y - transform.position.y);
         direction = direction.normalized;
+
+        // Animation stuff
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
 
         // Get all enemies
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
