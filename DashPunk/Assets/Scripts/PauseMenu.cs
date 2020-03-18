@@ -7,7 +7,6 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
-    public GameObject inventoryDisplayUI;
 
     // Update is called once per frame
     void Update()
@@ -43,11 +42,6 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
-    }
-
-    public void LoadInventory()
-    {
-        inventoryDisplayUI.SetActive(true);
     }
 }
 
