@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bounceLine;
     public GameObject pierceLine;
     public GameObject mouse;
+    public Animator animator;
 
     //Parameters for upgrades
     public int bounceDamage;
@@ -83,6 +84,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Animation stuff
+        animator.SetFloat("Horizontal", playerPos.x);
+        animator.SetFloat("Vertical", playerPos.y);
+        animator.SetFloat("Speed", playerPos.sqrMagnitude);
+
         // Get Mouse cursor position relative to player and turn it into a unit vector
         playerPos = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

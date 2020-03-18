@@ -1,7 +1,223 @@
 fileFormatVersion: 2
 guid: ea42280785afb6c4192a692d01fceb04
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3505632965608462228
+    second: Character1Walk_0
+  - first:
+      213: 5421965995043794486
+    second: Character1Walk_1
+  - first:
+      213: -3328297092498832288
+    second: Character1Walk_2
+  - first:
+      213: -6435802098132453895
+    second: Character1Walk_3
+  - first:
+      213: 2442266320935995462
+    second: Character1Walk_4
+  - first:
+      213: -2756310575187462029
+    second: Character1Walk_5
+  - first:
+      213: -3003083711277360615
+    second: Character1Walk_6
+  - first:
+      213: 3289882044283433571
+    second: Character1Walk_7
+  - first:
+      213: 488444441276137778
+    second: Character1Walk_8
+  - first:
+      213: 3863132708051310957
+    second: Character1Walk_9
+  - first:
+      213: -8222393012628890113
+    second: Character1Walk_10
+  - first:
+      213: -428797970578992999
+    second: Character1Walk_11
+  - first:
+      213: 1110158703281924016
+    second: Character1Walk_12
+  - first:
+      213: -7203086997964853643
+    second: Character1Walk_13
+  - first:
+      213: -76014352922137593
+    second: Character1Walk_14
+  - first:
+      213: 4837171887599772991
+    second: Character1Walk_15
+  - first:
+      213: 3439932397756240786
+    second: Character1Walk_16
+  - first:
+      213: -242340799961985243
+    second: Character1Walk_17
+  - first:
+      213: 4980115403327913131
+    second: Character1Walk_18
+  - first:
+      213: 1617121816444413207
+    second: Character1Walk_19
+  - first:
+      213: -6872597582492979386
+    second: Character1Walk_20
+  - first:
+      213: -7000947545538061048
+    second: Character1Walk_21
+  - first:
+      213: -4431701869101796772
+    second: Character1Walk_22
+  - first:
+      213: 2026862417606144684
+    second: Character1Walk_23
+  - first:
+      213: 9020229952032322905
+    second: Character1Walk_24
+  - first:
+      213: 6618377879770524295
+    second: Character1Walk_25
+  - first:
+      213: -4669724046779225204
+    second: Character1Walk_26
+  - first:
+      213: -7473983468906722682
+    second: Character1Walk_27
+  - first:
+      213: 5582012514006250755
+    second: Character1Walk_28
+  - first:
+      213: 6000714726757008318
+    second: Character1Walk_29
+  - first:
+      213: 8391880766893412567
+    second: Character1Walk_30
+  - first:
+      213: 7240277813888307502
+    second: Character1Walk_31
+  - first:
+      213: -6481888941955836573
+    second: Character1Walk_32
+  - first:
+      213: -1428909793693366291
+    second: Character1Walk_33
+  - first:
+      213: -6067737913029665923
+    second: Character1Walk_34
+  - first:
+      213: 5947064106994217598
+    second: Character1Walk_35
+  - first:
+      213: -7933257904523019585
+    second: Character1Walk_0
+  - first:
+      213: -9084709697884159369
+    second: Character1Walk_1
+  - first:
+      213: 7056296753761748914
+    second: Character1Walk_2
+  - first:
+      213: 5196085574048701589
+    second: Character1Walk_3
+  - first:
+      213: -5278064122294589670
+    second: Character1Walk_4
+  - first:
+      213: -9182396387744872697
+    second: Character1Walk_5
+  - first:
+      213: -6078457807739313278
+    second: Character1Walk_6
+  - first:
+      213: 1074081973072647290
+    second: Character1Walk_7
+  - first:
+      213: -3934740110551082585
+    second: Character1Walk_8
+  - first:
+      213: 3665018663391087356
+    second: Character1Walk_9
+  - first:
+      213: 8498788594578316039
+    second: Character1Walk_10
+  - first:
+      213: 2945108397700147263
+    second: Character1Walk_11
+  - first:
+      213: 4592003357545516573
+    second: Character1Walk_12
+  - first:
+      213: 8584328335087014275
+    second: Character1Walk_13
+  - first:
+      213: -2823137432777227155
+    second: Character1Walk_14
+  - first:
+      213: -8271891385154082129
+    second: Character1Walk_15
+  - first:
+      213: -4972994907250854655
+    second: Character1Walk_16
+  - first:
+      213: 776920249531387348
+    second: Character1Walk_17
+  - first:
+      213: 5134763204331243573
+    second: Character1Walk_18
+  - first:
+      213: 8442927160027629662
+    second: Character1Walk_19
+  - first:
+      213: 4217791172571437582
+    second: Character1Walk_20
+  - first:
+      213: 6093790660059765711
+    second: Character1Walk_21
+  - first:
+      213: 5327187196341015742
+    second: Character1Walk_22
+  - first:
+      213: 760674103317773614
+    second: Character1Walk_23
+  - first:
+      213: -3763775046780831367
+    second: Character1Walk_24
+  - first:
+      213: 8547168827782132153
+    second: Character1Walk_25
+  - first:
+      213: -4473879943564673959
+    second: Character1Walk_26
+  - first:
+      213: -9206160734847922223
+    second: Character1Walk_27
+  - first:
+      213: 1187400644849365625
+    second: Character1Walk_28
+  - first:
+      213: -2766296617522525777
+    second: Character1Walk_29
+  - first:
+      213: 285919775473151464
+    second: Character1Walk_30
+  - first:
+      213: -3002862925579234082
+    second: Character1Walk_31
+  - first:
+      213: -3973436753882145962
+    second: Character1Walk_32
+  - first:
+      213: 423759500791656041
+    second: Character1Walk_33
+  - first:
+      213: -475772306837582314
+    second: Character1Walk_34
+  - first:
+      213: 3923004898068934135
+    second: Character1Walk_35
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +256,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +286,789 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Character1Walk_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 195
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba7851d7f767e190800000000000000
+      internalID: -7933257904523019585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 195
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7728112a9a0ace180800000000000000
+      internalID: -9084709697884159369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 194
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b706bdf2800de160800000000000000
+      internalID: 7056296753761748914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 193
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c54bfac443c1840800000000000000
+      internalID: 5196085574048701589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 194
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17a5e825ac80c6b0800000000000000
+      internalID: -5278064122294589670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 195
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70703a1c223919080800000000000000
+      internalID: -9182396387744872697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 194
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283af7334daf4aba0800000000000000
+      internalID: -6078457807739313278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 193
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7455a02dd7e7ee00800000000000000
+      internalID: 1074081973072647290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 194
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a91f1377bef469c0800000000000000
+      internalID: -3934740110551082585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_9
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 130
+        width: 20
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa4a966e03ccd230800000000000000
+      internalID: 3665018663391087356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_10
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 130
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b5bf0c233c1f570800000000000000
+      internalID: 8498788594578316039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_11
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 131
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38efeddb702fd820800000000000000
+      internalID: 2945108397700147263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_12
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 131
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ec6e569b21abf30800000000000000
+      internalID: 4592003357545516573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_13
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 130
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3819e289329a12770800000000000000
+      internalID: 8584328335087014275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_14
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 130
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d648437667332d8d0800000000000000
+      internalID: -2823137432777227155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_15
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 130
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faae64f8c96543d80800000000000000
+      internalID: -8271891385154082129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_16
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 130
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1057c7bda7f5cfab0800000000000000
+      internalID: -4972994907250854655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_17
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 130
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd4024c9dc28ca00800000000000000
+      internalID: 776920249531387348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 66
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53809efdde7524740800000000000000
+      internalID: 5134763204331243573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_19
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 66
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58c1fdf48d4b2570800000000000000
+      internalID: 8442927160027629662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_20
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a16e189ba988a30800000000000000
+      internalID: 4217791172571437582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_21
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 65
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb947ca15e719450800000000000000
+      internalID: 6093790660059765711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_22
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb45ae9c788fde940800000000000000
+      internalID: 5327187196341015742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_23
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 66
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d381611157e8a00800000000000000
+      internalID: 760674103317773614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_24
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979362a498264cbc0800000000000000
+      internalID: -3763775046780831367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_25
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 65
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1fe3793c4ad9670800000000000000
+      internalID: 8547168827782132153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_26
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 65
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c351c15e599e1c0800000000000000
+      internalID: -4473879943564673959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_27
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2
+        width: 20
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df8d3686952d3080800000000000000
+      internalID: -9206160734847922223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_28
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972f05a689e7a7010800000000000000
+      internalID: 1187400644849365625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_29
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 3
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9843102e32c99d0800000000000000
+      internalID: -2766296617522525777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_30
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 3
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed265b558ac7f300800000000000000
+      internalID: 285919775473151464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_31
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 2
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4d8ab3410b356d0800000000000000
+      internalID: -3002862925579234082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 2
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b9f5313548bd8c0800000000000000
+      internalID: -3973436753882145962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_33
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 2
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e22e2550f71e500800000000000000
+      internalID: 423759500791656041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_34
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 2
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e4af09b97b569f0800000000000000
+      internalID: -475772306837582314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character1Walk_35
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 2
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd24897b20517630800000000000000
+      internalID: 3923004898068934135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
