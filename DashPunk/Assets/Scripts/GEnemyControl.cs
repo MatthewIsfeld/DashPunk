@@ -64,11 +64,17 @@ public class GEnemyControl : MonoBehaviour
                 direction.Normalize();
                 movement = direction;
 
-                //Animation Code
-                animator.SetFloat("Horizontal", movement.x);
-                animator.SetFloat("Vertical", movement.y);
-                animator.SetFloat("Speed", movement.sqrMagnitude);
-
+                if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+                {
+                    //Animation Code
+                    animator.SetFloat("Horizontal", movement.x);
+                    animator.SetFloat("Vertical", movement.y);
+                    animator.SetFloat("Speed", movement.sqrMagnitude);
+                }
+                if (playerObject.GetComponent<PlayerController>().isHalting == 1)
+                {
+                    animator.SetFloat("Speed", 0);
+                }
             }
         }
         if (playerObject != null)
@@ -84,7 +90,6 @@ public class GEnemyControl : MonoBehaviour
                 shootCooldown -= Time.deltaTime;
             }
         }
-        playerObject = GameObject.Find("Player");
         if (playerObject != null)
         {
             playerBounceDashing = playerObject.GetComponent<PlayerController>().isBounceDashing;

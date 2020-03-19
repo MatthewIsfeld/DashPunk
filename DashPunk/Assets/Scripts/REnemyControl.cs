@@ -77,7 +77,6 @@ public class REnemyControl : MonoBehaviour
                 shootCooldown -= Time.deltaTime;
             }
         }
-        playerObject = GameObject.Find("Player");
         if (playerObject != null)
         {
             playerBounceDashing = playerObject.GetComponent<PlayerController>().isBounceDashing;

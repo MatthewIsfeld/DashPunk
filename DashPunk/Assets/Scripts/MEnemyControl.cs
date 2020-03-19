@@ -48,12 +48,17 @@ public class MEnemyControl : MonoBehaviour
         direction.Normalize();
         movement = direction;
 
-        //Animation Code
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        playerObject = GameObject.Find("Player");
+        if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+        {
+            //Animation Code
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
+        if (playerObject.GetComponent<PlayerController>().isHalting == 1)
+        {
+            animator.SetFloat("Speed", 0);
+        }
         if (playerObject != null)
         {
             playerBounceDashing = playerObject.GetComponent<PlayerController>().isBounceDashing;
