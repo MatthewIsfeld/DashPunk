@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     public GameObject mouse;
     public Animator animator;
     public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health
+    public Text maxHealthUpTxt;
 
     //Parameters for upgrades
     public int bounceDamage;
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
         healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
         clonesAllowed = 4;
+        maxHealthUpTxt.text = inventoryCount[0].ToString();
     }
 
     // Update is called once per frame
@@ -317,6 +319,7 @@ public class PlayerController : MonoBehaviour
                 hearts += 1;
                 healthbar.setHealth(hearts);
                 inventoryCount[0] += 1;
+                maxHealthUpTxt.text = inventoryCount[0].ToString();
                 other.gameObject.SetActive(false);
             }
         } 
