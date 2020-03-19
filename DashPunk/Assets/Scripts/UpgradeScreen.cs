@@ -6,6 +6,7 @@ public class UpgradeScreen : MonoBehaviour
 {
     public static bool isUpgrading = false;
     public GameObject upgradeScreenUI;
+    public static bool inUpgradeMenu = false;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +20,7 @@ public class UpgradeScreen : MonoBehaviour
         Time.timeScale = 1f;
         isUpgrading = false;
         PauseMenu.isPaused = false;
+        inUpgradeMenu = false;
     }
 
     public void Pause()
@@ -27,5 +29,6 @@ public class UpgradeScreen : MonoBehaviour
         isUpgrading = true;
         upgradeScreenUI.SetActive(true);
         PauseMenu.isPaused = true;
+        inUpgradeMenu = true;
     }
 }

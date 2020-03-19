@@ -5,19 +5,23 @@ using UnityEngine;
 public class InventoryMenu : MonoBehaviour
 {
     public GameObject inventoryDisplayUI;
+    public static bool inInventoryMenu = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (PauseMenu.inPauseMenu == false && UpgradeScreen.inUpgradeMenu == false)
         {
-            if (PauseMenu.isPaused)
+            if (Input.GetKeyDown(KeyCode.I))
             {
-                Resume();
-            }
-            else
-            {
-                Pause();
+                if (PauseMenu.isPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }
@@ -27,6 +31,7 @@ public class InventoryMenu : MonoBehaviour
         inventoryDisplayUI.SetActive(false);
         Time.timeScale = 1f;
         PauseMenu.isPaused = false;
+        inInventoryMenu = false;
     }
 
     void Pause()
@@ -34,5 +39,6 @@ public class InventoryMenu : MonoBehaviour
         inventoryDisplayUI.SetActive(true);
         Time.timeScale = 0f;
         PauseMenu.isPaused = true;
+        inInventoryMenu = true;
     }
 }
