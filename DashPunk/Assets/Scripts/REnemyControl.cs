@@ -34,6 +34,7 @@ public class REnemyControl : MonoBehaviour
     private GameObject shotBullet;
     public GameObject HealthDrop;
     public GameObject HealthUpgrade;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class REnemyControl : MonoBehaviour
         playerObject = GameObject.Find("Player");
         shootCooldown = startShootCooldown;
         Player = playerObject.GetComponent<Transform>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update makes the enemy rotate to face the player
@@ -85,8 +87,10 @@ public class REnemyControl : MonoBehaviour
 
         if (invuln == 1)
         {
+            spriteRenderer.color = Color.red;
             if (invulnTime <= 0)
             {
+                spriteRenderer.color = Color.white;
                 invuln = 0;
                 invulnTime = invulnTimeStart;
                 bounced = 0;

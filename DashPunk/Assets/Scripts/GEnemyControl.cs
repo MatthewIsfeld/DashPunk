@@ -35,6 +35,7 @@ public class GEnemyControl : MonoBehaviour
     public GameObject HealthDrop;
     public GameObject HealthUpgrade;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class GEnemyControl : MonoBehaviour
         playerObject = GameObject.Find("Player");
         shootCooldown = startShootCooldown;
         Player = playerObject.GetComponent<Transform>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update makes the enemy rotate to face the player
@@ -97,8 +99,10 @@ public class GEnemyControl : MonoBehaviour
 
         if (invuln == 1)
         {
+            spriteRenderer.color = Color.red;
             if (invulnTime <= 0)
             {
+                spriteRenderer.color = Color.white;
                 invuln = 0;
                 invulnTime = invulnTimeStart;
                 bounced = 0;
