@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health
     public Text maxHealthUpTxt;
+    public SpriteRenderer spriteRenderer;
 
     //Parameters for upgrades
     public int bounceDamage;
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
         healthbar.setHealth(hearts);
         clonesAllowed = 4;
         maxHealthUpTxt.text = inventoryCount[0].ToString();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -151,8 +153,10 @@ public class PlayerController : MonoBehaviour
 
         if (invuln == 1)
         {
+            spriteRenderer.color = Color.gray; 
             if (invulnTime <= 0)
             {
+                spriteRenderer.color = Color.white;
                 invuln = 0;
                 invulnTime = invulnTimeStart;
             }
