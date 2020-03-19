@@ -18,6 +18,7 @@ public class UpgradeScreen : MonoBehaviour
         upgradeScreenUI.SetActive(false);
         Time.timeScale = 1f;
         isUpgrading = false;
+        PauseMenu.isPaused = false;
     }
 
     public void Pause()
@@ -25,5 +26,6 @@ public class UpgradeScreen : MonoBehaviour
         Time.timeScale = 0;
         isUpgrading = true;
         upgradeScreenUI.SetActive(true);
+        PauseMenu.isPaused = true;
     }
 }
