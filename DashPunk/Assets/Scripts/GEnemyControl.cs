@@ -65,6 +65,7 @@ public class GEnemyControl : MonoBehaviour
                 movement = direction;
 
                 //Animation Code
+                animator.enabled = true;
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
                 animator.SetFloat("Speed", movement.sqrMagnitude);
@@ -72,7 +73,7 @@ public class GEnemyControl : MonoBehaviour
             
             if (playerObject.GetComponent<PlayerController>().isHalting == 1)
             {
-                animator.SetFloat("Speed", 0);
+                animator.enabled = false;
             }
         }
         if (playerObject != null)

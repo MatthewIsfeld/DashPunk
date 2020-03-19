@@ -20,6 +20,13 @@ public class ExplosionControl : MonoBehaviour
        if (explosionTime > 0)
         {
             explosionTime -= Time.deltaTime;
+            if (playerObject.GetComponent<PlayerController>().isHalting == 1)
+            {
+                this.gameObject.GetComponent<Animator>().enabled = false;
+            } else
+            {
+                this.gameObject.GetComponent<Animator>().enabled = true;
+            }
         } else
         {
             if (playerObject != null)
