@@ -20,6 +20,8 @@ public class HeatSeekingControl : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player").transform;
             playerObject = GameObject.Find("Player");
             target = new Vector2(Player.position.x, Player.position.y);
+            rb = this.GetComponent<Rigidbody2D>();
+            direction = Player.position - transform.position;
         }
     }
 
@@ -29,8 +31,11 @@ public class HeatSeekingControl : MonoBehaviour
         if (playerObject != null)
         {
             target = new Vector2(Player.position.x, Player.position.y);
+            direction = Player.position - transform.position;
             if (playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                rb.rotation = angle;
                 transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
             }            
         }

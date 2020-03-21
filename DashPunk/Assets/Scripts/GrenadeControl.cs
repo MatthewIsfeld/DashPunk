@@ -8,8 +8,6 @@ public class GrenadeControl : MonoBehaviour
     public float speed;
     private Vector2 target;
     private GameObject playerObject;
-    private Rigidbody2D rb;
-    private Vector3 direction;
     public GameObject explosion;
     
     // Start is called before the first frame update
