@@ -14,21 +14,27 @@ public class BulletControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerObject = GameObject.Find("Player");
-        rb = this.GetComponent<Rigidbody2D>();
-        //target = new Vector2(Player.position.x, Player.position.y); Grenade Code
-        direction = Player.position - transform.position;
-        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player").transform;
+            playerObject = GameObject.Find("Player");
+            rb = this.GetComponent<Rigidbody2D>();
+            //target = new Vector2(Player.position.x, Player.position.y); Grenade Code
+            direction = Player.position - transform.position;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+        if (playerObject != null)
         {
-            rb.MovePosition(transform.position + (direction * speed * Time.deltaTime));
-            //transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime); Grenade Code
+            if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+            {
+                rb.MovePosition(transform.position + (direction * speed * Time.deltaTime));
+                //transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime); Grenade Code
+            }
         }
         
         /* Grande Code

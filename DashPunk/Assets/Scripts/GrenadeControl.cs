@@ -16,22 +16,28 @@ public class GrenadeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerObject = GameObject.Find("Player");
-        target = new Vector2(Player.position.x, Player.position.y);       
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player").transform;
+            playerObject = GameObject.Find("Player");
+            target = new Vector2(Player.position.x, Player.position.y);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+        if (playerObject != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        }        
-        if (transform.position.x == target.x && transform.position.y == target.y)
-        {
-            destroyGrenade();
-        }        
+            if (playerObject.GetComponent<PlayerController>().isHalting == 0)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            }
+            if (transform.position.x == target.x && transform.position.y == target.y)
+            {
+                destroyGrenade();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
