@@ -129,19 +129,27 @@ public class GEnemyControl : MonoBehaviour
                 if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
                 {
                     rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+                    //Animation Code
+                    animator.SetInteger("moveState", 2);
                 }
                 else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
                 {
                     rb.MovePosition(this.transform.position);
+                    //Animation Code
+                    animator.SetInteger("moveState", 1);
                 }
                 else if (Vector2.Distance(transform.position, Player.position) < retreatDistance && playerObject.GetComponent<PlayerController>().isPierceDashing == 0)
                 {
                     if ((Vector2.Distance(transform.position, topWall.localPosition) > 15) && (Vector2.Distance(transform.position, leftWall.localPosition) > 15) && (Vector2.Distance(transform.position, rightWall.localPosition) > 15) && (Vector2.Distance(transform.position, bottomWall.localPosition) > 15))
                     {
                         rb.MovePosition((Vector2)transform.position + (direction * -moveSpeed * Time.deltaTime));
+                        //Animation Code
+                        animator.SetInteger("moveState", 2);
                     } else
                     {
                         rb.MovePosition(this.transform.position);
+                        //Animation Code
+                        animator.SetInteger("moveState", 1);
                     }
                 }
             }
