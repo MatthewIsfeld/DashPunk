@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
     {
         waveCountDown = nextWaveTime;
         enemiesText.text = "";
-        enemiesText.fontSize = 18;
+        enemiesText.fontSize = 24;
     }
 
     // Update is called once per frame
