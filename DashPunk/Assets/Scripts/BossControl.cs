@@ -32,6 +32,7 @@ public class BossControl : MonoBehaviour
     public Transform firePoint;
     public Transform firePoint2;
     public HealthBar healthbar;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -57,13 +58,24 @@ public class BossControl : MonoBehaviour
             if (playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
                 Vector3 direction = Player.position - transform.position;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                if (isHalted == false)
-                {
-                    rb.rotation = angle;
-                }
+                //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                //if (isHalted == false)
+                //{
+                    //rb.rotation = angle;
+                //}
                 direction.Normalize();
                 movement = direction;
+
+                //Animation Code
+                animator.enabled = true;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+                animator.SetFloat("Speed", movement.sqrMagnitude);
+            }
+            
+            if (playerObject.GetComponent<PlayerController>().isHalting == 1)
+            {
+                animator.enabled = false;
             }
         }
         playerObject = GameObject.Find("Player");
