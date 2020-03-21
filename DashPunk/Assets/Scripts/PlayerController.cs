@@ -64,12 +64,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        initialDashTime = 0.10f;
         dashTime = initialDashTime;
         deadText.text = "";
         deadText.fontSize = 50;
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
         invuln = 0;
+        invulnTimeStart = 1;
         invulnTime = invulnTimeStart;
+        haltTimeStart = 5;
         haltTime = haltTimeStart;
         isHalting = 0;
         haltCooldown = true;
@@ -87,6 +90,17 @@ public class PlayerController : MonoBehaviour
         clonesAllowed = 4;
         maxHealthUpTxt.text = inventoryCount[0].ToString();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        knockBackPower = 5000;
+        bouncePower = 20000;
+        dashSpeed = 70;
+        speed = 10;
+        genericDashCooldown = 0.6f;
+        pierceDashCooldown = 0.8f;
+        bounceDashCooldown = 0.8f;
+        bounceDamage = 1;
+        pierceDamage = 1;
+        bounceCloneDamage = 1;
+        pierceCloneDamage = 1;
     }
 
     // Update is called once per frame
