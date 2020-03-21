@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrenadeControl : MonoBehaviour
+public class HeatSeekingControl : MonoBehaviour
 {
     private Transform Player;
     public float speed;
@@ -11,7 +11,7 @@ public class GrenadeControl : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 direction;
     public GameObject explosion;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,7 @@ public class GrenadeControl : MonoBehaviour
     {
         if (playerObject != null)
         {
+            target = new Vector2(Player.position.x, Player.position.y);
             if (playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);

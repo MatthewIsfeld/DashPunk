@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6060066090037667749}
   - component: {fileID: 2462956721445002444}
   - component: {fileID: 2815608205923643190}
-  - component: {fileID: 1138623619403390127}
+  - component: {fileID: 8180609238139732856}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Enemy
@@ -131,7 +131,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &1138623619403390127
+--- !u!114 &8180609238139732856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
