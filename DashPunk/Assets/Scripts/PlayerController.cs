@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     public float invulnTimeStart;
     private float invulnTime;
     public int clonesAllowed;
+    public int haltBarMax;
 
     void Start()
     {
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour
         pierceDamage = 1;
         bounceCloneDamage = 1;
         pierceCloneDamage = 1;
+        haltBarMax = 5;
     }
 
     // Update is called once per frame
@@ -123,9 +125,9 @@ public class PlayerController : MonoBehaviour
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
 
         // Check how full your halt bar is
-        if (enemyHits >= 5)
+        if (enemyHits >= haltBarMax)
         {
-            enemyHits = 5;
+            enemyHits = haltBarMax;
             haltCooldown = false;
         }
 
