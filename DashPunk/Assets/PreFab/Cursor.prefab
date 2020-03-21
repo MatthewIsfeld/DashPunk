@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8031725154051239859}
   - component: {fileID: 8031725154051239856}
   - component: {fileID: 8031725154051239857}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8031725154051239862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 940.92444, y: 450.6978, z: 0}
+  m_LocalPosition: {x: 940.92444, y: 450.6978, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
