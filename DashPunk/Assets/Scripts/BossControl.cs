@@ -119,19 +119,21 @@ public class BossControl : MonoBehaviour
         
         if (playerObject != null)
         {
-            if (grenadeCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0 && shootCooldown > 0)
+            if (playerObject.GetComponent<PlayerController>() != null)
             {
-                shotGrenade = Instantiate(grenade, firePoint2.position, firePoint2.rotation);
-                Physics2D.IgnoreCollision(shotGrenade.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-                grenadeCooldown = startGrenadeCooldown;
-            }
-            else
-            {
-                grenadeCooldown -= Time.deltaTime;
+                if (grenadeCooldown <= 0 && playerObject.GetComponent<PlayerController>().isHalting == 0 && shootCooldown > 0)
+                {
+                    shotGrenade = Instantiate(grenade, firePoint2.position, firePoint2.rotation);
+                    Physics2D.IgnoreCollision(shotGrenade.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+                    grenadeCooldown = startGrenadeCooldown;
+                }
+                else
+                {
+                    grenadeCooldown -= Time.deltaTime;
+                }
             }
         }
-       
-        healthbar.setHealth(hearts);
+        healthbar.setHealth(hearts);        
     }
 
     // FixedUpdate moves enemy towards player
