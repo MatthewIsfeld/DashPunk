@@ -33,6 +33,7 @@ public class BossControl : MonoBehaviour
     public Transform firePoint2;
     public HealthBar healthbar;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class BossControl : MonoBehaviour
         hearts = 5;
         healthbar.setMaxHealth(hearts);
         healthbar.setActive();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update makes the enemy rotate to face the player
@@ -87,8 +89,10 @@ public class BossControl : MonoBehaviour
 
         if (invuln == 1)
         {
+            spriteRenderer.color = Color.red;
             if (invulnTime <= 0)
             {
+                spriteRenderer.color = Color.white;
                 invuln = 0;
                 invulnTime = invulnTimeStart;
                 bounced = 0;

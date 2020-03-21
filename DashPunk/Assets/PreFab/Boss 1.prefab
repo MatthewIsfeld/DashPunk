@@ -222,6 +222,7 @@ MonoBehaviour:
   firePoint2: {fileID: 78322142832546171}
   healthbar: {fileID: 0}
   animator: {fileID: 4768779708780229352}
+  spriteRenderer: {fileID: 2395540911459508898}
 --- !u!95 &4768779708780229352
 Animator:
   serializedVersion: 3
