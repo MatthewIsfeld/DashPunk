@@ -35,6 +35,7 @@ public class REnemyControl : MonoBehaviour
     public GameObject HealthDrop;
     public GameObject HealthUpgrade;
     public SpriteRenderer spriteRenderer;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -57,13 +58,24 @@ public class REnemyControl : MonoBehaviour
             if (playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
                 Vector3 direction = Player.position - transform.position;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                if (isHalted == false)
-                {
-                    rb.rotation = angle;
-                }
+                //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                //if (isHalted == false)
+                //{
+                   // rb.rotation = angle;
+                //}
                 direction.Normalize();
                 movement = direction;
+
+                //Animation Code
+                animator.enabled = true;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+                animator.SetFloat("Speed", movement.sqrMagnitude);
+            }
+
+            if (playerObject.GetComponent<PlayerController>().isHalting == 1)
+            {
+                animator.enabled = false;
             }
         }
         if (playerObject != null)
@@ -117,19 +129,27 @@ public class REnemyControl : MonoBehaviour
                 if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
                 {
                     rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+                    //Animation Code
+                    animator.SetInteger("moveState", 2);
                 }
                 else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
                 {
                     rb.MovePosition(this.transform.position);
+                    //Animation Code
+                    animator.SetInteger("moveState", 1);
                 }
                 else if (Vector2.Distance(transform.position, Player.position) < retreatDistance && playerObject.GetComponent<PlayerController>().isPierceDashing == 0)
                 {
                     if ((Vector2.Distance(transform.position, topWall.localPosition) > 15) && (Vector2.Distance(transform.position, leftWall.localPosition) > 15) && (Vector2.Distance(transform.position, rightWall.localPosition) > 15) && (Vector2.Distance(transform.position, bottomWall.localPosition) > 15))
                     {
                         rb.MovePosition((Vector2)transform.position + (direction * -moveSpeed * Time.deltaTime));
+                        //Animation Code
+                        animator.SetInteger("moveState", 2);
                     } else
                     {
                         rb.MovePosition(this.transform.position);
+                        //Animation Code
+                        animator.SetInteger("moveState", 1);
                     }
                 }
             }
