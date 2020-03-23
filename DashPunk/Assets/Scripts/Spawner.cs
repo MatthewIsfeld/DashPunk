@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
         enemiesText.text = "";
         enemiesText.fontSize = 24;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
