@@ -35,9 +35,10 @@ public class PlayerController : MonoBehaviour
     public GameObject pierceLine;
     public GameObject mouse;
     public Animator animator;
-    public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health, 1 - Clones Up, 
+    public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health, 1 - Clones Up, 2 - Dash CDD Up
     public Text maxHealthUpTxt;
     public Text clonesUpTxt;
+    public Text dashCDDUpTxt;
     public SpriteRenderer spriteRenderer;
 
     //Parameters for upgrades
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
         clonesAllowed = 4;
         maxHealthUpTxt.text = inventoryCount[0].ToString();
         clonesUpTxt.text = inventoryCount[1].ToString();
+        dashCDDUpTxt.text = inventoryCount[2].ToString();
         spriteRenderer = GetComponent<SpriteRenderer>();
         knockBackPower = 5000;
         bouncePower = 20000;
@@ -351,7 +353,15 @@ public class PlayerController : MonoBehaviour
             inventoryCount[1] += 1;
             clonesUpTxt.text = inventoryCount[1].ToString();
             other.gameObject.SetActive(false);
-        }       
+        }
+        if (other.gameObject.CompareTag("DashCDDUpgrade"))
+        {
+            pierceDashCooldown = 0.8f * pierceDashCooldown;
+            bounceDashCooldown = 0.8f * bounceDashCooldown;
+            inventoryCount[2] += 1;
+            dashCDDUpTxt.text = inventoryCount[2].ToString();
+            other.gameObject.SetActive(false);
+        }
         if (other.gameObject.CompareTag("Explosion"))
         {
             if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))

@@ -24,6 +24,7 @@ public class MEnemyControl : MonoBehaviour
     public GameObject HealthDrop;
     public GameObject HealthUpgrade;
     public GameObject clonesUpgrade;
+    public GameObject dashCDDUpgrade;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Color defaultCol;
@@ -196,6 +197,11 @@ public class MEnemyControl : MonoBehaviour
         Instantiate(clonesUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnDashCDDUpgrade()
+    {
+        Instantiate(dashCDDUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -213,6 +219,10 @@ public class MEnemyControl : MonoBehaviour
         else if (randVal > 25 && randVal <= 30)
         {
             spawnClonesUpgrade();
+        }
+        else if (randVal > 30 && randVal <= 35)
+        {
+            spawnDashCDDUpgrade();
         }
         this.gameObject.SetActive(false);
     }

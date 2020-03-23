@@ -230,6 +230,8 @@ MonoBehaviour:
     type: 3}
   clonesUpgrade: {fileID: 3391982949744613291, guid: cb6fc6cad036a394ca9ea629cdb66e7d,
     type: 3}
+  dashCDDUpgrade: {fileID: 6565508571933201212, guid: cbcee1a98866d364cbf1da0568024da2,
+    type: 3}
   animator: {fileID: 1834810095138880623}
   spriteRenderer: {fileID: 0}
   defaultCol: {r: 0, g: 0, b: 0, a: 0}
