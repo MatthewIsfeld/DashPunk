@@ -206,6 +206,8 @@ MonoBehaviour:
     type: 3}
   dashCDDUpgrade: {fileID: 6565508571933201212, guid: cbcee1a98866d364cbf1da0568024da2,
     type: 3}
+  haltUpgrade: {fileID: 1017118513319872535, guid: 82a88aa0475b3ae4d9a2dcff132420db,
+    type: 3}
   spriteRenderer: {fileID: 0}
   animator: {fileID: 7026033977405190389}
   defaultCol: {r: 0, g: 0, b: 0, a: 0}

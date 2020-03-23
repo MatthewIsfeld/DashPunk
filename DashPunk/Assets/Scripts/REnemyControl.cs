@@ -36,6 +36,7 @@ public class REnemyControl : MonoBehaviour
     public GameObject HealthUpgrade;
     public GameObject clonesUpgrade;
     public GameObject dashCDDUpgrade;
+    public GameObject haltUpgrade;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
     public Color defaultCol;
@@ -261,6 +262,11 @@ public class REnemyControl : MonoBehaviour
         Instantiate(dashCDDUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnHaltUpgrade()
+    {
+        Instantiate(haltUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -282,6 +288,10 @@ public class REnemyControl : MonoBehaviour
         else if (randVal > 30 && randVal <= 35)
         {
             spawnDashCDDUpgrade();
+        }
+        else if (randVal > 35 && randVal <= 40)
+        {
+            spawnHaltUpgrade();
         }
         this.gameObject.SetActive(false);
     }
