@@ -8,9 +8,8 @@ public class UpgradeScreen : MonoBehaviour
     public static bool isUpgrading = false;
     public GameObject upgradeScreenUI;
     public static bool inUpgradeMenu = false;
-    public Button upgrade1;
-    public Button upgrade2;
-    public Button upgrade3;
+    public Button[] buttons;
+    public Sprite[] upgrades;
 
     // Update is called once per frame
     void Update()
@@ -34,5 +33,35 @@ public class UpgradeScreen : MonoBehaviour
         upgradeScreenUI.SetActive(true);
         PauseMenu.isPaused = true;
         inUpgradeMenu = true;
+    }
+
+    public void selectButtons()
+    {
+        int[] chosenNumbers = new int[3];
+        int randVal;
+        bool duplicate = true;
+
+        for (int i = 0; i < 3; i++)
+        {
+            duplicate = true;
+            while (duplicate == true)
+            {
+                duplicate = false;
+                randVal = Random.Range(1, 6);
+                for (int j = 0; j < 3; j++)
+                {
+                    if(chosenNumbers[j] == randVal)
+                    {
+                        duplicate = true;
+                    }
+                }
+
+                if (duplicate == false)
+                {
+                    chosenNumbers[i] = randVal;
+                    buttons[i].GetComponent<Image>().sprite = upgrades[randVal - 1];
+                }
+            }
+        }
     }
 }
