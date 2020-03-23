@@ -34,6 +34,7 @@ public class REnemyControl : MonoBehaviour
     private GameObject shotBullet;
     public GameObject HealthDrop;
     public GameObject HealthUpgrade;
+    public GameObject clonesUpgrade;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
     public Color defaultCol;
@@ -249,6 +250,11 @@ public class REnemyControl : MonoBehaviour
         Instantiate(HealthUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnClonesUpgrade()
+    {
+        Instantiate(clonesUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -259,10 +265,14 @@ public class REnemyControl : MonoBehaviour
         {
             spawnHealthDrop();
         }
-        else if (randVal > 20 && randVal <= 40)
+        else if (randVal > 20 && randVal <= 25)
         {
             spawnHealthUpgrade();
         }
-        this.gameObject.SetActive(false);
+        else if (randVal > 25 && randVal <= 30)
+        {
+            spawnClonesUpgrade();
+        }
+            this.gameObject.SetActive(false);
     }
 }

@@ -23,6 +23,7 @@ public class MEnemyControl : MonoBehaviour
     public static bool isHalted = false;
     public GameObject HealthDrop;
     public GameObject HealthUpgrade;
+    public GameObject clonesUpgrade;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Color defaultCol;
@@ -190,6 +191,11 @@ public class MEnemyControl : MonoBehaviour
         Instantiate(HealthUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnClonesUpgrade()
+    {
+        Instantiate(clonesUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -200,9 +206,13 @@ public class MEnemyControl : MonoBehaviour
         {
             spawnHealthDrop();
         }
-        else if (randVal > 20 && randVal <= 40)
+        else if (randVal > 20 && randVal <= 25)
         {
             spawnHealthUpgrade();
+        } 
+        else if (randVal > 25 && randVal <= 30)
+        {
+            spawnClonesUpgrade();
         }
         this.gameObject.SetActive(false);
     }

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 423345466371011571}
   - component: {fileID: 1834810095138880623}
   m_Layer: 0
-  m_Name: Grenade Enemy 1 1
+  m_Name: Grenade Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,11 @@ MonoBehaviour:
     type: 3}
   HealthUpgrade: {fileID: 3856469186272228498, guid: dc9a67a96a53ffc4e9fd216099811175,
     type: 3}
+  clonesUpgrade: {fileID: 3391982949744613291, guid: cb6fc6cad036a394ca9ea629cdb66e7d,
+    type: 3}
   animator: {fileID: 1834810095138880623}
+  spriteRenderer: {fileID: 0}
+  defaultCol: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &1834810095138880623
 Animator:
   serializedVersion: 3

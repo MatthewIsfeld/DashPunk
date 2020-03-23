@@ -35,8 +35,9 @@ public class PlayerController : MonoBehaviour
     public GameObject pierceLine;
     public GameObject mouse;
     public Animator animator;
-    public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health
+    public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health, 1 - Clones Up, 
     public Text maxHealthUpTxt;
+    public Text clonesUpTxt;
     public SpriteRenderer spriteRenderer;
 
     //Parameters for upgrades
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
         healthbar.setHealth(hearts);
         clonesAllowed = 4;
         maxHealthUpTxt.text = inventoryCount[0].ToString();
+        clonesUpTxt.text = inventoryCount[1].ToString();
         spriteRenderer = GetComponent<SpriteRenderer>();
         knockBackPower = 5000;
         bouncePower = 20000;
@@ -330,7 +332,7 @@ public class PlayerController : MonoBehaviour
                 other.gameObject.SetActive(false);
             }
         }
-        else if (other.gameObject.CompareTag("MaxHealthUpgrade"))
+        if (other.gameObject.CompareTag("MaxHealthUpgrade"))
         {
             if ((isBounceDashing == 0) && (isPierceDashing == 0))
             {
@@ -342,7 +344,14 @@ public class PlayerController : MonoBehaviour
                 maxHealthUpTxt.text = inventoryCount[0].ToString();
                 other.gameObject.SetActive(false);
             }
-        } 
+        }
+        if (other.gameObject.CompareTag("+ClonesUpgrade"))
+        {
+            clonesAllowed += 1;
+            inventoryCount[1] += 1;
+            clonesUpTxt.text = inventoryCount[1].ToString();
+            other.gameObject.SetActive(false);
+        }       
         if (other.gameObject.CompareTag("Explosion"))
         {
             if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
@@ -358,7 +367,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-
     }
 
     void CreateDust()

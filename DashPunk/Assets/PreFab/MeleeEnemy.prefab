@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8105622551768764028}
   - component: {fileID: 5182572958942981430}
   m_Layer: 0
-  m_Name: MeleeEnemy 1
+  m_Name: MeleeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,11 @@ MonoBehaviour:
     type: 3}
   HealthUpgrade: {fileID: 3856469186272228498, guid: dc9a67a96a53ffc4e9fd216099811175,
     type: 3}
+  clonesUpgrade: {fileID: 3391982949744613291, guid: cb6fc6cad036a394ca9ea629cdb66e7d,
+    type: 3}
   animator: {fileID: 5182572958942981430}
+  spriteRenderer: {fileID: 0}
+  defaultCol: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &7964802321267214675
 Rigidbody2D:
   serializedVersion: 4
