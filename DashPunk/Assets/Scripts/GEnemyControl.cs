@@ -37,6 +37,7 @@ public class GEnemyControl : MonoBehaviour
     public GameObject clonesUpgrade;
     public GameObject dashCDDUpgrade;
     public GameObject haltUpgrade;
+    public GameObject moveSpeedUpgrade;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Color defaultCol;
@@ -267,6 +268,11 @@ public class GEnemyControl : MonoBehaviour
         Instantiate(haltUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnMoveSpeedUpgrade()
+    {
+        Instantiate(moveSpeedUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -292,6 +298,10 @@ public class GEnemyControl : MonoBehaviour
         else if (randVal > 35 && randVal <= 40)
         {
             spawnHaltUpgrade();
+        }
+        else if (randVal > 40 && randVal <= 45)
+        {
+            spawnMoveSpeedUpgrade();
         }
         this.gameObject.SetActive(false);
     }

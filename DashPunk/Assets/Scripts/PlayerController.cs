@@ -36,11 +36,12 @@ public class PlayerController : MonoBehaviour
     public GameObject mouse;
     public Animator animator;
     public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health, 1 - Clones Up, 2 - Dash CDD Up
-    // 3 - Halt Up,
+    // 3 - Halt Up, 4 - Move Speed Up
     public Text maxHealthUpTxt;
     public Text clonesUpTxt;
     public Text dashCDDUpTxt;
     public Text haltUpTxt;
+    public Text moveSpeedUpTxt;
     public SpriteRenderer spriteRenderer;
 
     //Parameters for upgrades
@@ -97,6 +98,7 @@ public class PlayerController : MonoBehaviour
         clonesUpTxt.text = inventoryCount[1].ToString();
         dashCDDUpTxt.text = inventoryCount[2].ToString();
         haltUpTxt.text = inventoryCount[3].ToString();
+        moveSpeedUpTxt.text = inventoryCount[4].ToString();
         spriteRenderer = GetComponent<SpriteRenderer>();
         knockBackPower = 5000;
         bouncePower = 20000;
@@ -370,6 +372,13 @@ public class PlayerController : MonoBehaviour
             haltTime = 1.2f * haltTime;
             inventoryCount[3] += 1;
             haltUpTxt.text = inventoryCount[3].ToString();
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("MoveSpeedUpgrade"))
+        {
+            speed = 1.05f * speed;
+            inventoryCount[4] += 1;
+            moveSpeedUpTxt.text = inventoryCount[4].ToString();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("Explosion"))

@@ -15,6 +15,7 @@ TagManager:
   - +ClonesUpgrade
   - DashCDDUpgrade
   - HaltUpgrade
+  - MoveSpeedUpgrade
   layers:
   - Default
   - TransparentFX
