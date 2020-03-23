@@ -171,10 +171,7 @@ public class BossControl : MonoBehaviour
                 invuln = 1;
                 if (hearts <= 0)
                 {
-                    healthbar.setUnactive();
-                    //CreateBlood();
-                    Spawner.totalEnemies -= 1;
-                    this.gameObject.SetActive(false);
+                    death();
                 }
             }
         }
@@ -199,10 +196,7 @@ public class BossControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                //CreateBlood();
-                Spawner.totalEnemies -= 1;
-                this.gameObject.SetActive(false);
-                healthbar.setUnactive();
+                death();
             }
         }
         if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
@@ -212,9 +206,7 @@ public class BossControl : MonoBehaviour
             invuln = 1;
             if (hearts <= 0)
             {
-                Spawner.totalEnemies -= 1;
-                this.gameObject.SetActive(false);
-                healthbar.setUnactive();
+                death();
             }
         }
 
@@ -234,10 +226,7 @@ public class BossControl : MonoBehaviour
                     rb.AddForce(bounceDir * 15000);
                     if (hearts <= 0)
                     {
-                        Spawner.totalEnemies -= 1;
-                        //CreateBlood();
-                        this.gameObject.SetActive(false);
-                        healthbar.setUnactive();
+                        death();
                     }
                 }
             }
@@ -246,5 +235,13 @@ public class BossControl : MonoBehaviour
     void CreateBlood()
     {
         blood.Play();
+    }
+
+    void death()
+    {
+        Spawner.totalEnemies -= 1;
+        //CreateBlood();
+        this.gameObject.SetActive(false);
+        healthbar.setUnactive();
     }
 }
