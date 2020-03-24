@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
     public GameObject pierceLine;
     public GameObject mouse;
     public Animator animator;
-    public int[] inventoryCount = new int[5]; //Array size is # of upgrade types, 0 - max health, 1 - Clones Up, 2 - Dash CDD Up
-    // 3 - Halt Up, 4 - Move Speed Up
+    public int[] inventoryCount = new int[5]; // Array size is # of upgrade types, 0 - Max Health, 1 - Clones Up, 2 - Dash CD
+                                              // 3 - Halt Up, 4 - Move Speed Up
     public Text maxHealthUpTxt;
     public Text clonesUpTxt;
     public Text dashCDDUpTxt;
