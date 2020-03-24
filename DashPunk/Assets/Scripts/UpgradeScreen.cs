@@ -9,7 +9,13 @@ public class UpgradeScreen : MonoBehaviour
     public GameObject upgradeScreenUI;
     public static bool inUpgradeMenu = false;
     public Button[] buttons;
-    public Sprite[] upgrades;
+    public GameObject[] upgrades;
+    public GameObject playerTracker;
+
+    void Start()
+    {
+        playerTracker = GameObject.Find("Player");
+    }
 
     // Update is called once per frame
     void Update()
@@ -59,9 +65,64 @@ public class UpgradeScreen : MonoBehaviour
                 if (duplicate == false)
                 {
                     chosenNumbers[i] = randVal;
-                    buttons[i].GetComponent<Image>().sprite = upgrades[randVal - 1];
+                    buttons[i].GetComponent<Image>().sprite = upgrades[randVal - 1].GetComponent<SpriteRenderer>().sprite;
+                    if (randVal == 1)
+                    {
+                        buttons[i].onClick.RemoveAllListeners();
+                        buttons[i].onClick.AddListener(Resume);
+                        buttons[i].onClick.AddListener(SpawnUpgrade1);
+                    } 
+                    else if (randVal == 2)
+                    {
+                        buttons[i].onClick.RemoveAllListeners();
+                        buttons[i].onClick.AddListener(Resume);
+                        buttons[i].onClick.AddListener(SpawnUpgrade2);
+                    }
+                    else if (randVal == 3)
+                    {
+                        buttons[i].onClick.RemoveAllListeners();
+                        buttons[i].onClick.AddListener(Resume);
+                        buttons[i].onClick.AddListener(SpawnUpgrade3);
+                    }
+                    else if (randVal == 4)
+                    {
+                        buttons[i].onClick.RemoveAllListeners();
+                        buttons[i].onClick.AddListener(Resume);
+                        buttons[i].onClick.AddListener(SpawnUpgrade4);
+                    }
+                    else if (randVal == 5)
+                    {
+                        buttons[i].onClick.RemoveAllListeners();
+                        buttons[i].onClick.AddListener(Resume);
+                        buttons[i].onClick.AddListener(SpawnUpgrade5);
+                    }
                 }
             }
         }
+    }
+
+    public void SpawnUpgrade1()
+    {
+        Instantiate(upgrades[0], playerTracker.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
+    public void SpawnUpgrade2()
+    {
+        Instantiate(upgrades[1], playerTracker.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
+    public void SpawnUpgrade3()
+    {
+        Instantiate(upgrades[2], playerTracker.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
+    public void SpawnUpgrade4()
+    {
+        Instantiate(upgrades[3], playerTracker.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
+    public void SpawnUpgrade5()
+    {
+        Instantiate(upgrades[4], playerTracker.transform.position, new Quaternion(0, 0, 0, 0));
     }
 }
