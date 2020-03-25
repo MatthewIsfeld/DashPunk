@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class HaltingBarScript : MonoBehaviour
 {
-    public int enemyHits;
+    public float enemyHits;
     public Slider haltingBar;
 
     // Update is called once per frame
     void Update()
     {
+        haltingBar.maxValue = PlayerController.haltBarMax;
         enemyHits = PlayerController.enemyHits;
-        if (enemyHits < 6)
+        if (enemyHits < PlayerController.haltBarMax+1)
         {
             haltingBar.value = enemyHits;
         }

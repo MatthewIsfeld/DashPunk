@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private bool pierceCooldown;
     private bool dashCooldown;
     private bool haltCooldown;
-    public static int enemyHits;
+    public static float enemyHits;
     public Rigidbody2D tempBody;
     private bool spaceDash;
     public HealthBar healthbar;
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     public float invulnTimeStart;
     private float invulnTime;
     public int clonesAllowed;
-    public int haltBarMax;
+    public static int haltBarMax;
 
     void Start()
     {
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
             {
                 CreateDust3();
                 isHalting = 1;
-                for (int i = 1; i < haltBarMax+1; i++)     // Make the bar count down
+                for (int i = 1; i < 6; i++)     // Make the bar count down
                 {
                     Invoke("reduceHits", i);
                 }
@@ -435,7 +435,9 @@ public class PlayerController : MonoBehaviour
 
     void reduceHits()
     {
-        enemyHits--;
+        float reduction = haltBarMax / 5;
+        enemyHits -= reduction;
     }
+
 
 }
