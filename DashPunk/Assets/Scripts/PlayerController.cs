@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         pierceDamage = 1;
         bounceCloneDamage = 1;
         pierceCloneDamage = 1;
-        haltBarMax = 5;
+        haltBarMax = 10;
     }
 
     // Update is called once per frame
@@ -369,7 +369,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("HaltUpgrade"))
         {
-            haltTime = 1.2f * haltTime;
+            haltBarMax -= 1;
             inventoryCount[3] += 1;
             haltUpTxt.text = inventoryCount[3].ToString();
             other.gameObject.SetActive(false);
