@@ -152,12 +152,14 @@ public class PlayerController : MonoBehaviour
                 pierceLine.transform.rotation = Quaternion.AngleAxis(angle - 45, Vector3.forward);
                 pierceLine.SetActive(true);
             }
-            else if (Input.GetMouseButtonUp(1) && (isHalting == 0) && (isBounceDashing == 0) && pierceCooldown == false && dashCooldown == false)
+            else if (Input.GetMouseButtonUp(1))
             {
-                Debug.Log("mouse released");
                 pierceLine.SetActive(false);
-                invuln = 1;
-                isPierceDashing = 1;
+                if ((isHalting == 0) && (isBounceDashing == 0) && pierceCooldown == false && dashCooldown == false)
+                {
+                    invuln = 1;
+                    isPierceDashing = 1;
+                }
             }
             else if (Input.GetMouseButton(0))
             {
@@ -165,11 +167,14 @@ public class PlayerController : MonoBehaviour
                 bounceLine.transform.rotation = Quaternion.AngleAxis(angle + 45, Vector3.forward);
                 bounceLine.SetActive(true);
             }
-            else if (Input.GetMouseButtonUp(0) && (isHalting == 0) && (isPierceDashing == 0) && bounceCooldown == false && dashCooldown == false)
+            else if (Input.GetMouseButtonUp(0))
             {
                 bounceLine.SetActive(false);
-                invuln = 1;
-                isBounceDashing = 1;
+                if ((isHalting == 0) && (isPierceDashing == 0) && bounceCooldown == false && dashCooldown == false)
+                {
+                    invuln = 1;
+                    isBounceDashing = 1;
+                }
             }
             else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
             {
