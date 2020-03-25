@@ -369,7 +369,10 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("HaltUpgrade"))
         {
-            haltBarMax -= 1;
+            if (haltBarMax > 5)
+            {
+                haltBarMax -= 1;
+            }
             inventoryCount[3] += 1;
             haltUpTxt.text = inventoryCount[3].ToString();
             other.gameObject.SetActive(false);
