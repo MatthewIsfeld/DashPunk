@@ -68,28 +68,28 @@ public class UpgradeScreen : MonoBehaviour
                     buttons[i].GetComponent<Image>().sprite = upgrades[randVal - 1].GetComponent<SpriteRenderer>().sprite;
                     if (randVal == 1)
                     {
-                        buttons[i].GetComponentInChildren<Text>().text = "Max HP increase";
+                        buttons[i].GetComponentInChildren<Text>().text = "Halt Bar reduction";
                         buttons[i].onClick.RemoveAllListeners();
                         buttons[i].onClick.AddListener(Resume);
                         buttons[i].onClick.AddListener(SpawnUpgrade1);
                     } 
                     else if (randVal == 2)
                     {
-                        buttons[i].GetComponentInChildren<Text>().text = "Halt Clones increase";
+                        buttons[i].GetComponentInChildren<Text>().text = "Dash CD reduction";
                         buttons[i].onClick.RemoveAllListeners();
                         buttons[i].onClick.AddListener(Resume);
                         buttons[i].onClick.AddListener(SpawnUpgrade2);
                     }
                     else if (randVal == 3)
                     {
-                        buttons[i].GetComponentInChildren<Text>().text = "Dash CD reduction";
+                        buttons[i].GetComponentInChildren<Text>().text = "Halt Clones increase";
                         buttons[i].onClick.RemoveAllListeners();
                         buttons[i].onClick.AddListener(Resume);
                         buttons[i].onClick.AddListener(SpawnUpgrade3);
                     }
                     else if (randVal == 4)
                     {
-                        buttons[i].GetComponentInChildren<Text>().text = "Halt Bar reduction";
+                        buttons[i].GetComponentInChildren<Text>().text = "Max HP increase";
                         buttons[i].onClick.RemoveAllListeners();
                         buttons[i].onClick.AddListener(Resume);
                         buttons[i].onClick.AddListener(SpawnUpgrade4);
