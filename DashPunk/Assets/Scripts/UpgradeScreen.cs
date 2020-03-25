@@ -66,6 +66,7 @@ public class UpgradeScreen : MonoBehaviour
                 {
                     chosenNumbers[i] = randVal;
                     buttons[i].GetComponent<Image>().sprite = upgrades[randVal - 1].GetComponent<SpriteRenderer>().sprite;
+                    buttons[i].GetComponent<Image>().color = upgrades[randVal - 1].GetComponent<SpriteRenderer>().color;
                     if (randVal == 1)
                     {
                         buttons[i].GetComponentInChildren<Text>().text = "Halt Clones increase";
