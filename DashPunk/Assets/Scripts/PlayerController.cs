@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
                     isPierceDashing = 1;
                 }
             }
-            else if (Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0) && !Input.GetMouseButton(1))
             {
                 bounceLine.transform.position = this.transform.position;
                 bounceLine.transform.rotation = Quaternion.AngleAxis(angle + 45, Vector3.forward);
