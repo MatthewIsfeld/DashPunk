@@ -68,7 +68,7 @@ public class UpgradeScreen : MonoBehaviour
                     buttons[i].GetComponent<Image>().sprite = upgrades[randVal - 1].GetComponent<SpriteRenderer>().sprite;
                     if (randVal == 1)
                     {
-                        buttons[i].GetComponentInChildren<Text>().text = "Halt Bar reduction";
+                        buttons[i].GetComponentInChildren<Text>().text = "Halt Clones increase";
                         buttons[i].onClick.RemoveAllListeners();
                         buttons[i].onClick.AddListener(Resume);
                         buttons[i].onClick.AddListener(SpawnUpgrade1);
@@ -82,7 +82,7 @@ public class UpgradeScreen : MonoBehaviour
                     }
                     else if (randVal == 3)
                     {
-                        buttons[i].GetComponentInChildren<Text>().text = "Halt Clones increase";
+                        buttons[i].GetComponentInChildren<Text>().text = "Halt Bar reduction";
                         buttons[i].onClick.RemoveAllListeners();
                         buttons[i].onClick.AddListener(Resume);
                         buttons[i].onClick.AddListener(SpawnUpgrade3);
