@@ -148,11 +148,12 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButton(1) && !Input.GetMouseButton(0))
             {
+                bounceLine.SetActive(false);
                 pierceLine.transform.position = this.transform.position;
                 pierceLine.transform.rotation = Quaternion.AngleAxis(angle - 45, Vector3.forward);
                 pierceLine.SetActive(true);
             }
-            else if (Input.GetMouseButtonUp(1) && !Input.GetMouseButton(0))
+            if (Input.GetMouseButtonUp(1) && !Input.GetMouseButton(0))
             {
                 pierceLine.SetActive(false);
                 if ((isHalting == 0) && (isBounceDashing == 0) && pierceCooldown == false && dashCooldown == false)
@@ -161,13 +162,14 @@ public class PlayerController : MonoBehaviour
                     isPierceDashing = 1;
                 }
             }
-            if (Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0) && !Input.GetMouseButton(1)) // Can only happen when right click is not held.
             {
+                pierceLine.SetActive(false);
                 bounceLine.transform.position = this.transform.position;
                 bounceLine.transform.rotation = Quaternion.AngleAxis(angle + 45, Vector3.forward);
                 bounceLine.SetActive(true);
             }
-            else if (Input.GetMouseButtonUp(0) && !Input.GetMouseButton(1))
+            if (Input.GetMouseButtonUp(0) && !Input.GetMouseButton(1)) // Can only happen when right click is not held.
             {
                 bounceLine.SetActive(false);
                 if ((isHalting == 0) && (isPierceDashing == 0) && bounceCooldown == false && dashCooldown == false)
