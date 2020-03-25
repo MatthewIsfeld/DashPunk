@@ -372,6 +372,9 @@ public class PlayerController : MonoBehaviour
             if (haltBarMax > 5)
             {
                 haltBarMax -= 1;
+            } else
+            {
+                clonesAllowed += 1;
             }
             inventoryCount[3] += 1;
             haltUpTxt.text = inventoryCount[3].ToString();

@@ -494,7 +494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "+20% Halt \nTime x"
+  m_Text: "-1 Hits to get \nHalt x"
 --- !u!222 &386805523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -937,7 +937,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 700, y: -300}
-  m_SizeDelta: {x: 1000, y: 103}
+  m_SizeDelta: {x: 1300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &833894259
 MonoBehaviour:
@@ -971,7 +971,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'STARTING VALUES: Max HP: 4, # of Dash Clones: 4, BDashCooldown: 0.8s,
-    PDashCooldown: 0.8s'
+    PDashCooldown: 0.8s, Hits to get Halt: 10
+
+    NOTE: Each HaltUp upgrade acquired
+    above 5 raises clone limit instead of lowering # of hits.'
 --- !u!222 &833894260
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2553,7 +2556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 410, y: 15}
+  m_AnchoredPosition: {x: 405, y: 15}
   m_SizeDelta: {x: 203, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989497713
