@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
             {
                 CreateDust3();
                 isHalting = 1;
-                for (int i = 1; i < 6; i++)     // Make the bar count down for 5s
+                for (int i = 1; i < haltBarMax+1; i++)     // Make the bar count down
                 {
                     Invoke("reduceHits", i);
                 }
