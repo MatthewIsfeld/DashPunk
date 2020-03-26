@@ -9,6 +9,7 @@ public class BulletControl : MonoBehaviour
     private GameObject playerObject;
     private Rigidbody2D rb;
     private Vector3 direction;
+    private float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,8 @@ public class BulletControl : MonoBehaviour
             playerObject = GameObject.Find("Player");
             rb = this.GetComponent<Rigidbody2D>();
             direction = Player.position - transform.position;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            rb.rotation = angle;
             direction = direction.normalized;
         }
     }
