@@ -6,6 +6,12 @@ public class InventoryMenu : MonoBehaviour
 {
     public GameObject inventoryDisplayUI;
     public static bool inInventoryMenu = false;
+    public GameObject playerTracker;
+
+    void Start()
+    {
+        playerTracker = GameObject.Find("Player");
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +38,8 @@ public class InventoryMenu : MonoBehaviour
         Time.timeScale = 1f;
         PauseMenu.isPaused = false;
         inInventoryMenu = false;
+        playerTracker.GetComponent<PlayerController>().dashCooldown = true;
+        playerTracker.GetComponent<PlayerController>().Invoke("dashCD", 0.1f);
     }
 
     void Pause()

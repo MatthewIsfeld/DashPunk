@@ -30,6 +30,8 @@ public class UpgradeScreen : MonoBehaviour
         isUpgrading = false;
         PauseMenu.isPaused = false;
         inUpgradeMenu = false;
+        playerTracker.GetComponent<PlayerController>().dashCooldown = true;
+        playerTracker.GetComponent<PlayerController>().Invoke("dashCD", 0.1f);
     }
 
     public void Pause()

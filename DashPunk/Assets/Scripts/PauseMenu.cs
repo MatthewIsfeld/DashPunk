@@ -8,6 +8,12 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
     public static bool inPauseMenu = false;
     public GameObject pauseMenuUI;
+    public GameObject playerTracker;
+
+    void Start()
+    {
+        playerTracker = GameObject.Find("Player");
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +40,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         inPauseMenu = false;
+        playerTracker.GetComponent<PlayerController>().dashCooldown = true;
+        playerTracker.GetComponent<PlayerController>().Invoke("dashCD", 0.1f);
     }
 
     void Pause()

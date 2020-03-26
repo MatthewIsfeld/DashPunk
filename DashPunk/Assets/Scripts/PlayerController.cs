@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 knockBackDir;
     private bool bounceCooldown;
     private bool pierceCooldown;
-    private bool dashCooldown;
+    public bool dashCooldown;
     private bool haltCooldown;
     public static float enemyHits;
     public Rigidbody2D tempBody;
