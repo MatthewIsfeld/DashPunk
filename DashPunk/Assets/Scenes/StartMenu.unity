@@ -4475,7 +4475,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Grenade Sprite from BizmasterStudios: https://opengameart.org/content/explosives-and-medic-stuff-from-pixeltime'
+  m_Text: 'Grenade Sprite from BizmasterStudios: https://opengameart.org/content/explosives-and-medic-stuff-from-pixeltime
+
+
+    Bullet
+    Sprite from Bullet Collection 1 by Master484: https://opengameart.org/content/bullet-collection-1-m484'
 --- !u!222 &1872110718
 CanvasRenderer:
   m_ObjectHideFlags: 0

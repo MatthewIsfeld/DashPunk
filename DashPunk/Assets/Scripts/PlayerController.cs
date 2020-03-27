@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         deadText.fontSize = 50;
         enemyColliders = GameObject.FindGameObjectsWithTag("Enemy").OfType<GameObject>().ToList();
         invuln = 0;
-        invulnTimeStart = 1;
+        invulnTimeStart = 0.3f;
         invulnTime = invulnTimeStart;
         haltTimeStart = 5;
         haltTime = haltTimeStart;
