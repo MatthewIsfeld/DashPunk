@@ -4479,7 +4479,11 @@ MonoBehaviour:
 
 
     Bullet
-    Sprite from Bullet Collection 1 by Master484: https://opengameart.org/content/bullet-collection-1-m484'
+    Sprite from Bullet Collection 1 by Master484: https://opengameart.org/content/bullet-collection-1-m484
+
+
+    Floor
+    sprite from Omnihunter Project: https://opengameart.org/content/top-down-basic-construction'
 --- !u!222 &1872110718
 CanvasRenderer:
   m_ObjectHideFlags: 0
