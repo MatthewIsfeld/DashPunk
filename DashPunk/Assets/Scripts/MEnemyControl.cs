@@ -123,21 +123,31 @@ public class MEnemyControl : MonoBehaviour
                 }
             }
         }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (playerPierceDashing == 1 && invuln == 0)
+            {
+                PlayerController.enemyHits++; // Increment the halting bar.
+                hearts -= playerObject.GetComponent<PlayerController>().pierceDamage;
+                // Play blood animation
+                //CreateBlood();
+                invuln = 1;
+                if (hearts <= 0)
+                {
+                    death();
+                }
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {        
-        if ((playerBounceDashing == 1 || playerPierceDashing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
+        if ((playerBounceDashing == 1) && (invuln == 0) && (other.gameObject.CompareTag("Player")))
         {
             PlayerController.enemyHits++; // Increment the halting bar.
-            if (playerBounceDashing == 1)
-            {
-                bounced = 1;
-                hearts -= playerObject.GetComponent<PlayerController>().bounceDamage;
-            } else
-            {
-                hearts -= playerObject.GetComponent<PlayerController>().pierceDamage;
-            }
+            bounced = 1;
+            hearts -= playerObject.GetComponent<PlayerController>().bounceDamage;
             // Play blood animation
             //CreateBlood();
             invuln = 1;
