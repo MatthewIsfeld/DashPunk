@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         isPierceDashing = 0;
         isBounceDashing = 0;
         spaceDash = false;
-        hearts = 5 + PlayerUpgrades.maxHealthUp;
+        hearts = 20 + PlayerUpgrades.maxHealthUp;
         maxHealth = hearts;
         healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
@@ -322,6 +322,7 @@ public class PlayerController : MonoBehaviour
                 if (hearts < 1)
                 {
                     Invoke("mainMenu", 2.5f);
+                    deadText.color = Color.white;
                     deadText.text = "THE PUNK'S JOURNEY IS OVER";
                     this.gameObject.SetActive(false);
                 }
