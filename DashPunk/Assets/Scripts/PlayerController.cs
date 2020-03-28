@@ -35,8 +35,6 @@ public class PlayerController : MonoBehaviour
     public GameObject pierceLine;
     public GameObject mouse;
     public Animator animator;
-    public int[] inventoryCount = new int[5]; // Array size is # of upgrade types, 0 - Max Health, 1 - Clones Up, 2 - Dash CD
-                                              // 3 - Halt Up, 4 - Move Speed Up
     public Text maxHealthUpTxt;
     public Text clonesUpTxt;
     public Text dashCDDUpTxt;
@@ -89,29 +87,29 @@ public class PlayerController : MonoBehaviour
         isPierceDashing = 0;
         isBounceDashing = 0;
         spaceDash = false;
-        hearts = 5;
+        hearts = 5 + PlayerUpgrades.maxHealthUp;
         maxHealth = hearts;
         healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
-        clonesAllowed = 4;
-        maxHealthUpTxt.text = inventoryCount[0].ToString();
-        clonesUpTxt.text = inventoryCount[1].ToString();
-        dashCDDUpTxt.text = inventoryCount[2].ToString();
-        haltUpTxt.text = inventoryCount[3].ToString();
-        moveSpeedUpTxt.text = inventoryCount[4].ToString();
+        clonesAllowed = 4 + PlayerUpgrades.clonesUpgrade;
+        maxHealthUpTxt.text = PlayerUpgrades.maxHealthUp.ToString();
+        clonesUpTxt.text = PlayerUpgrades.clonesUpgrade.ToString();
+        dashCDDUpTxt.text = PlayerUpgrades.dashCooldownUpgrades.ToString();
+        haltUpTxt.text = PlayerUpgrades.haltUpgrades.ToString();
+        moveSpeedUpTxt.text = PlayerUpgrades.moveSpeedUpgrade.ToString();
         spriteRenderer = GetComponent<SpriteRenderer>();
         knockBackPower = 5000;
         bouncePower = 20000;
         dashSpeed = 70;
-        speed = 10;
+        speed = 10 + (5 * PlayerUpgrades.moveSpeedUpgrade);
         genericDashCooldown = 0.6f;
-        pierceDashCooldown = 0.8f;
-        bounceDashCooldown = 0.8f;
+        pierceDashCooldown = 0.8f * Mathf.Pow(0.95f, PlayerUpgrades.dashCooldownUpgrades);
+        bounceDashCooldown = 0.8f * Mathf.Pow(0.95f, PlayerUpgrades.dashCooldownUpgrades);
         bounceDamage = 1;
         pierceDamage = 1;
         bounceCloneDamage = 1;
         pierceCloneDamage = 1;
-        haltBarMax = 10;
+        haltBarMax = 10 - PlayerUpgrades.haltUpgrades;
     }
 
     // Update is called once per frame
@@ -360,24 +358,24 @@ public class PlayerController : MonoBehaviour
                 healthbar.setMaxHealth(maxHealth);
                 hearts += 1;
                 healthbar.setHealth(hearts);
-                inventoryCount[0] += 1;
-                maxHealthUpTxt.text = inventoryCount[0].ToString();
+                PlayerUpgrades.maxHealthUp += 1;
+                maxHealthUpTxt.text = PlayerUpgrades.maxHealthUp.ToString();
                 other.gameObject.SetActive(false);
             }
         }
         if (other.gameObject.CompareTag("+ClonesUpgrade"))
         {
             clonesAllowed += 1;
-            inventoryCount[1] += 1;
-            clonesUpTxt.text = inventoryCount[1].ToString();
+            PlayerUpgrades.clonesUpgrade += 1;
+            clonesUpTxt.text = PlayerUpgrades.clonesUpgrade.ToString();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("DashCDDUpgrade"))
         {
-            pierceDashCooldown = 0.8f * pierceDashCooldown;
-            bounceDashCooldown = 0.8f * bounceDashCooldown;
-            inventoryCount[2] += 1;
-            dashCDDUpTxt.text = inventoryCount[2].ToString();
+            pierceDashCooldown = 0.95f * pierceDashCooldown;
+            bounceDashCooldown = 0.95f * bounceDashCooldown;
+            PlayerUpgrades.dashCooldownUpgrades += 1;
+            dashCDDUpTxt.text = PlayerUpgrades.dashCooldownUpgrades.ToString();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("HaltUpgrade"))
@@ -389,15 +387,15 @@ public class PlayerController : MonoBehaviour
             {
                 clonesAllowed += 1;
             }
-            inventoryCount[3] += 1;
-            haltUpTxt.text = inventoryCount[3].ToString();
+            PlayerUpgrades.haltUpgrades += 1;
+            haltUpTxt.text = PlayerUpgrades.haltUpgrades.ToString();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("MoveSpeedUpgrade"))
         {
             speed = 1.05f * speed;
-            inventoryCount[4] += 1;
-            moveSpeedUpTxt.text = inventoryCount[4].ToString();
+            PlayerUpgrades.moveSpeedUpgrade += 1;
+            moveSpeedUpTxt.text = PlayerUpgrades.moveSpeedUpgrade.ToString();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("Explosion"))

@@ -644,7 +644,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "-20% Dash \nCooldown x"
+  m_Text: "-5% Dash \nCooldown x"
 --- !u!222 &474876858
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1049,6 +1049,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RightBoundary
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157882853764328102, guid: 6d94b66fe46ed8f4bb5f5e4aaddc1e0d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d94b66fe46ed8f4bb5f5e4aaddc1e0d, type: 3}
