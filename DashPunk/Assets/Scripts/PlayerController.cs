@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         maxHealth = hearts;
         healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
-        clonesAllowed = 4 + PlayerUpgrades.clonesUpgrade;
+        clonesAllowed = 4 + PlayerUpgrades.clonesUpgrade; //PlaceHolder need to implement function
         maxHealthUpTxt.text = PlayerUpgrades.maxHealthUp.ToString();
         clonesUpTxt.text = PlayerUpgrades.clonesUpgrade.ToString();
         dashCDDUpTxt.text = PlayerUpgrades.dashCooldownUpgrades.ToString();
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         knockBackPower = 5000;
         bouncePower = 20000;
         dashSpeed = 70;
-        speed = 10 + (5 * PlayerUpgrades.moveSpeedUpgrade);
+        speed = 10 + (5 * PlayerUpgrades.moveSpeedUpgrade); //PlaceHolder need to implement function
         genericDashCooldown = 0.6f;
         pierceDashCooldown = 0.8f * Mathf.Pow(0.95f, PlayerUpgrades.dashCooldownUpgrades);
         bounceDashCooldown = 0.8f * Mathf.Pow(0.95f, PlayerUpgrades.dashCooldownUpgrades);
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         pierceDamage = 1;
         bounceCloneDamage = 1;
         pierceCloneDamage = 1;
-        haltBarMax = 10 - PlayerUpgrades.haltUpgrades;
+        haltBarMax = 10 - PlayerUpgrades.haltUpgrades; //PlaceHolder need to implement function
     }
 
     // Update is called once per frame

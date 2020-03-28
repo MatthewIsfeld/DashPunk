@@ -120,21 +120,22 @@ public class Spawner : MonoBehaviour
 
     void waveCompleted()
     {
-        Debug.Log("game paused to go to upgrade screen.");
-        waveEnd.GetComponent<UpgradeScreen>().Pause();
-        waveEnd.GetComponent<UpgradeScreen>().selectButtons();
-        Debug.Log("Wave Completed!");
-        waveState = 1;
-        waveCountDown = nextWaveTime;
-
         if (nextWave + 1 > waves.Length - 1)
         {
+            waveState = 1;
+            waveCountDown = nextWaveTime;
             nextWave = 0;
             Debug.Log("Changing to next stage!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
         {
+            Debug.Log("game paused to go to upgrade screen.");
+            waveEnd.GetComponent<UpgradeScreen>().Pause();
+            waveEnd.GetComponent<UpgradeScreen>().selectButtons();
+            Debug.Log("Wave Completed!");
+            waveState = 1;
+            waveCountDown = nextWaveTime;
             nextWave++;
         }
     }
