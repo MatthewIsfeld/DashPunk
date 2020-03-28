@@ -39,6 +39,10 @@ public class HeatSeekingControl : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
             }            
         }
+        if (Spawner.totalEnemies == 0)
+        {
+            destroyGrenade();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

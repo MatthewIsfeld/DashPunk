@@ -247,18 +247,22 @@ public class PlayerController : MonoBehaviour
         // Move character when pierceDashing and disable enemy collider so character can pass through
         else if (isPierceDashing == 1)
         {
-            /* for (int i = 0; i < enemyColliders.Count; i++)
+             for (int i = 0; i < enemyColliders.Count; i++)
              {
                  tempEnemyCollider = enemyColliders[i].GetComponent<Collider2D>();
-                 tempEnemyCollider.enabled = !tempEnemyCollider.enabled;
-             } */
-
-            this.GetComponent<Collider2D>().isTrigger = true;
+                 tempEnemyCollider.isTrigger = true;
+             } 
+            //this.GetComponent<Collider2D>().isTrigger = true;
             CreateDust2();
             if (dashTime <= 0)
             {
                 rb.velocity = Vector2.zero;
-                this.GetComponent<Collider2D>().isTrigger = false;
+                for (int i = 0; i < enemyColliders.Count; i++)
+                {
+                    tempEnemyCollider = enemyColliders[i].GetComponent<Collider2D>();
+                    tempEnemyCollider.isTrigger = false;
+                }
+                //this.GetComponent<Collider2D>().isTrigger = false;
                 dashTime = initialDashTime;
                 isPierceDashing = 0;
                 pierceCooldown = true;
@@ -266,11 +270,7 @@ public class PlayerController : MonoBehaviour
                 Invoke("pierceDashCD", pierceDashCooldown);
                 Invoke("dashCD", genericDashCooldown);
                 spaceDash = false;
-              /*  for (int i = 0; i < enemyColliders.Count; i++)
-                {
-                    tempEnemyCollider = enemyColliders[i].GetComponent<Collider2D>();
-                    tempEnemyCollider.enabled = true;
-                } */
+               
             }
             else
             {

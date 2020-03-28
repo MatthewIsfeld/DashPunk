@@ -35,7 +35,11 @@ public class BulletControl : MonoBehaviour
             {                
                 rb.MovePosition(transform.position + (direction * speed * Time.deltaTime));
             }
-        }                       
+        }
+        if (Spawner.totalEnemies == 0)
+        {
+            destroyBullet();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

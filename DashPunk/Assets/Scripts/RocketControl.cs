@@ -10,6 +10,7 @@ public class RocketControl : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 direction;
     public GameObject explosion;
+    private float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class RocketControl : MonoBehaviour
             playerObject = GameObject.Find("Player");
             rb = this.GetComponent<Rigidbody2D>();
             direction = Player.position - transform.position;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            rb.rotation = angle;
             direction = direction.normalized;
         }
     }
@@ -32,6 +35,10 @@ public class RocketControl : MonoBehaviour
             {
                 rb.MovePosition(transform.position + (direction * speed * Time.deltaTime));
             }
+        }
+        if (Spawner.totalEnemies == 0)
+        {
+            destroyBullet();
         }
     }
 
