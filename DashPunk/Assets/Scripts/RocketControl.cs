@@ -22,7 +22,7 @@ public class RocketControl : MonoBehaviour
             rb = this.GetComponent<Rigidbody2D>();
             direction = Player.position - transform.position;
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            rb.rotation = angle;
+            rb.rotation = angle + 90;
             direction = direction.normalized;
         }
     }

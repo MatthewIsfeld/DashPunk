@@ -35,7 +35,7 @@ public class HeatSeekingControl : MonoBehaviour
             if (playerObject.GetComponent<PlayerController>().isHalting == 0)
             {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                rb.rotation = angle;
+                rb.rotation = angle + 90;
                 transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
             }            
         }

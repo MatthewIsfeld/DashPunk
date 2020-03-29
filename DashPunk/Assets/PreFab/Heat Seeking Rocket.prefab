@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2304833036993870069
+--- !u!114 &2671903805718001796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39460633974206611}
+  m_GameObject: {fileID: 1503495217150693441}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eb50820c8988674cb341766c4438fb7, type: 3}
@@ -15,22 +15,52 @@ MonoBehaviour:
   speed: 8
   explosion: {fileID: 7492085415971963224, guid: ae678ebd1704ed44e8a6a94a9cd931db,
     type: 3}
---- !u!1001 &7309889483419416570
+--- !u!1001 &8151722113652430632
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2462956721445002444, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0033263061
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462956721445002444, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462956721445002444, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.03076923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462956721445002444, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.027336612
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462956721445002444, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.000826654
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462956721445002444, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.021014137
+      objectReference: {fileID: 0}
     - target: {fileID: 3888988844693415736, guid: 5263221354d6cab47b67d5c486e10ebb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.431702
+      value: -13.943301
       objectReference: {fileID: 0}
     - target: {fileID: 3888988844693415736, guid: 5263221354d6cab47b67d5c486e10ebb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.4599824
+      value: -1.9599025
       objectReference: {fileID: 0}
     - target: {fileID: 3888988844693415736, guid: 5263221354d6cab47b67d5c486e10ebb,
         type: 3}
@@ -77,6 +107,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3888988844693415736, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888988844693415736, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060066090037667749, guid: 5263221354d6cab47b67d5c486e10ebb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 750650581637798775, guid: f3a28980893f4ae4f9b382ec4b267bd3,
+        type: 3}
     - target: {fileID: 6060066090037667749, guid: 5263221354d6cab47b67d5c486e10ebb,
         type: 3}
       propertyPath: m_Color.b
@@ -100,9 +146,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8180609238139732856, guid: 5263221354d6cab47b67d5c486e10ebb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5263221354d6cab47b67d5c486e10ebb, type: 3}
---- !u!1 &39460633974206611 stripped
+--- !u!1 &1503495217150693441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7349242362888390505, guid: 5263221354d6cab47b67d5c486e10ebb,
     type: 3}
-  m_PrefabInstance: {fileID: 7309889483419416570}
+  m_PrefabInstance: {fileID: 8151722113652430632}
   m_PrefabAsset: {fileID: 0}
