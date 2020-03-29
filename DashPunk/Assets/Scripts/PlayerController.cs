@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -408,6 +410,19 @@ public class PlayerController : MonoBehaviour
             speed = 1.05f * speed;
             PlayerUpgrades.moveSpeedUpgrade += 1;
             moveSpeedUpTxt.text = PlayerUpgrades.moveSpeedUpgrade.ToString();
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("BossCurrency"))
+        {
+            string path = Application.dataPath + "/PermanentUpgrades.txt";
+            StreamReader readPerm = new StreamReader(path);
+            string tempCurrencyTxt = readPerm.ReadLine();
+            readPerm.Close();
+            int tempCurrency = Int32.Parse(tempCurrencyTxt);
+            tempCurrency += 100;
+            StreamWriter writePerm = new StreamWriter(path);
+            writePerm.Write(tempCurrency.ToString());
+            writePerm.Close();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("Explosion"))

@@ -35,6 +35,7 @@ public class BossControl : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Color defaultCol;
+    public GameObject currency;
 
     // Start is called before the first frame update
     void Start()
@@ -247,8 +248,14 @@ public class BossControl : MonoBehaviour
         blood.Play();
     }
 
+    void spawnCurrency()
+    {
+        Instantiate(currency, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
+        spawnCurrency();
         Spawner.totalEnemies -= 1;
         //CreateBlood();
         this.gameObject.SetActive(false);
