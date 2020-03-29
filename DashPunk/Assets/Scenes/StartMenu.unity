@@ -4475,43 +4475,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Grenade Sprite from BizmasterStudios: https://opengameart.org/content/explosives-and-medic-stuff-from-pixeltime
-
-
-    Bullet
-    and Missile Sprite from Bullet Collection 1 by Master484: https://opengameart.org/content/bullet-collection-1-m484
-
-
-    Floor
-    Sprite from Omnihunter Project: https://opengameart.org/content/top-down-basic-construction
-
-
-    Level
-    One Theme: Deus Ex Tempus - Trevor Lentz
-
-    https://opengameart.org/content/deus-ex-tempus
-
-
-    Assorted
-    sound effects from:
-
-    - https://freesound.org/people/Robinhood76/
-
-    - https://freesound.org/people/PSYCHO%20BOOMER/sounds/42029/
-
-    -
-    https://freesound.org/people/micahlg/sounds/413180/
-
-    - https://freesound.org/people/LukeSharples/sounds/209079/
-
-    -
-    https://freesound.org/people/cmusounddesign/sounds/85168/
-
-
-    Level 2 Theme:
-    "Cyber Monk" by iamoneabe
-
-    https://opengameart.org/content/cyber-monk'
+  m_Text: "Grenade Sprite from BizmasterStudios: https://opengameart.org/content/explosives-and-medic-stuff-from-pixeltime\n\nBullet
+    and Missile Sprite from Bullet Collection 1 by Master484: https://opengameart.org/content/bullet-collection-1-m484\n\nFloor
+    Sprite from Omnihunter Project: https://opengameart.org/content/top-down-basic-construction\n\nLevel
+    One Theme: Deus Ex Tempus - Trevor Lentz\nhttps://opengameart.org/content/deus-ex-tempus\n\nAssorted
+    sound effects from:\n- https://freesound.org/people/Robinhood76/\n- https://freesound.org/people/PSYCHO%20BOOMER/sounds/42029/\n-
+    https://freesound.org/people/micahlg/sounds/413180/\n- https://freesound.org/people/LukeSharples/sounds/209079/\n-
+    https://freesound.org/people/cmusounddesign/sounds/85168/\n\nLevel 2 Theme: \"Cyber
+    Monk\" by iamoneabe\nhttps://opengameart.org/content/cyber-monk\n\nLevel 2 Background
+    from [LPC] streets by Ba\u015Dto \nhttps://opengameart.org/content/lpc-streets"
 --- !u!222 &1872110718
 CanvasRenderer:
   m_ObjectHideFlags: 0
