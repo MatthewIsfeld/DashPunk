@@ -294,7 +294,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: collect
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!1 &1746855353129689550
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: collect
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!1 &1991050488516518660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,7 +1293,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: collect
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!1 &4603738610608614166
 GameObject:
   m_ObjectHideFlags: 0
