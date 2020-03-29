@@ -228,26 +228,32 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ebdf965e9fdd5c046b268a01d8d1a9d8, type: 3}
     volume: 0.28
     source: {fileID: 0}
+    loop: 0
   - name: bounceSound
     clip: {fileID: 8300000, guid: d44714c761fe5534ab8d7be810f245bd, type: 3}
     volume: 0.066
     source: {fileID: 0}
+    loop: 0
   - name: enemyHit
     clip: {fileID: 8300000, guid: 319cfce673a6fbe40af18b082d774c06, type: 3}
     volume: 0.235
     source: {fileID: 0}
+    loop: 0
   - name: playerHit
     clip: {fileID: 8300000, guid: 5825ba94db4e7c644999a63b3e2d4679, type: 3}
     volume: 0.301
     source: {fileID: 0}
+    loop: 0
   - name: halting
     clip: {fileID: 8300000, guid: cc4a5df8dd3abbe4881b88e07f5f92b1, type: 3}
     volume: 0.39
     source: {fileID: 0}
+    loop: 0
   - name: bgm
     clip: {fileID: 8300000, guid: 9ebb8506ade1fde4a8779eda1862f2f8, type: 3}
     volume: 0.252
     source: {fileID: 0}
+    loop: 1
 --- !u!4 &91073261
 Transform:
   m_ObjectHideFlags: 0
