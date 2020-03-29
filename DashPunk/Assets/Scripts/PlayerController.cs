@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("bgm");
         rb = GetComponent<Rigidbody2D>();
         initialDashTime = 0.10f;
         dashTime = initialDashTime;
@@ -157,6 +159,7 @@ public class PlayerController : MonoBehaviour
                 if ((isHalting == 0) && (isBounceDashing == 0) && pierceCooldown == false && dashCooldown == false)
                 {
                     invuln = 1;
+                    FindObjectOfType<AudioManager>().Play("pierceSound");
                     isPierceDashing = 1;
                 }
             }
@@ -173,11 +176,14 @@ public class PlayerController : MonoBehaviour
                 if ((isHalting == 0) && (isPierceDashing == 0) && bounceCooldown == false && dashCooldown == false)
                 {
                     invuln = 1;
+                    FindObjectOfType<AudioManager>().Play("bounceSound");
                     isBounceDashing = 1;
                 }
             }
             else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
             {
+                FindObjectOfType<AudioManager>().Play("halting");
+                FindObjectOfType<AudioManager>().Pause("bgm");
                 CreateDust3();
                 isHalting = 1;
                 for (int i = 1; i < 6; i++)     // Make the bar count down
@@ -315,6 +321,7 @@ public class PlayerController : MonoBehaviour
             if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
             {
                 hearts -= 1;
+                FindObjectOfType<AudioManager>().Play("playerHit");
                 healthbar.setHealth(hearts);
                 invuln = 1;
                 knockBackDir = new Vector2(transform.position.x - other.gameObject.GetComponent<Transform>().position.x, transform.position.y - other.gameObject.GetComponent<Transform>().position.y);

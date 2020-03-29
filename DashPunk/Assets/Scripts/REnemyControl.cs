@@ -106,6 +106,7 @@ public class REnemyControl : MonoBehaviour
         if (invuln == 1)
         {
             spriteRenderer.color = Color.red;
+            FindObjectOfType<AudioManager>().Play("enemyHit");
             if (invulnTime <= 0)
             {
                 spriteRenderer.color = defaultCol;

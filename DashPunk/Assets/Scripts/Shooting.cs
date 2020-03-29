@@ -43,6 +43,7 @@ public class Shooting : MonoBehaviour
         if (playerAccess.GetComponent<PlayerController>().haltTime <= 0)
         {
             ExecuteClones();
+            FindObjectOfType<AudioManager>().UnPause("bgm");
         }
     }
 
