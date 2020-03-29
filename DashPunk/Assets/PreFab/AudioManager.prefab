@@ -79,3 +79,18 @@ MonoBehaviour:
     volume: 0.35
     source: {fileID: 0}
     loop: 0
+  - name: collect
+    clip: {fileID: 8300000, guid: e5afcbad9af40624abdb29fecd9aec29, type: 3}
+    volume: 0.293
+    source: {fileID: 0}
+    loop: 0
+  - name: resume
+    clip: {fileID: 8300000, guid: 512d9fc64e284784d98b628503bf0133, type: 3}
+    volume: 0.35
+    source: {fileID: 0}
+    loop: 0
+  - name: resume
+    clip: {fileID: 8300000, guid: 512d9fc64e284784d98b628503bf0133, type: 3}
+    volume: 0.35
+    source: {fileID: 0}
+    loop: 0
