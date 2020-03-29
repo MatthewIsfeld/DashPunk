@@ -4479,7 +4479,7 @@ MonoBehaviour:
 
 
     Bullet
-    Sprite from Bullet Collection 1 by Master484: https://opengameart.org/content/bullet-collection-1-m484
+    and Missile Sprite from Bullet Collection 1 by Master484: https://opengameart.org/content/bullet-collection-1-m484
 
 
     Floor
@@ -4504,7 +4504,11 @@ MonoBehaviour:
 
     - https://freesound.org/people/LukeSharples/sounds/209079/
 
-'
+
+    Level
+    2 Theme: "Cyber Monk" by iamoneabe
+
+    https://opengameart.org/content/cyber-monk'
 --- !u!222 &1872110718
 CanvasRenderer:
   m_ObjectHideFlags: 0
