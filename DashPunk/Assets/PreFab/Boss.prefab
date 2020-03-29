@@ -443,7 +443,7 @@ MonoBehaviour:
   animator: {fileID: 4768779708780229352}
   spriteRenderer: {fileID: 2395540911459508898}
   defaultCol: {r: 0, g: 0, b: 0, a: 0}
-  currency: {fileID: 2184074789531814731, guid: c54eb2d805356b24db54dc7bc82d970f,
+  currency: {fileID: 1874105421591974362, guid: 814b5b70a7fa26e47ba9b25fd0f5c6e6,
     type: 3}
 --- !u!95 &4768779708780229352
 Animator:
