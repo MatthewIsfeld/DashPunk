@@ -16,6 +16,7 @@ TagManager:
   - DashCDDUpgrade
   - HaltUpgrade
   - MoveSpeedUpgrade
+  - BossCurrency
   layers:
   - Default
   - TransparentFX
