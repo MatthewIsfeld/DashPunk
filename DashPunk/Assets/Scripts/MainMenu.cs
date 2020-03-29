@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
         if (!File.Exists(path))
         {
             StreamWriter writePerm = new StreamWriter(path);
-            writePerm.Write("0");
+            writePerm.Write("0,0,0,0,0,0"); //Add a 0, for each upgrade
             writePerm.Close();
         }
         PlayerUpgrades.maxHealthUp = 0;

@@ -417,11 +417,12 @@ public class PlayerController : MonoBehaviour
             string path = Application.dataPath + "/PermanentUpgrades.txt";
             StreamReader readPerm = new StreamReader(path);
             string tempCurrencyTxt = readPerm.ReadLine();
+            string[] tempCurrencyTxtList = tempCurrencyTxt.Split(','); // Current length is 6
             readPerm.Close();
-            int tempCurrency = Int32.Parse(tempCurrencyTxt);
+            int tempCurrency = Int32.Parse(tempCurrencyTxtList[0]);
             tempCurrency += 100;
             StreamWriter writePerm = new StreamWriter(path);
-            writePerm.Write(tempCurrency.ToString());
+            writePerm.Write(tempCurrency.ToString() + "," + tempCurrencyTxtList[1] + "," + tempCurrencyTxtList[2] + "," + tempCurrencyTxtList[3] + "," + tempCurrencyTxtList[4] + "," + tempCurrencyTxtList[5]);
             writePerm.Close();
             other.gameObject.SetActive(false);
         }
