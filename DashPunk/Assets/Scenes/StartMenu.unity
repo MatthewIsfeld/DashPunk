@@ -3447,7 +3447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1371917190
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4504,9 +4504,12 @@ MonoBehaviour:
 
     - https://freesound.org/people/LukeSharples/sounds/209079/
 
+    -
+    https://freesound.org/people/cmusounddesign/sounds/85168/
 
-    Level
-    2 Theme: "Cyber Monk" by iamoneabe
+
+    Level 2 Theme:
+    "Cyber Monk" by iamoneabe
 
     https://opengameart.org/content/cyber-monk'
 --- !u!222 &1872110718
