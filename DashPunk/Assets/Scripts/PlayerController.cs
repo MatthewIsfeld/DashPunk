@@ -354,6 +354,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("HealthDrop"))
         {
+            FindObjectOfType<AudioManager>().Play("collect");
             if ((isBounceDashing == 0) && (isPierceDashing == 0))
             {
                 if (hearts < maxHealth)
@@ -366,6 +367,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("MaxHealthUpgrade"))
         {
+            FindObjectOfType<AudioManager>().Play("collect");
             if ((isBounceDashing == 0) && (isPierceDashing == 0))
             {
                 maxHealth += 1;
@@ -379,6 +381,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("+ClonesUpgrade"))
         {
+            FindObjectOfType<AudioManager>().Play("collect");
             clonesAllowed += 1;
             PlayerUpgrades.clonesUpgrade += 1;
             clonesUpTxt.text = PlayerUpgrades.clonesUpgrade.ToString();
@@ -386,6 +389,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("DashCDDUpgrade"))
         {
+            FindObjectOfType<AudioManager>().Play("collect");
             pierceDashCooldown = 0.95f * pierceDashCooldown;
             bounceDashCooldown = 0.95f * bounceDashCooldown;
             PlayerUpgrades.dashCooldownUpgrades += 1;
@@ -394,6 +398,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("HaltUpgrade"))
         {
+            FindObjectOfType<AudioManager>().Play("collect");
             if (haltBarMax > 5)
             {
                 haltBarMax -= 1;
@@ -407,6 +412,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("MoveSpeedUpgrade"))
         {
+            FindObjectOfType<AudioManager>().Play("collect");
             speed = 1.05f * speed;
             PlayerUpgrades.moveSpeedUpgrade += 1;
             moveSpeedUpTxt.text = PlayerUpgrades.moveSpeedUpgrade.ToString();
@@ -414,6 +420,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("BossCurrency"))
         {
+            FindObjectOfType<AudioManager>().Play("collect");
             string path = Application.dataPath + "/PermanentUpgrades.txt";
             StreamReader readPerm = new StreamReader(path);
             string tempCurrencyTxt = readPerm.ReadLine();
@@ -428,6 +435,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Explosion"))
         {
+            FindObjectOfType<AudioManager>().Play("playerHit");
             if ((isPierceDashing == 0) && (isBounceDashing == 0) && (invuln == 0))
             {
                 hearts -= 1;
