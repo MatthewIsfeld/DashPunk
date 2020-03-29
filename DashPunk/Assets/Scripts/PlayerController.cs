@@ -186,6 +186,7 @@ public class PlayerController : MonoBehaviour
                 FindObjectOfType<AudioManager>().Pause("bgm");
                 CreateDust3();
                 isHalting = 1;
+                Invoke("resumeHalt", 3);
                 for (int i = 1; i < 6; i++)     // Make the bar count down
                 {
                     Invoke("reduceHits", i);
@@ -511,5 +512,10 @@ public class PlayerController : MonoBehaviour
         }
 
         return retVal;
+    }
+
+    public void resumeHalt()
+    {
+        FindObjectOfType<AudioManager>().Play("resume");
     }
 }
