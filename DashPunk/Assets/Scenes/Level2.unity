@@ -2860,6 +2860,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986774214}
   m_CullTransparentMesh: 0
+--- !u!1 &1026527077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026527078}
+  - component: {fileID: 1026527080}
+  - component: {fileID: 1026527079}
+  m_Layer: 5
+  m_Name: Note
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1026527078
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026527077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1512741119}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: -300}
+  m_SizeDelta: {x: 1000, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1026527079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026527077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 32
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Note: Exiting to Main Menu ends current run.
+
+    All chips gained are
+    kept.'
+--- !u!222 &1026527080
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026527077}
+  m_CullTransparentMesh: 0
 --- !u!1 &1035565658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1746855353129689550, guid: 52c7a4c262772644ba5d3512a9fa5052,
@@ -5030,10 +5110,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5420925127750730104, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6272868098739973711, guid: 52c7a4c262772644ba5d3512a9fa5052,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -157
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272868098739973711, guid: 52c7a4c262772644ba5d3512a9fa5052,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6449136501785807713, guid: 52c7a4c262772644ba5d3512a9fa5052,
         type: 3}
@@ -5124,6 +5214,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryDisplayUI: {fileID: 1142740366}
   playerTracker: {fileID: 0}
+--- !u!224 &1512741119 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6928352190196198153, guid: 52c7a4c262772644ba5d3512a9fa5052,
+    type: 3}
+  m_PrefabInstance: {fileID: 1512741112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1555762859
 GameObject:
   m_ObjectHideFlags: 0
