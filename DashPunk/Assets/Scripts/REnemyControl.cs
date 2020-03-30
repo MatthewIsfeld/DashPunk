@@ -288,6 +288,7 @@ public class REnemyControl : MonoBehaviour
         int randVal;
         randVal = Random.Range(0, 100);
         Spawner.totalEnemies -= 1;
+        SpawnerEnd.totalEnemies -= 1;
         //CreateBlood();
         if (randVal <= 20)
         {

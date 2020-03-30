@@ -261,6 +261,7 @@ public class BossControl : MonoBehaviour
         playerObject.GetComponent<PlayerController>().bossFight = false;
         spawnCurrency();
         Spawner.totalEnemies -= 1;
+        SpawnerEnd.totalEnemies -= 1;
         //CreateBlood();
         this.gameObject.SetActive(false);
         healthbar.setUnactive();

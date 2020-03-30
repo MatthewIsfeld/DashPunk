@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         isPierceDashing = 0;
         isBounceDashing = 0;
         spaceDash = false;
-        hearts = 5 + PlayerUpgrades.maxHealthUp;
+        hearts = 10 + PlayerUpgrades.maxHealthUp;
         maxHealth = hearts;
         healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
