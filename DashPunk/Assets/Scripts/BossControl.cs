@@ -176,7 +176,6 @@ public class BossControl : MonoBehaviour
                 invuln = 1;
                 if (hearts <= 0)
                 {
-                    playerObject.GetComponent<PlayerController>().bossFight = false;
                     death();
                 }
             }
@@ -259,6 +258,7 @@ public class BossControl : MonoBehaviour
 
     void death()
     {
+        playerObject.GetComponent<PlayerController>().bossFight = false;
         spawnCurrency();
         Spawner.totalEnemies -= 1;
         //CreateBlood();
