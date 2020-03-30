@@ -16,7 +16,7 @@ public class ShopMenu : MonoBehaviour
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(',');
         readPerm.Close();
-        creditNum.text = "# of Credits: " + tempCurrencyTxtList[0].ToString();
+        creditNum.text = "# of Chips: " + tempCurrencyTxtList[0].ToString();
     }   
 
     public void BuyMaxHealth()
@@ -31,7 +31,7 @@ public class ShopMenu : MonoBehaviour
         if (tempCurrency >= 50)
         {
             tempCurrency -= 50;
-            creditNum.text = "# of Credits: " + tempCurrency.ToString();
+            creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempMaxHealth += 1;
             StreamWriter writePerm = new StreamWriter(path);
             writePerm.Write(tempCurrency.ToString() + "," + tempMaxHealth.ToString() + "," + tempCurrencyTxtList[2] + "," + tempCurrencyTxtList[3] + "," + tempCurrencyTxtList[4] + "," + tempCurrencyTxtList[5]);
@@ -51,7 +51,7 @@ public class ShopMenu : MonoBehaviour
         if (tempCurrency >= 50)
         {
             tempCurrency -= 50;
-            creditNum.text = "# of Credits: " + tempCurrency.ToString();
+            creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempClones += 1;
             StreamWriter writePerm = new StreamWriter(path);
             writePerm.Write(tempCurrency.ToString() + "," + tempCurrencyTxtList[1] + "," + tempClones.ToString() + "," + tempCurrencyTxtList[3] + "," + tempCurrencyTxtList[4] + "," + tempCurrencyTxtList[5]);
@@ -71,7 +71,7 @@ public class ShopMenu : MonoBehaviour
         if (tempCurrency >= 50)
         {
             tempCurrency -= 50;
-            creditNum.text = "# of Credits: " + tempCurrency.ToString();
+            creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempCooldown += 1;
             StreamWriter writePerm = new StreamWriter(path);
             writePerm.Write(tempCurrency.ToString() + "," + tempCurrencyTxtList[1] + "," + tempCurrencyTxtList[2] + "," + tempCooldown.ToString() + "," + tempCurrencyTxtList[4] + "," + tempCurrencyTxtList[5]);
@@ -91,7 +91,7 @@ public class ShopMenu : MonoBehaviour
         if (tempCurrency >= 50 && tempHaltBar < 5)
         {
             tempCurrency -= 50;
-            creditNum.text = "# of Credits: " + tempCurrency.ToString();
+            creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempHaltBar += 1;
             StreamWriter writePerm = new StreamWriter(path);
             writePerm.Write(tempCurrency.ToString() + "," + tempCurrencyTxtList[1] + "," + tempCurrencyTxtList[2] + "," + tempCurrencyTxtList[3] + "," + tempHaltBar.ToString() + "," + tempCurrencyTxtList[5]);
@@ -111,7 +111,7 @@ public class ShopMenu : MonoBehaviour
         if (tempCurrency >= 50)
         {
             tempCurrency -= 50;
-            creditNum.text = "# of Credits: " + tempCurrency.ToString();
+            creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempMoveSpeed += 1;
             StreamWriter writePerm = new StreamWriter(path);
             writePerm.Write(tempCurrency.ToString() + "," + tempCurrencyTxtList[1] + "," + tempCurrencyTxtList[2] + "," + tempCurrencyTxtList[3] + "," + tempCurrencyTxtList[4] + "," + tempMoveSpeed.ToString());
