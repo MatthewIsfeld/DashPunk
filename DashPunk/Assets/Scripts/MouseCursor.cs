@@ -11,7 +11,7 @@ public class MouseCursor : MonoBehaviour
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    void Update()
+    void LateUpdate()
     {        
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = cursorPos;   
