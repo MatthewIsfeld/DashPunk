@@ -478,8 +478,7 @@ MonoBehaviour:
   moveSpeed: 3
   playerBounceDashing: 0
   playerPierceDashing: 0
-  playerObject: {fileID: 4514663858792220219, guid: b73af14510a9b7748bdbf2b64138f3d4,
-    type: 3}
+  playerObject: {fileID: 0}
   hearts: 20
   invulnTimeStart: 0.3
   blood: {fileID: 0}
