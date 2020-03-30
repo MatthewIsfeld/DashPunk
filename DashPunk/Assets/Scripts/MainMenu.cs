@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     void Start()
     {
+        Cursor.visible = true;
         string path = Application.dataPath + "/PermanentUpgrades.txt";
         if (!File.Exists(path))
         {
