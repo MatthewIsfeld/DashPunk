@@ -50,6 +50,14 @@ public class HeatSeekingControl : MonoBehaviour
         destroyGrenade();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            destroyGrenade();
+        }
+    }
+
     void destroyGrenade()
     {
         Instantiate(explosion, transform.position, Quaternion.identity);

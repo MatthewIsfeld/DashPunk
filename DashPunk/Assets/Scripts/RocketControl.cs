@@ -47,6 +47,14 @@ public class RocketControl : MonoBehaviour
         destroyBullet();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            destroyBullet();
+        }
+    }
+
     void destroyBullet()
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
