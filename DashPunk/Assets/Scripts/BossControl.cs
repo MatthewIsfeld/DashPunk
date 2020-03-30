@@ -40,6 +40,8 @@ public class BossControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Pause("bgm");
+        FindObjectOfType<AudioManager>().Play("boss");
         rb = this.GetComponent<Rigidbody2D>();
         invuln = 0;
         invulnTime = invulnTimeStart;

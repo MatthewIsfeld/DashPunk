@@ -186,6 +186,7 @@ public class PlayerController : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("halting");
                 FindObjectOfType<AudioManager>().Pause("bgm");
+                FindObjectOfType<AudioManager>().Pause("boss");
                 CreateDust3();
                 isHalting = 1;
                 Invoke("resumeHalt", 3);

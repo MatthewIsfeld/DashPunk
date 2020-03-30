@@ -14,6 +14,8 @@ public class Shooting : MonoBehaviour
     public List<Vector2> bDirList = new List<Vector2>();
     public List<Vector2> pDirList = new List<Vector2>();
     private int cloneNum;
+    public AudioSource bgm;
+    public AudioSource boss;
 
     void Start()
     {
@@ -44,6 +46,8 @@ public class Shooting : MonoBehaviour
         {
             ExecuteClones();
             FindObjectOfType<AudioManager>().UnPause("bgm");
+            
+            //FindObjectOfType<AudioManager>().UnPause("boss");
         }
     }
 

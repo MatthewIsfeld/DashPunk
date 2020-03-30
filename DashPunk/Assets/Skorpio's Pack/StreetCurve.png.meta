@@ -1,7 +1,187 @@
 fileFormatVersion: 2
 guid: 899d6297d3e0e0d45874e6c6482aef14
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7627050824011831034
+    second: StreetCurve_0
+  - first:
+      213: -1616280166858712507
+    second: StreetCurve_1
+  - first:
+      213: -7802306675137975668
+    second: StreetCurve_2
+  - first:
+      213: 6970744298580127817
+    second: StreetCurve_3
+  - first:
+      213: -1074253984406993066
+    second: StreetCurve_4
+  - first:
+      213: 4184374273207400990
+    second: StreetCurve_5
+  - first:
+      213: -2783713974259443713
+    second: StreetCurve_6
+  - first:
+      213: 259268757174285077
+    second: StreetCurve_7
+  - first:
+      213: -1765082341524237768
+    second: StreetCurve_8
+  - first:
+      213: 4724042564514597404
+    second: StreetCurve_9
+  - first:
+      213: -2344382169841424716
+    second: StreetCurve_10
+  - first:
+      213: 660050623576862436
+    second: StreetCurve_11
+  - first:
+      213: 2357329904346641182
+    second: StreetCurve_12
+  - first:
+      213: 8262493907858392527
+    second: StreetCurve_13
+  - first:
+      213: -2552020493650566613
+    second: StreetCurve_14
+  - first:
+      213: 7992536112689592027
+    second: StreetCurve_15
+  - first:
+      213: -2650189132084371074
+    second: StreetCurve_16
+  - first:
+      213: -320066169731852751
+    second: StreetCurve_17
+  - first:
+      213: 7861930809651518131
+    second: StreetCurve_18
+  - first:
+      213: -8365149324849459363
+    second: StreetCurve_19
+  - first:
+      213: 3781536262745612797
+    second: StreetCurve_20
+  - first:
+      213: 2747907057989094931
+    second: StreetCurve_21
+  - first:
+      213: 6559216377665129729
+    second: StreetCurve_22
+  - first:
+      213: 1562691767088280130
+    second: StreetCurve_23
+  - first:
+      213: -6432768913003147441
+    second: StreetCurve_24
+  - first:
+      213: 2486044109573227452
+    second: StreetCurve_25
+  - first:
+      213: -3464174758060169340
+    second: StreetCurve_26
+  - first:
+      213: -7302169004336418550
+    second: StreetCurve_27
+  - first:
+      213: 4853360275231560212
+    second: StreetCurve_28
+  - first:
+      213: 6014781194761799229
+    second: StreetCurve_29
+  - first:
+      213: 6579970425171687204
+    second: StreetCurve_30
+  - first:
+      213: -6797438377743716547
+    second: StreetCurve_31
+  - first:
+      213: 3217805853097825973
+    second: StreetCurve_32
+  - first:
+      213: -5264137076456632702
+    second: StreetCurve_33
+  - first:
+      213: 579306051744477691
+    second: StreetCurve_34
+  - first:
+      213: 5018796016771687315
+    second: StreetCurve_35
+  - first:
+      213: 8404246283465855965
+    second: StreetCurve_36
+  - first:
+      213: -2397612109647804213
+    second: StreetCurve_37
+  - first:
+      213: 2086412027612472149
+    second: StreetCurve_38
+  - first:
+      213: -7248504016037188768
+    second: StreetCurve_39
+  - first:
+      213: -8133709502672462660
+    second: StreetCurve_40
+  - first:
+      213: 4243891893761552708
+    second: StreetCurve_41
+  - first:
+      213: -8025437223689845458
+    second: StreetCurve_42
+  - first:
+      213: -5977017837243022809
+    second: StreetCurve_43
+  - first:
+      213: 2496026487128651189
+    second: StreetCurve_44
+  - first:
+      213: 3496989807772146883
+    second: StreetCurve_45
+  - first:
+      213: -5619568822981500616
+    second: StreetCurve_46
+  - first:
+      213: 7134528669723272617
+    second: StreetCurve_47
+  - first:
+      213: -1693107293023049831
+    second: StreetCurve_48
+  - first:
+      213: -2096354321015322337
+    second: StreetCurve_49
+  - first:
+      213: -7470601201105901025
+    second: StreetCurve_50
+  - first:
+      213: 3361795545212405479
+    second: StreetCurve_51
+  - first:
+      213: -2067167369513240810
+    second: StreetCurve_52
+  - first:
+      213: 6917535496252558235
+    second: StreetCurve_53
+  - first:
+      213: 8229897391445086895
+    second: StreetCurve_54
+  - first:
+      213: -5905628744193180781
+    second: StreetCurve_55
+  - first:
+      213: -7628634501273338965
+    second: StreetCurve_56
+  - first:
+      213: 3013999632392888635
+    second: StreetCurve_57
+  - first:
+      213: 2372409321233208011
+    second: StreetCurve_58
+  - first:
+      213: 4634962161759985390
+    second: StreetCurve_59
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +220,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +250,369 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: StreetCurve_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609ace67fa5472690800000000000000
+      internalID: -7627050824011831034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a90ec60c1d199e0800000000000000
+      internalID: -1616280166858712507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8aedb7da63a8b390800000000000000
+      internalID: -7802306675137975668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940b2f8c10f0db060800000000000000
+      internalID: 6970744298580127817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6578fdc51bb7711f0800000000000000
+      internalID: -1074253984406993066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a7fc15b32e11a30800000000000000
+      internalID: 4184374273207400990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff799ff93e24e59d0800000000000000
+      internalID: -2783713974259443713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513fabc9f8b199300800000000000000
+      internalID: 259268757174285077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832122256fa2187e0800000000000000
+      internalID: -1765082341524237768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ac7b1feab2f8140800000000000000
+      internalID: 4724042564514597404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6a7dc66d4177fd0800000000000000
+      internalID: -2344382169841424716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eee2188b88f82900800000000000000
+      internalID: 660050623576862436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13bcfeee0be6b020800000000000000
+      internalID: 2357329904346641182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc58ab0ce664aa270800000000000000
+      internalID: 8262493907858392527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22e078d1e6659cd0800000000000000
+      internalID: -2552020493650566613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetCurve_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6385b8f313bee60800000000000000
+      internalID: 7992536112689592027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
