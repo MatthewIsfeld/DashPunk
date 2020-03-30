@@ -6,7 +6,8 @@ public class AudioManager : MonoBehaviour
 {
 
     public Sound[] sounds;
-    
+    string OutputMixer = "MainMixer";
+
     void Awake()
     {
         foreach(Sound s in sounds)
@@ -15,6 +16,7 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.loop = s.loop;
+            //s.source.outputAudioMixerGroup = s.mixer;
         }
     }
 
