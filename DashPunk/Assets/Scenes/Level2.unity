@@ -842,6 +842,12 @@ PrefabInstance:
       objectReference: {fileID: 616514414}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aa34be6235dd184f96e44d02a3caacb, type: 3}
+--- !u!1 &132086515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8576817598621158932, guid: 7aa34be6235dd184f96e44d02a3caacb,
+    type: 3}
+  m_PrefabInstance: {fileID: 132086514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &136821522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5461,7 +5467,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 132086515}
     - target: {fileID: 8674160034588999491, guid: d2845da6a7e95634a9b5710bcc85de3a,
         type: 3}
       propertyPath: m_BackGroundColor.r
