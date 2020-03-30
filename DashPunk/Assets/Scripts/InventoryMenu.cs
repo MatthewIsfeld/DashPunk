@@ -34,6 +34,7 @@ public class InventoryMenu : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.visible = false;
         inventoryDisplayUI.SetActive(false);
         Time.timeScale = 1f;
         PauseMenu.isPaused = false;
@@ -44,6 +45,7 @@ public class InventoryMenu : MonoBehaviour
 
     void Pause()
     {
+        Cursor.visible = true;
         inventoryDisplayUI.SetActive(true);
         Time.timeScale = 0f;
         PauseMenu.isPaused = true;
