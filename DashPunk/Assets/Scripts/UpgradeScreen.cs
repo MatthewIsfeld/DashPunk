@@ -25,6 +25,7 @@ public class UpgradeScreen : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.visible = false;
         upgradeScreenUI.SetActive(false);
         Time.timeScale = 1f;
         isUpgrading = false;
@@ -36,6 +37,7 @@ public class UpgradeScreen : MonoBehaviour
 
     public void Pause()
     {
+        Cursor.visible = true;
         Time.timeScale = 0;
         isUpgrading = true;
         upgradeScreenUI.SetActive(true);
