@@ -3661,6 +3661,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5846372174664699287, guid: 45196ba1f764ee745b7afa35fdf22ea5,
+        type: 3}
+      propertyPath: sounds.Array.data[8].name
+      value: boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846372174664699287, guid: 45196ba1f764ee745b7afa35fdf22ea5,
+        type: 3}
+      propertyPath: sounds.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 18b7dc958af24dc43989d13a1f1cfc66, type: 3}
+    - target: {fileID: 5846372174664699287, guid: 45196ba1f764ee745b7afa35fdf22ea5,
+        type: 3}
+      propertyPath: sounds.Array.data[8].volume
+      value: 0.293
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846372174664699287, guid: 45196ba1f764ee745b7afa35fdf22ea5,
+        type: 3}
+      propertyPath: sounds.Array.data[8].loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45196ba1f764ee745b7afa35fdf22ea5, type: 3}
 --- !u!1001 &7343990317371216440
