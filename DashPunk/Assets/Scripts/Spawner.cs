@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     public int waveState = 1; //1 is between waves, 2 is during wave, 3 is creating wave
     public OneWave[] waves;
     private int nextWave = 0;
+    public Animator animator;
 
     public Transform[] spawnPoints;
 
@@ -130,7 +131,7 @@ public class Spawner : MonoBehaviour
             waveCountDown = nextWaveTime;
             nextWave = 0;
             Debug.Log("Changing to next stage!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            ChangeLevel();
         }
         else
         {
@@ -142,6 +143,20 @@ public class Spawner : MonoBehaviour
             waveCountDown = nextWaveTime;
             nextWave++;
         }
+    }
+
+    void ChangeLevel()
+    {
+        StartCoroutine(LevelCoordinate(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LevelCoordinate(int num)
+    {
+        animator.SetInteger("SceneTransition", 1);
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(num);
     }
 }
 
