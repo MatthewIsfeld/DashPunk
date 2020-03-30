@@ -19,6 +19,8 @@ public class Spawner : MonoBehaviour
     public Text enemiesText;
     public static int totalEnemies;
     public GameObject waveEnd;
+    public Text goNext;
+    private bool levelEnd;
     
 
     [System.Serializable]
@@ -44,35 +46,49 @@ public class Spawner : MonoBehaviour
         waveState = 1;
         nextWaveTime = 5f;
         searchCountDown = 1f;
+        goNext.text = "";
+        levelEnd = false;
     }
     
     // Update is called once per frame
     void Update()
     {
-        if (waveState == 2)
+        if (levelEnd == false)
         {
-            //Check if enemies are still alive
-            if (checkAlive() == false)
+            if (waveState == 2)
             {
-                waveCompleted();
+                //Check if enemies are still alive
+                if (checkAlive() == false)
+                {
+                    waveCompleted();
+                }
+                else
+                {
+                    enemiesText.text = "Enemies Remaining: " + totalEnemies;
+                    return;
+                }
+            }
+            if (waveCountDown <= 0)
+            {
+                if (waveState != 3)
+                {
+                    //Spawn wave
+                    StartCoroutine(spawnWave(waves[nextWave]));
+                }
             }
             else
             {
-                enemiesText.text = "Enemies Remaining: " + totalEnemies;
-                return;
+                waveCountDown -= Time.deltaTime;
             }
-        }
-        if (waveCountDown <= 0)
+        } else if (levelEnd == true)
         {
-            if (waveState != 3)
+            if (UpgradeScreen.isUpgrading == false)
             {
-                //Spawn wave
-                StartCoroutine(spawnWave(waves[nextWave]));
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    ChangeLevel();
+                }
             }
-        }
-        else
-        {
-            waveCountDown -= Time.deltaTime;
         }
     }
 
@@ -127,11 +143,15 @@ public class Spawner : MonoBehaviour
     {
         if (nextWave + 1 > waves.Length - 1)
         {
-            waveState = 1;
+            waveEnd.GetComponent<UpgradeScreen>().Pause();
+            waveEnd.GetComponent<UpgradeScreen>().selectButtons();
+            waveState = 2;
             waveCountDown = nextWaveTime;
-            nextWave = 0;
+            nextWave = waves.Length;
             Debug.Log("Changing to next stage!");
-            ChangeLevel();
+
+            goNext.text = "Press N to go to next Level!";
+            levelEnd = true;
         }
         else
         {
