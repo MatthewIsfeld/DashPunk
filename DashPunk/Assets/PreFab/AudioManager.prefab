@@ -46,61 +46,61 @@ MonoBehaviour:
   sounds:
   - name: pierceSound
     clip: {fileID: 8300000, guid: ebdf965e9fdd5c046b268a01d8d1a9d8, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.28
     source: {fileID: 0}
     loop: 0
   - name: bounceSound
     clip: {fileID: 8300000, guid: d44714c761fe5534ab8d7be810f245bd, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.066
     source: {fileID: 0}
     loop: 0
   - name: enemyHit
     clip: {fileID: 8300000, guid: 319cfce673a6fbe40af18b082d774c06, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.235
     source: {fileID: 0}
     loop: 0
   - name: playerHit
     clip: {fileID: 8300000, guid: 5825ba94db4e7c644999a63b3e2d4679, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.301
     source: {fileID: 0}
     loop: 0
   - name: halting
     clip: {fileID: 8300000, guid: d0fb59ffe958ecd45808312e5de70f54, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.301
     source: {fileID: 0}
     loop: 0
   - name: bgm
     clip: {fileID: 8300000, guid: 9ebb8506ade1fde4a8779eda1862f2f8, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.252
     source: {fileID: 0}
     loop: 1
   - name: resume
     clip: {fileID: 8300000, guid: 512d9fc64e284784d98b628503bf0133, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.35
     source: {fileID: 0}
     loop: 0
   - name: collect
     clip: {fileID: 8300000, guid: e5afcbad9af40624abdb29fecd9aec29, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.293
     source: {fileID: 0}
     loop: 0
   - name: resume
     clip: {fileID: 8300000, guid: 512d9fc64e284784d98b628503bf0133, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.35
     source: {fileID: 0}
     loop: 0
   - name: resume
     clip: {fileID: 8300000, guid: 512d9fc64e284784d98b628503bf0133, type: 3}
-    mixer: {fileID: 24100000, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
+    mixer: {fileID: 24300002, guid: 2291f0618fdf1e74da6347eb559d7426, type: 2}
     volume: 0.35
     source: {fileID: 0}
     loop: 0
