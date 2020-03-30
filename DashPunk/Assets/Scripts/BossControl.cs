@@ -55,6 +55,7 @@ public class BossControl : MonoBehaviour
         healthbar.setActive();
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultCol = spriteRenderer.color;
+        playerObject.GetComponent<PlayerController>().bossFight = true;
     }
 
     // Update makes the enemy rotate to face the player
@@ -175,6 +176,7 @@ public class BossControl : MonoBehaviour
                 invuln = 1;
                 if (hearts <= 0)
                 {
+                    playerObject.GetComponent<PlayerController>().bossFight = false;
                     death();
                 }
             }

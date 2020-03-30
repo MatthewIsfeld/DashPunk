@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     public Text haltUpTxt;
     public Text moveSpeedUpTxt;
     public SpriteRenderer spriteRenderer;
+    public bool bossFight;
 
     //Parameters for upgrades
     public int bounceDamage;
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
         isPierceDashing = 0;
         isBounceDashing = 0;
         spaceDash = false;
-        hearts = 20 + PlayerUpgrades.maxHealthUp;
+        hearts = 50 + PlayerUpgrades.maxHealthUp;
         maxHealth = hearts;
         healthbar.setMaxHealth(maxHealth);
         healthbar.setHealth(hearts);
@@ -114,6 +115,7 @@ public class PlayerController : MonoBehaviour
         bounceCloneDamage = 1;
         pierceCloneDamage = 1;
         haltBarMax = calcHaltBarMax(); //Function should work
+        bossFight = false;
     }
 
     // Update is called once per frame
@@ -185,8 +187,16 @@ public class PlayerController : MonoBehaviour
             else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
             {
                 FindObjectOfType<AudioManager>().Play("halting");
-                FindObjectOfType<AudioManager>().Pause("bgm");
-                FindObjectOfType<AudioManager>().Pause("boss");
+                if (bossFight)
+                {
+                    Debug.Log("paused boss music because bossFight is true");
+                    FindObjectOfType<AudioManager>().Pause("boss");
+                }
+                else
+                {
+                    Debug.Log("paused bgm music because bossFight is false");
+                    FindObjectOfType<AudioManager>().Pause("bgm");
+                }
                 CreateDust3();
                 isHalting = 1;
                 Invoke("resumeHalt", 3);

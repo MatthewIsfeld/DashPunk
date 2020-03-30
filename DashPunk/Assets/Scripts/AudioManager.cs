@@ -22,23 +22,17 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
-        s.isPaused = false;
-        s.isPlaying = true;
     }
 
     public void Pause (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Pause();
-        s.isPaused = true;
-        s.isPlaying = false;
     }
 
     public void UnPause(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.UnPause();
-        s.isPaused = false;
-        s.isPlaying = true;
     }
 }

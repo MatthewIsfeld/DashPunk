@@ -14580,6 +14580,7 @@ MonoBehaviour:
   haltUpTxt: {fileID: 0}
   moveSpeedUpTxt: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bossFight: 0
   bounceDamage: 1
   pierceDamage: 1
   bounceCloneDamage: 1
@@ -14597,7 +14598,6 @@ MonoBehaviour:
   haltTime: 0
   invulnTimeStart: 1
   clonesAllowed: 0
-  pierceClip: {fileID: 0}
 --- !u!61 &8576817598621158934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14662,11 +14662,13 @@ MonoBehaviour:
     type: 3}
   pierceClone: {fileID: 74133933897261228, guid: 48519f98e23e6ed42b9595451ba43f5a,
     type: 3}
-  playerAccess: {fileID: 0}
+  playerAccess: {fileID: 8576817598621158932}
   bounceList: []
   pierceList: []
   bDirList: []
   pDirList: []
+  bgm: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!95 &2800891033977550135
 Animator:
   serializedVersion: 3

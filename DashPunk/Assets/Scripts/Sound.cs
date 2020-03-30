@@ -14,6 +14,4 @@ public class Sound
     public AudioSource source;
 
     public bool loop;
-    public bool isPaused = false;
-    public bool isPlaying = false;
 }

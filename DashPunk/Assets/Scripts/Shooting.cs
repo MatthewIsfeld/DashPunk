@@ -14,8 +14,6 @@ public class Shooting : MonoBehaviour
     public List<Vector2> bDirList = new List<Vector2>();
     public List<Vector2> pDirList = new List<Vector2>();
     private int cloneNum;
-    public AudioSource bgm;
-    public AudioSource boss;
 
     void Start()
     {
@@ -42,12 +40,20 @@ public class Shooting : MonoBehaviour
                 cloneNum++;
             }
         }
-        if (playerAccess.GetComponent<PlayerController>().haltTime <= 0)
+        if (playerAccess.GetComponent<PlayerController>().haltTime <= 0.1)
         {
             ExecuteClones();
-            FindObjectOfType<AudioManager>().UnPause("bgm");
-            
-            //FindObjectOfType<AudioManager>().UnPause("boss");
+            Debug.Log("clones unleashed ");
+            if (playerAccess.GetComponent<PlayerController>().bossFight)
+            {
+                Debug.Log("unpaused boss music because bossFight is true");
+                FindObjectOfType<AudioManager>().UnPause("boss");
+            }
+            else
+            {
+                Debug.Log("unpaused bgm music because bossFight is false");
+                FindObjectOfType<AudioManager>().UnPause("bgm");
+            }
         }
     }
 
