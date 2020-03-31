@@ -27,11 +27,10 @@ public class FinalBossControl : MonoBehaviour
     public float startShootCooldown;
     public Transform firePoint;
     public HealthBar healthbar;
-    //public Animator animator;
+    public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Color defaultCol;
     public GameObject currency;
-    private bool rocket;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +50,6 @@ public class FinalBossControl : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultCol = spriteRenderer.color;
         playerObject.GetComponent<PlayerController>().bossFight = true;
-        rocket = true;
     }
 
     // Update makes the enemy rotate to face the player
@@ -71,16 +69,16 @@ public class FinalBossControl : MonoBehaviour
                 movement = direction;
 
                 //Animation Code
-                //animator.enabled = true;
-                //animator.SetFloat("Horizontal", movement.x);
-                //animator.SetFloat("Vertical", movement.y);
-                //animator.SetFloat("Speed", movement.sqrMagnitude);
+                animator.enabled = true;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+                animator.SetFloat("Speed", movement.sqrMagnitude);
             }
 
-            //if (playerObject.GetComponent<PlayerController>().isHalting == 1)
-            //{
-                //animator.enabled = false;
-            //}
+            if (playerObject.GetComponent<PlayerController>().isHalting == 1)
+           {
+                animator.enabled = false;
+            }
         }
         playerObject = GameObject.Find("Player");
         if (playerObject != null)

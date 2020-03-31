@@ -659,7 +659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'STARTING VALUES: Max HP: 5, # of Dash Clones: 4, BDashCooldown: 0.8s,
+  m_Text: 'STARTING VALUES: Max HP: 10, # of Dash Clones: 4, BDashCooldown: 0.8s,
     PDashCooldown: 0.8s, Hits to get Halt: 10
 
     NOTE: Each HaltUp upgrade acquired
@@ -4920,14 +4920,14 @@ MonoBehaviour:
     enemy3Count: 2
     spawnRate: 2
   - name: Boss Wave
-    enemy1: {fileID: 6191982570685614464, guid: cafc2ec7488414d4e9c75800a02768e1,
+    enemy1: {fileID: 5473621339305147352, guid: d9a4db5a448f0f44fa0c594e1b5f7448,
       type: 3}
     enemy2: {fileID: 164657957794893411, guid: 2538c96458b3c384dbec649ec004ecc2, type: 3}
     enemy3: {fileID: 8113390931299368461, guid: a7f57c289994b5c40b64e874f4fbe76f,
       type: 3}
     enemy1Count: 1
-    enemy2Count: 2
-    enemy3Count: 1
+    enemy2Count: 0
+    enemy3Count: 0
     spawnRate: 2
   animator: {fileID: 949140585}
   spawnPoints:

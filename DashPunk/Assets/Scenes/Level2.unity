@@ -5779,7 +5779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'STARTING VALUES: Max HP: 5, # of Dash Clones: 4, BDashCooldown: 0.8s,
+  m_Text: 'STARTING VALUES: Max HP: 10, # of Dash Clones: 4, BDashCooldown: 0.8s,
     PDashCooldown: 0.8s, Hits to get Halt: 10
 
     NOTE: Each HaltUp upgrade acquired
