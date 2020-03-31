@@ -36,10 +36,6 @@ public class BulletControl : MonoBehaviour
                 rb.MovePosition(transform.position + (direction * speed * Time.deltaTime));
             }
         }
-        if (Spawner.totalEnemies == 0)
-        {
-            destroyBullet();
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -50,6 +46,14 @@ public class BulletControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Wall"))
+        {
+            destroyBullet();
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            destroyBullet();
+        }
+        if (other.gameObject.CompareTag("Player"))
         {
             destroyBullet();
         }

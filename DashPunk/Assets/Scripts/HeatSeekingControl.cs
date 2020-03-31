@@ -38,11 +38,7 @@ public class HeatSeekingControl : MonoBehaviour
                 rb.rotation = angle + 90;
                 transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
             }            
-        }
-        if (Spawner.totalEnemies == 0)
-        {
-            destroyGrenade();
-        }
+        }       
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -53,6 +49,14 @@ public class HeatSeekingControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Wall"))
+        {
+            destroyGrenade();
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            destroyGrenade();
+        }
+        if (other.gameObject.CompareTag("Player"))
         {
             destroyGrenade();
         }

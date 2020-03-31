@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
             PlayerUpgrades.maxHealthUp = 0 + Int32.Parse(tempCurrencyTxtList[1]);
         } else
         {
-            PlayerUpgrades.maxHealthUp = 200 + Int32.Parse(tempCurrencyTxtList[1]);
+            PlayerUpgrades.maxHealthUp = 2000 + Int32.Parse(tempCurrencyTxtList[1]);
         }
         PlayerUpgrades.clonesUpgrade = 0 + Int32.Parse(tempCurrencyTxtList[2]);
         PlayerUpgrades.dashCooldownUpgrades = 0 + Int32.Parse(tempCurrencyTxtList[3]);
