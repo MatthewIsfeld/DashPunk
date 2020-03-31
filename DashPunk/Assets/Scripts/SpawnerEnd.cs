@@ -90,6 +90,7 @@ public class SpawnerEnd : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.N))
                 {
                     endGame.text = "";
+                    goNext.text = "";
                     ChangeLevel();
                 }
             }

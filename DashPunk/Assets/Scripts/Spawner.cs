@@ -86,6 +86,7 @@ public class Spawner : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.N))
                 {
+                    goNext.text = "";
                     ChangeLevel();
                 }
             }
