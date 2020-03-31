@@ -17,7 +17,7 @@ public class BossControl : MonoBehaviour
     private float invuln;
     private float invulnTime;
     public float invulnTimeStart;
-    private int bounced;
+    public int bounced;
     private Vector2 bounceDir;
     public ParticleSystem blood;
     public static bool isHalted = false;
@@ -227,9 +227,77 @@ public class BossControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
+            if (other.gameObject.GetComponent<REnemyControl>() != null)
+            {
+                if ((other.gameObject.GetComponent<REnemyControl>().bounced == 1) && (invuln == 0))
+                {
+                    PlayerController.enemyHits++;
+                    hearts -= 1;
+                    //CreateBlood();
+                    invuln = 1;
+                    bounced = 1;
+                    bounceDir = PlayerController.direction;
+                    rb.AddForce(bounceDir * 15000);
+                    if (hearts <= 0)
+                    {
+                        death();
+                    }
+                }
+            }
+            if (other.gameObject.GetComponent<MEnemyControl>() != null)
+            {
+                if ((other.gameObject.GetComponent<MEnemyControl>().bounced == 1) && (invuln == 0))
+                {
+                    PlayerController.enemyHits++;
+                    hearts -= 1;
+                    //CreateBlood();
+                    invuln = 1;
+                    bounced = 1;
+                    bounceDir = PlayerController.direction;
+                    rb.AddForce(bounceDir * 15000);
+                    if (hearts <= 0)
+                    {
+                        death();
+                    }
+                }
+            }
+            if (other.gameObject.GetComponent<GEnemyControl>() != null)
+            {
+                if ((other.gameObject.GetComponent<GEnemyControl>().bounced == 1) && (invuln == 0))
+                {
+                    PlayerController.enemyHits++;
+                    hearts -= 1;
+                    //CreateBlood();
+                    invuln = 1;
+                    bounced = 1;
+                    bounceDir = PlayerController.direction;
+                    rb.AddForce(bounceDir * 15000);
+                    if (hearts <= 0)
+                    {
+                        death();
+                    }
+                }
+            }
             if (other.gameObject.GetComponent<BossControl>() != null)
             {
                 if ((other.gameObject.GetComponent<BossControl>().bounced == 1) && (invuln == 0))
+                {
+                    PlayerController.enemyHits++;
+                    hearts -= 1;
+                    //CreateBlood();
+                    invuln = 1;
+                    bounced = 1;
+                    bounceDir = PlayerController.direction;
+                    rb.AddForce(bounceDir * 15000);
+                    if (hearts <= 0)
+                    {
+                        death();
+                    }
+                }
+            }
+            if (other.gameObject.GetComponent<FinalBossControl>() != null)
+            {
+                if ((other.gameObject.GetComponent<FinalBossControl>().bounced == 1) && (invuln == 0))
                 {
                     PlayerController.enemyHits++;
                     hearts -= 1;
