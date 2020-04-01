@@ -349,8 +349,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1737919289
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1747177655328474230, guid: 4d2b302f3e5bd2b429c0ea870b9e8416,
     type: 3}
@@ -432,6 +432,7 @@ MonoBehaviour:
     type: 3}
   hearts: 20
   invulnTimeStart: 0.3
+  bounced: 0
   blood: {fileID: 0}
   bullet: {fileID: 1872896420441014964, guid: 9508b3c142fca7f44962639273ce1104, type: 3}
   grenade: {fileID: 7349242362888390505, guid: 5263221354d6cab47b67d5c486e10ebb, type: 3}
