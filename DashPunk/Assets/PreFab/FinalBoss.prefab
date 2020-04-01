@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 4266826540600580692}
   - component: {fileID: 741399215481177473}
   m_Layer: 0
-  m_Name: FinalBoss 1 (1) 1
+  m_Name: FinalBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 5473621339305147352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1960558, y: 0.056977272, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_Children:
   - {fileID: 693325736023984748}
   - {fileID: 149083255455496588}
@@ -515,6 +515,7 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   hearts: 30
   invulnTimeStart: 0.3
+  bounced: 0
   blood: {fileID: 0}
   bullet: {fileID: 5650629618181173161, guid: 74e045f362abe3943b651dfe293bec84, type: 3}
   startShootCooldown: 0.25
