@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2335528399857778694}
   - component: {fileID: 7440124324135740904}
   m_Layer: 0
-  m_Name: Bounce clone 1
+  m_Name: Bounce clone
   m_TagString: BounceClone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1737919289
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 4980115403327913131, guid: ea42280785afb6c4192a692d01fceb04,
     type: 3}

@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1737919289
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 840627316385213645, guid: 2004ebce02d6c484ba62b84391a2d51d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,6 +105,7 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   hearts: 2
   invulnTimeStart: 0.3
+  bounced: 0
   blood: {fileID: 0}
   HealthDrop: {fileID: 4035910383399343260, guid: 61c6fa629ad810d4ea94ebe789f18754,
     type: 3}
