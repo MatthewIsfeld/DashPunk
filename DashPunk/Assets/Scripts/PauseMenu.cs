@@ -52,6 +52,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         inPauseMenu = true;
+        playerTracker.GetComponent<PlayerController>().dashCooldown = true;
+        playerTracker.GetComponent<PlayerController>().Invoke("dashCD", 0.1f);
     }
 
     public void LoadMenu()
