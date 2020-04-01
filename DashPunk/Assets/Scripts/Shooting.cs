@@ -79,7 +79,7 @@ public class Shooting : MonoBehaviour
         }
         for (int i = 0; i < pierceList.Count; i++)
         {
-            pierceList[i].GetComponent<Rigidbody2D>().AddForce(pDirList[i] * 1500f);
+            pierceList[i].GetComponent<Rigidbody2D>().AddForce(pDirList[i] * 1250f);
         }
         cloneNum = 0;
         Invoke("clearClones", 0.8f);    
