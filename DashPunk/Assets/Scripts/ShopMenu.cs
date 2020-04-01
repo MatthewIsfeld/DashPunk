@@ -28,9 +28,9 @@ public class ShopMenu : MonoBehaviour
         readPerm.Close();
         int tempCurrency = Int32.Parse(tempCurrencyTxtList[0]);
         int tempMaxHealth = Int32.Parse(tempCurrencyTxtList[1]);
-        if (tempCurrency >= 50)
+        if (tempCurrency >= 25)
         {
-            tempCurrency -= 50;
+            tempCurrency -= 25;
             creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempMaxHealth += 1;
             StreamWriter writePerm = new StreamWriter(path);
@@ -68,9 +68,9 @@ public class ShopMenu : MonoBehaviour
         readPerm.Close();
         int tempCurrency = Int32.Parse(tempCurrencyTxtList[0]);
         int tempCooldown = Int32.Parse(tempCurrencyTxtList[3]);
-        if (tempCurrency >= 50)
+        if (tempCurrency >= 25)
         {
-            tempCurrency -= 50;
+            tempCurrency -= 25;
             creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempCooldown += 1;
             StreamWriter writePerm = new StreamWriter(path);
@@ -108,9 +108,9 @@ public class ShopMenu : MonoBehaviour
         readPerm.Close();
         int tempCurrency = Int32.Parse(tempCurrencyTxtList[0]);
         int tempMoveSpeed = Int32.Parse(tempCurrencyTxtList[5]);
-        if (tempCurrency >= 50)
+        if (tempCurrency >= 25)
         {
-            tempCurrency -= 50;
+            tempCurrency -= 25;
             creditNum.text = "# of Chips: " + tempCurrency.ToString();
             tempMoveSpeed += 1;
             StreamWriter writePerm = new StreamWriter(path);
