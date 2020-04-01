@@ -114,6 +114,7 @@ public class MEnemyControl : MonoBehaviour
         {
             if ((invuln == 0))
             {
+                PlayerController.enemyHits++; // Increment the halting bar.
                 hearts -= playerObject.GetComponent<PlayerController>().pierceCloneDamage;
                 // Play blood animation
                 // CreateBlood();
@@ -159,6 +160,7 @@ public class MEnemyControl : MonoBehaviour
         }
         if ((invuln == 0) && (other.gameObject.CompareTag("BounceClone")) && (BounceCloneScript.cloneBouncing == 1))
         {
+            PlayerController.enemyHits++; // Increment the halting bar.
             bounced = 1;
             hearts -= playerObject.GetComponent<PlayerController>().bounceCloneDamage;
             invuln = 1;
