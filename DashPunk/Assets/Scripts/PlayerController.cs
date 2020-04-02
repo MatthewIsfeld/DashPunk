@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
                 pierceLine.transform.rotation = Quaternion.AngleAxis(angle - 45, Vector3.forward);
                 pierceLine.SetActive(true);
             }
-            if (Input.GetMouseButtonUp(1) && !Input.GetMouseButton(0))
+            if (Input.GetMouseButtonUp(1) && !Input.GetMouseButton(0) && !Input.GetMouseButtonUp(0))
             {
                 pierceLine.SetActive(false);
                 if ((isHalting == 0) && (isBounceDashing == 0) && pierceCooldown == false && dashCooldown == false)
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
                 bounceLine.transform.rotation = Quaternion.AngleAxis(angle + 45, Vector3.forward);
                 bounceLine.SetActive(true);
             }
-            if (Input.GetMouseButtonUp(0) && !Input.GetMouseButton(1)) // Can only happen when right click is not held.
+            if (Input.GetMouseButtonUp(0) && !Input.GetMouseButton(1) && !Input.GetMouseButtonUp(1)) // Can only happen when right click is not held.
             {
                 bounceLine.SetActive(false);
                 if ((isHalting == 0) && (isPierceDashing == 0) && bounceCooldown == false && dashCooldown == false)
@@ -183,6 +183,11 @@ public class PlayerController : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("bounceSound");
                     isBounceDashing = 1;
                 }
+            }
+            if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+            {
+                pierceLine.SetActive(false);
+                bounceLine.SetActive(false);
             }
             else if ((Input.GetKeyDown(KeyCode.Space)) && (haltCooldown == false) && spaceDash == false)
             {
