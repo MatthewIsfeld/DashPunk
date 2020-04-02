@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0) && playerAccess.GetComponent<PlayerController>().isHalting == 1) // Code for setting up bounce clones
+        if (Input.GetMouseButtonUp(0) && playerAccess.GetComponent<PlayerController>().isHalting == 1 && !Input.GetMouseButton(1) && !Input.GetMouseButtonUp(1)) // Code for setting up bounce clones
         {
             if (cloneNum < playerAccess.GetComponent<PlayerController>().clonesAllowed)
             {
@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
                 cloneNum++;
             }
         }
-        else if (Input.GetMouseButtonUp(1) && playerAccess.GetComponent<PlayerController>().isHalting == 1) // Code for setting up pierce clones
+        else if (Input.GetMouseButtonUp(1) && playerAccess.GetComponent<PlayerController>().isHalting == 1 && !Input.GetMouseButton(0) && !Input.GetMouseButtonUp(0)) // Code for setting up pierce clones
         {
             if (cloneNum < playerAccess.GetComponent<PlayerController>().clonesAllowed)
             {
