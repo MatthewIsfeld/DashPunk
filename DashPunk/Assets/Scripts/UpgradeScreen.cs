@@ -25,6 +25,7 @@ public class UpgradeScreen : MonoBehaviour
 
     public void Resume()
     {
+        playerTracker.GetComponent<PlayerController>().pierceLine.SetActive(false);
         Cursor.visible = false;
         upgradeScreenUI.SetActive(false);
         Time.timeScale = 1f;
