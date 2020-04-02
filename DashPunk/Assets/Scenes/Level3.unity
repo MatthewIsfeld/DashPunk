@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Text: 'STARTING VALUES: Max HP: 10, # of Dash Clones: 4, BDashCooldown: 0.8s,
     PDashCooldown: 0.8s, Hits to get Halt: 10
 
-    NOTE: Each HaltUp upgrade acquired
+    NOTE: Each Halt upgrade acquired
     above 5 raises clone limit instead of lowering # of hits.'
 --- !u!222 &234094869
 CanvasRenderer:
