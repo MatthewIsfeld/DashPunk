@@ -34,6 +34,8 @@ public class InventoryMenu : MonoBehaviour
 
     public void Resume()
     {
+        playerTracker.GetComponent<PlayerController>().bounceLine.SetActive(false);
+        playerTracker.GetComponent<PlayerController>().pierceLine.SetActive(false);
         Cursor.visible = false;
         inventoryDisplayUI.SetActive(false);
         Time.timeScale = 1f;
