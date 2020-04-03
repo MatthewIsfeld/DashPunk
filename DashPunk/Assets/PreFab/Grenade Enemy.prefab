@@ -213,6 +213,8 @@ MonoBehaviour:
   animator: {fileID: 1834810095138880623}
   spriteRenderer: {fileID: 0}
   defaultCol: {r: 0, g: 0, b: 0, a: 0}
+  currency: {fileID: 7634072659018456073, guid: 67046a12544ba8946913f991ca3d7314,
+    type: 3}
 --- !u!95 &1834810095138880623
 Animator:
   serializedVersion: 3

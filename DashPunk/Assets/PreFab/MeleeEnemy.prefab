@@ -122,6 +122,8 @@ MonoBehaviour:
   animator: {fileID: 5182572958942981430}
   spriteRenderer: {fileID: 0}
   defaultCol: {r: 0, g: 0, b: 0, a: 0}
+  currency: {fileID: 7634072659018456073, guid: 67046a12544ba8946913f991ca3d7314,
+    type: 3}
 --- !u!50 &7964802321267214675
 Rigidbody2D:
   serializedVersion: 4

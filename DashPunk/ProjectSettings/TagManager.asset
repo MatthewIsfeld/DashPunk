@@ -17,6 +17,7 @@ TagManager:
   - HaltUpgrade
   - MoveSpeedUpgrade
   - BossCurrency
+  - EnemyCurrency
   layers:
   - Default
   - TransparentFX

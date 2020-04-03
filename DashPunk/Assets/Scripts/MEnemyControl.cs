@@ -30,6 +30,7 @@ public class MEnemyControl : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Color defaultCol;
+    public GameObject currency;
 
     // Start is called before the first frame update
     void Start()
@@ -295,6 +296,11 @@ public class MEnemyControl : MonoBehaviour
         Instantiate(moveSpeedUpgrade, this.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
+    void spawnCurrency()
+    {
+        Instantiate(currency, this.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
     void death()
     {
         int randVal;
@@ -325,6 +331,10 @@ public class MEnemyControl : MonoBehaviour
         else if (randVal > 40 && randVal <= 45)
         {
             spawnMoveSpeedUpgrade();
+        }
+        else if (randVal > 67)
+        {
+            spawnCurrency();
         }
         this.gameObject.SetActive(false);
     }
