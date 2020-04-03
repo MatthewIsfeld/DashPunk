@@ -23,6 +23,7 @@ public class HeatSeekingControl : MonoBehaviour
             rb = this.GetComponent<Rigidbody2D>();
             direction = Player.position - transform.position;
         }
+        Invoke("destroyGrenade", 4.5f);
     }
 
     // Update is called once per frame
