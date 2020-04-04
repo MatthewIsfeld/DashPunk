@@ -104,7 +104,10 @@ public class MEnemyControl : MonoBehaviour
     {
         if (playerObject.GetComponent<PlayerController>().isHalting == 0)
         {
-            rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+            if (!(playerObject.GetComponent<PlayerController>().hearts < 1))
+            {
+                rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+            }
         }
 
     }
