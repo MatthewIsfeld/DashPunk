@@ -153,7 +153,7 @@ public class SpawnerEnd : MonoBehaviour
             nextWave = waves.Length;
             Debug.Log("Changing to next stage!");
 
-            endGame.text = "The Punk has ended the reign of the Robots!!!";
+            endGame.text = "The Punk has ended the reign of the MegaCorporations!!!";
             goNext.text = "Press N to return to Main Menu!";
             levelEnd = true;
         }
