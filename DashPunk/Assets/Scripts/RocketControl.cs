@@ -24,6 +24,7 @@ public class RocketControl : MonoBehaviour
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             rb.rotation = angle + 90;
             direction = direction.normalized;
+            rb.freezeRotation = true;
         }
     }
 

@@ -23,6 +23,7 @@ public class BulletControl : MonoBehaviour
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
             direction = direction.normalized;
+            rb.freezeRotation = true;
         }
     }
 

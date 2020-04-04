@@ -9,7 +9,8 @@ public class GrenadeControl : MonoBehaviour
     private Vector2 target;
     private GameObject playerObject;
     public GameObject explosion;
-    
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class GrenadeControl : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player").transform;
             playerObject = GameObject.Find("Player");
             target = new Vector2(Player.position.x, Player.position.y);
+            rb = this.GetComponent<Rigidbody2D>();
+            rb.freezeRotation = true;
         }
     }
 
