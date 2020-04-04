@@ -102,7 +102,7 @@ public class MEnemyControl : MonoBehaviour
     // Move enemy with MovePosition
     void moveEnemy(Vector2 direction)
     {
-        if (isHalted == false)
+        if (playerObject.GetComponent<PlayerController>().isHalting == 0)
         {
             rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
         }

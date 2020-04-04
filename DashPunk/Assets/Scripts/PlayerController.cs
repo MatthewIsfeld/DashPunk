@@ -347,6 +347,10 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(knockBackDir * knockBackPower);
                 if (hearts < 1)
                 {
+                    if (isHalting == 1)
+                    {
+                        isHalting = 0;
+                    }
                     Invoke("mainMenu", 2.5f);
                     deadText.color = Color.white;
                     deadText.text = "THE PUNK'S JOURNEY IS OVER";
@@ -459,6 +463,10 @@ public class PlayerController : MonoBehaviour
                 invuln = 1;
                 if (hearts < 1)
                 {
+                    if (isHalting == 1)
+                    {
+                        isHalting = 0;
+                    }
                     Invoke("mainMenu", 2.5f);
                     deadText.text = "THE PUNK'S JOURNEY IS OVER";
                     this.gameObject.SetActive(false);
