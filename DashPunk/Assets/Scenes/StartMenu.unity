@@ -6543,8 +6543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -44, y: 153.1}
-  m_SizeDelta: {x: 892.1, y: 598.1}
+  m_AnchoredPosition: {x: -44, y: 80}
+  m_SizeDelta: {x: 892.1, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1607529203
 MonoBehaviour:
@@ -6582,8 +6582,8 @@ MonoBehaviour:
     - Bounce Dash\nRight Click - Pierce Dash\nWhen your \"Halting Bar\" is full,
     press <SPACE> to freeze time, and fire clones instead of dashing.\n\nCollect
     upgrades to gain the power the Punk needs to revive a shattered world.\n\nWhen
-    the Punk defeats a boss, you can use the \"chips\" he gains to purchase permanent
-    upgrades at the shop."
+    the Punk defeats a boss or randomly when he kills an enemy the Punk gains chips
+    that can be used to purchase permanent upgrades at the shop."
 --- !u!222 &1607529204
 CanvasRenderer:
   m_ObjectHideFlags: 0
