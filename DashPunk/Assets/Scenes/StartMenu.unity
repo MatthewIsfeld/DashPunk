@@ -3273,7 +3273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "-5% Dash \nCooldown\n50 chips"
+  m_Text: "-5% Dash \nCooldown\n25 chips"
 --- !u!222 &773940237
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6177,7 +6177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0037231445, y: -4.5}
+  m_AnchoredPosition: {x: 0.0036621094, y: -4.5}
   m_SizeDelta: {x: 0.0073242, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1452003348
