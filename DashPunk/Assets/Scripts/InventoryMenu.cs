@@ -14,7 +14,7 @@ public class InventoryMenu : MonoBehaviour
     void Start()
     {
         playerTracker = GameObject.Find("Player");
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(','); // Current length is 6
@@ -41,7 +41,7 @@ public class InventoryMenu : MonoBehaviour
         }
         if (inInventoryMenu == true)
         {
-            string path = Application.dataPath + "/PermanentUpgrades.txt";
+            string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
             StreamReader readPerm = new StreamReader(path);
             string tempCurrencyTxt = readPerm.ReadLine();
             string[] tempCurrencyTxtList = tempCurrencyTxt.Split(','); // Current length is 6

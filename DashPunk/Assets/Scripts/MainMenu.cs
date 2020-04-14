@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         if (!File.Exists(path))
         {
             StreamWriter writePerm = new StreamWriter(path);
@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame ()
     {
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(','); // Current length is 6

@@ -437,7 +437,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("BossCurrency"))
         {
             FindObjectOfType<AudioManager>().Play("collect");
-            string path = Application.dataPath + "/PermanentUpgrades.txt";
+            string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
             StreamReader readPerm = new StreamReader(path);
             string tempCurrencyTxt = readPerm.ReadLine();
             string[] tempCurrencyTxtList = tempCurrencyTxt.Split(','); // Current length is 6
@@ -469,7 +469,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyCurrency"))
         {
             FindObjectOfType<AudioManager>().Play("collect");
-            string path = Application.dataPath + "/PermanentUpgrades.txt";
+            string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
             StreamReader readPerm = new StreamReader(path);
             string tempCurrencyTxt = readPerm.ReadLine();
             string[] tempCurrencyTxtList = tempCurrencyTxt.Split(','); // Current length is 6

@@ -11,7 +11,7 @@ public class ShopMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(',');
@@ -21,7 +21,7 @@ public class ShopMenu : MonoBehaviour
 
     public void BuyMaxHealth()
     {
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(',');
@@ -41,7 +41,7 @@ public class ShopMenu : MonoBehaviour
 
     public void BuyClones()
     {
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(',');
@@ -61,7 +61,7 @@ public class ShopMenu : MonoBehaviour
 
     public void BuyDashCooldown()
     {
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(',');
@@ -81,7 +81,7 @@ public class ShopMenu : MonoBehaviour
 
     public void BuyHaltBar()
     {
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(',');
@@ -101,7 +101,7 @@ public class ShopMenu : MonoBehaviour
 
     public void BuyMoveSpeed()
     {
-        string path = Application.dataPath + "/PermanentUpgrades.txt";
+        string path = Application.persistentDataPath + "/PermanentUpgrades.txt";
         StreamReader readPerm = new StreamReader(path);
         string tempCurrencyTxt = readPerm.ReadLine();
         string[] tempCurrencyTxtList = tempCurrencyTxt.Split(',');
